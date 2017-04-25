@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				background:yellow;
+				transition:width 2s, height 2s ,background 2s;
+				
+				-moz-transition:width ease-in 2s, height ease-in 2s, background ease-in 2s, -moz-transform ease-in 2s;
+				-webkit-transition:width ease-in 2s, height ease-in 2s, background ease-in 2s, -webkit-transform ease-in 2s; 
+				-o-transition:width ease-in 2s, height ease-in 2s, background ease-in 2s, -o-transform ease-in 2s;
+			}
+			
+			div:hover{
+				width:200px;
+				height:200px;
+				background:blue;
+				transform:rotate(360deg);
+				
+				-moz-transform:rotate(360deg);
+				-webkit-transform:rotate(360deg); 
+				-o-transform:rotate(360deg); 
+			}
+
+		</style>
+	</head>
+	<body>
+		<div>请把鼠标指针放到黄色的 div 元素上，来查看过渡效果。</div>
+
+	</body>
+</html>

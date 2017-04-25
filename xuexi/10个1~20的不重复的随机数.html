@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>10个1~20的不重复的随机数</title>
+	</head>
+	<body>
+	    <h1 id="con1">10个1~20的不重复的随机数</h1>
+		<script>
+		    var con1=document.getElementById('con1');
+		    var arr=[];
+		    for (var i = 0; i < 10; i++) {
+		        var r=parseInt(Math.random()*20)+1;
+		        arr.push(r);
+		        console.log(arr);
+		        for (var j = 0; j < i; j++) {
+		            if (arr[j]==r) {
+		                arr.pop();
+		                i--;
+		                break;
+		            }
+		        }
+		    }
+		    con1.innerText=arr;
+		    console.log(arr.length);
+		</script>
+	</body>
+</html>

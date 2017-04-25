@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>全局类名获取</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+	    *{margin:0; padding:0; list-style:none;}
+	    .bgred{
+	        background: red;
+	    }
+	    .blue{
+	        color: blue;
+	    }
+	</style>
+	</head>
+	<body>
+	
+	<ul>
+	    <li class="bgred">111</li>
+	    <li class="bgred blue">222</li>
+	    <li class="bgred">333</li>
+	    <li class="bgred">111</li>
+	    <li class="bgred blue">222</li>
+	    <li class="bgred">333</li>
+	</ul>
+	
+	<script>
+	function byClass1(oClass){//全局获取
+	    var tags=document.all?document.all:document.getElementsByTagName('*');
+	    var arr=[];
+	    for (var i = 0; i < tags.length; i++) {
+	        var classNa=tags[i].className;
+	        var num=classNa.indexOf(oClass,0);
+	        if (num!=-1) {
+	            arr.push(tags[i]);
+	        };
+	    };
+	    return arr;
+	}
+	var liRed=byClass1('bgred');
+	alert(liRed.length);//6
+	</script>
+	</body>
+</html>

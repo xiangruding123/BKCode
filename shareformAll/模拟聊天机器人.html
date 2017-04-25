@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title></title>
+  
+  <link rel="stylesheet" href="css/all.css" />
+ 
+ </head>
+ <body>
+	<div id="box" class="box">
+		<div id="content" class="content">
+			<ul id="talkList">
+				<li class="mm">
+					<div class="logo-head"> 
+						<img src="img/w11.jpg"/>
+					</div>
+					<span class="talk">
+						Hi,主人!
+					</span>
+				</li>
+				<li class="mm">
+					<div class="logo-head"> 
+						<img src="img/w11.jpg"/>
+					</div>
+					<span class="talk">
+						我可以陪您聊天哦！O(∩_∩)O
+					</span>
+				</li>
+				<li class="gg">
+					<div class="logo-head">
+						<img src="img/w12.jpg"/>
+					</div>
+					<span class="talk">
+						o(≧v≦)o~~
+					</span>
+				</li>
+			</ul>
+		</div>
+		<div class="control">
+			<textarea id="txt" rows="2" cols="40"></textarea>
+			<a href="javascript:void(0)" id="send">发送</a>
+		</div>
+	</div>
+	<script>
+		/*
+				思路:
+					第一步:获取所要操作的节点对象；
+					第二步:为按钮节点添加一个点击事件;
+					第三步:获取文本域内容;
+					第四步:创建li节对象，把内容包装起来，追加在ul最后面
+							gg  mm
+		*/
+			//获取ul节点对象
+			var talklist = document.getElementById("talkList"); 
+			//获取文本域内容
+			var txt = document.getElementById("txt");
+			//获取按钮
+			var send = document.getElementById("send");
+			send.onclick = function(){
+					var data = txt.value;//获取文本域中的内容 value属性
+					getTalk("gg",data,talklist);	
+					txt.value = '';
+					/*mm*/
+					setTimeout(function(){
+							var mmdata = "";
+							switch(data){
+									case "你好":
+											mmdata = "主人你好，有什么小娜可以为你服务的";break;
+									case "是谁创造的你":
+											mmdata = "是你呀！";
+											break;
+									case "好的":
+											mmdata = "谢谢!";
+											break;
+									case "好的":
+											mmdata = "再见!";
+											break;
+									default:
+											mmdata = "亲，您的余额不足~~";
+											mmdata = "请充值...";
+											break;
+							}
+							getTalk("mm",mmdata,talklist);
+					},1000);
+					
+			}
+			/*
+					创造一个工具:
+								参数 name  类名
+									 data  内容
+									 list  ul节点对象
+			*/
+				function getTalk(name,data,list){
+							var li = document.createElement("li");
+							li.className = name;
+							li.innerHTML = '<div class="logo-head">'+
+									'<img src="img/'+name+'.jpg"/>'+
+									'</div>'+
+									'<span class="talk">'+
+										data+
+									'</span>';
+							list.appendChild(li);
+							li.scrollIntoView();//把需要显示的节对象显示在可视区域中
+				}
+	</script>
+ </body>
+</html>

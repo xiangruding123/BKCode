@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>鼠标拖拽_T</title>
+	<style>
+	*{margin:0;padding:0;list-style: none;}
+		#dot{
+		    width:80px;
+		    height:80px;
+		    line-height: 30px;
+		    text-align: center;
+		    font-size:24px;
+		    background: #D00000;
+		    color:#fff;
+		    cursor:move;
+		    position:absolute;
+		    left:300;
+		    top:100;
+		}
+	</style>
+	</head>
+	<body>
+	    <div id="dot"></div>
+	</body>
+		<script>
+		    var dot=document.getElementById('dot');
+		    var x,y;
+		    var xStart,yStart;
+		    var xEnd,yEnd;
+		    dot.onmousedown=function(ev){
+		        var e=window.event||ev;
+		        x=e.offsetX;
+		        y=e.offsetY;
+		        dot.onmousemove=function(ev){
+		            var e=window.event||ev;
+		            var xEnd=e.clientX-x;
+		            var yEnd=e.clientY-y;
+		            dot.style.left=xEnd+'px';
+		            dot.style.top=yEnd+'px';
+		        }
+		    }
+		    dot.onmouseup=function(){
+		        dot.onmousemove=null;
+		    }
+		</script>
+</html>

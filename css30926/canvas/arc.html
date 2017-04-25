@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*#mycanvas{border: 1px solid #FF0000;}*/
+		</style>
+	</head>
+	<body>
+		<canvas id="mycanvas" width=700 height=800 ></canvas>
+	</body>
+	<script>
+		var canvas=document.getElementById("mycanvas");
+		var ctx=canvas.getContext("2d");
+		
+	
+//		ctx.arc(300,300,60,0,Math.PI*2,false);
+//		ctx.strokeStyle="black"
+//		ctx.stroke();
+//		ctx.fillStyle="#FFFF00"
+//		ctx.fill();
+		
+		ctx.beginPath();                      //起始一条路径，或重置当前路径
+        ctx.arc(320,240,100,0,2*Math.PI);     //创建圆形或部分圆-x轴、y轴、半径、起始角、结束角
+        ctx.fillStyle='yellow';               //设置或返回用于填充绘画的颜色、渐变或模式
+        ctx.fill();                           //填充当前绘图（路径）
+        ctx.strokeStyle='black';              //设置或返回用于笔触的颜色、渐变或模式
+        ctx.stroke();                         //填充已定义的路径线条颜色
+        ctx.closePath();                       //关闭从当前点回到起始点的路径
+		
+		
+	</script>
+</html>

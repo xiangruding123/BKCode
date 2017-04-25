@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>select下拉菜单的选中删除和添加</title>
+		<script>
+			window.onload= function(){
+			
+				var btn = document.getElementById("btn");
+				var sel1 = document.getElementById("sell");
+				
+				btn.onclick = function(){
+					
+					//添加
+					sel1.options.add( new Option("dd","value"));
+					//删除
+//					sel1.options.length = 0;
+					//选中
+					sell[1].selected = true;
+//					sell.selectedIndex = 2;
+				}
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<form title="描 &#10;述" name="form1" action="">
+			<select id="sell">
+				<option value="0">a</option>
+				<option value="1">b</option>
+				<option value="2">c</option>
+			</select>
+			<input type="button" id="btn" value="按钮" />
+		</form>
+		
+	</body>
+</html>

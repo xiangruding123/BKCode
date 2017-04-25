@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<head> 
+	<meta charset="utf-8" />
+	<title>OnContextMenu事件</title> 
+	<style>
+		#infoDiv{
+			width: 200px;
+			height: 200px;
+			background: lightblue;
+		}
+	</style>
+		<script language="JavaScript"> 
+		function uFunction() 
+		
+			{     
+				document.all.infoDiv.innerHTML='你按下了鼠标右键，但是右键菜单不能 显示！';
+			}
+			
+		function uFunction2() 
+			{    
+				document.all.infoDiv.innerHTML='你按下了Ctrl+鼠标右键，可以 显示右键菜单。';
+			}
+			
+			
+		</script> 
+</head> 
+
+<body oncontextmenu="if(!event.ctrlKey){uFunction();return false}else{uFunction2()}"> 
+
+	<div id="infoDiv">
+		你按下了鼠标右键，但是右键菜单不能 显示！<br>
+		你按下了Ctrl+鼠标右键，可以显示右键菜单。 
+	</div>
+
+</body> 

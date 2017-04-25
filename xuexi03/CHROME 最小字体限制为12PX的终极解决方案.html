@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			 .fz6{
+               font-size: 6px;
+          }
+          .fz12{
+              font-size: 12px;
+              line-height: 20px;
+          }
+          @media screen and (-webkit-min-device-pixel-ratio:0) {
+              .-webkit-fz6-box{
+                  width: 400px;
+              }
+              .-webkit-fz6{
+                  /* defout most smallest:12px*/
+                  -webkit-font-size: 12px;
+                 -webkit-line-height: 20px;
+                  /*  字体缩放12×0.5= 6px,
+                      translate调整位置
+                     取父级盒子宽度的负50% -400px * 50% = -200px*/
+                  -webkit-transform: scale(0.5) translate(-200px,0px) ;
+                  /* -ms-transform: ;
+                  -o-transform: ;
+                  transform: ; 
+                  -webkit-min-device-pixel-ratio:0;*/
+                  -webkit-letter-spacing: 1px;
+              }
+          }
+          .box-fieldset{
+              width: 400px;
+              height: 40px;
+              font-size: 16px;
+              line-height: 28px;
+          }
+          .fieldset{
+              border-top: 1px solid #ccc;
+              border-right:0px;
+              border-bottom: 0px;
+              border-left: 0px; 
+          }
+          .legend-txt-c{
+              text-align: center;
+          }
+          .sub,.sup{
+              font-size: 8px;
+              line-height: 14px;    
+          }
+          @media screen and (-webkit-min-device-pixel-ratio:0) {
+          /* 针对Google Chrome、Safari 3.0、Opera 9 的CSS样式 */
+              .-webkit-w16{
+                  width: 16px;
+                  display: inline-block;
+              }
+              .-webkit-sub,.-webkit-sup{
+                  -webkit-transform: scale(0.5) translate(-8px,0px) ;
+                  /* -ms-transform: ;
+                  -o-transform: ;
+                  transform: ; 
+                  -webkit-min-device-pixel-ratio:0;*/
+                  -webkit-letter-spacing: 1px;
+              }
+          }
+          @-moz-document url-prefix() {
+              /* 针对Firefox的CSS样式 */
+              .-moz-sub,.-moz-sup{
+                  position: relative;
+              }
+              .-moz-sub-span{
+                  position: relative;
+                  top: -8px;
+              }
+             .-moz-sup-span{
+                 position: relative;
+                  top: 0px;
+              }
+          }
+		</style>
+	</head>
+	<body>
+		 <p class="fz12">这段话的实际字体大小为12px，几乎所有主流浏览器都能正常识别</p>
+      <p class="fz6">这段话的实际字体大小6px，Chrome 默认最小字体是12px，这是Chrome为了更好显示中文设计的。但是这样一来就会出现某些上标、下标字体过大，影响用户体验。（例如2<sup>2</sup>,CO<sub>2</sub>）</p>
+      <div class="-webkit-fz6-box">
+         <p class="fz6 -webkit-fz6">这段话的实际字体大小6px。已经解决CHROME浏览器不能正常显示的问题</p>
+      </div>
+      <div class="box-fieldset">
+          <fieldset class="fieldset">
+          <legend class="legend-txt-c">使用场景</legend>
+              <p>《高中化学》
+                  二氧化碳：CO<sub class="sub -moz-sub"><span class="-webkit-w16 -webkit-sub -moz-sub-span">2</span></sub>；
+                 水：H<sub class="sub -moz-sub"><span class="-webkit-w16 -webkit-sub -moz-sub-span">2</span></sub>O；
+                  氢气：H<sub class="sub -moz-sub"><span class="-webkit-w16 -webkit-sub -moz-sub-span">2</span></sub>；
+              </p>
+              
+              <p>《高中数学》
+                 2<sup class="sup -moz-sup"><span class="-webkit-w16 -webkit-sup -moz-sup-span">2</span></sup>；
+                 10<sup class="sup -moz-sup"><span class="-webkit-w16 -webkit-sup -moz-sup-span">2</span></sup>；
+                 2<sup class="sup -moz-sup"><span class="-webkit-w16 -webkit-sup -moz-sup-span">10</span></sup>；
+             </p>
+           </fieldset>    
+     </div>
+
+
+	</body>
+</html>	

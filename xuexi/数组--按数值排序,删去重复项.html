@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		
+			var arr2=[1,2,3,4,5,3,2,2,1,1,2,3,4,5,5];
+			var arr3=arr2.sort();
+			var newarr=[];
+			
+		    for (var i = 0; i < arr3.length; i++) {
+		        if (arr3[i]==arr3[i+1]) {
+		            continue;
+		        } 
+		        newarr.push(arr3[i]);//放在新的数组里newarr,push添加到数组末尾
+		    }
+		     console.log(newarr);
+
+
+
+			//这才是正确的！！封装成函数的形式
+//			function resetArr(arr){
+//		         arr.sort(function(a,b){return a-b});
+//		         var newarr=[];
+//		         for (var i = 0; i < arr.length; i++) {
+//		             if (arr[i]==arr[i+1]) {
+//		                 continue;
+//		             }
+//		             newarr.push(arr[i]);
+//		         };
+//		         return newarr;
+//		     }
+//		     var arr4=[12,45,45,12,2,8,5,85,5,12];
+//		     console.log(arr4);
+//		     var arr5=resetArr(arr4);//调用执行函数
+//		     console.log(arr5);
+		     
+		     
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

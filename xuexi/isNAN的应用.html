@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>isNaN( )的应用</title>
+	</head>
+	<body>
+		<input type="text" name="ipt" id="ipt" value="请输入数字" />
+		<script>
+			 /*isNaN( )的应用 */
+		     var ipt=document.getElementById('ipt');
+		     ipt.onchange=function(){
+		         if (isNaN(ipt.value)) {
+		             alert('亲，只能输入数字！');
+		         } else {
+		             alert('恭喜，输入成功！');
+		         }
+		     }
+		</script>
+	</body>
+</html>

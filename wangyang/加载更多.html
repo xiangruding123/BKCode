@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>模拟加载更多</title>
+		<script>
+			var p = 1;
+			window.onload = function() {
+				var ul1 = document.getElementById("ul1");
+				var btn = document.getElementById("btn");
+				btn.onclick = function() { 
+					ul1.innerHTML = "";
+					addScript();
+					p++;
+					//callback(p);
+				}
+			}
+			
+			function callback(t) {  //定义回调函数
+				var xhr;
+				window.XMLHttpRequest ? xhr = new XMLHttpRequest() : xhr = new ActiveXObject("Msxml2.XMLHTTP");
+				var Url = "data/txt.txt?t=" + new Date().getTime();
+				xhr.open("GET", Url, true);
+				xhr.send();
+				xhr.onreadystatechange = function() {  //通过ajax获取txt文件内容
+					if (xhr.readyState == 4 && xhr.status == 200) {
+						var str = xhr.responseText;
+						var arr = eval("(" + str + ")").list;  //将txt文件内容转为对象，arr代表取得的对象数组
+						//console.log(arr);
+							for (var i = 0; i < arr.length; i++) {
+								var obj = arr[i];
+								var li = document.createElement("li");
+								li.innerHTML = obj.key+(t-1)*10; //取出来的key值为1,2...10，需要转换为我们需要的数值
+								ul1.appendChild(li);
+						}
+					}
+				}
+			}
+			
+			function addScript() {  //jsonp  在页面创建script  
+				var script = document.createElement("script");
+				var head = document.getElementsByTagName("head")[0];
+				script.innerHTML = "callback(" + p + ")";  //回调函数
+				head.appendChild(script);
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="ul1"></ul>
+		<button id="btn">加载更多</button>
+	</body>
+</html>

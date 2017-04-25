@@ -1,0 +1,222 @@
+
+/*--------header模块--------------*/
+#header{
+	width: 100%;
+	height: 40px;
+	background: #000;
+}
+#header .header{
+	width: 1000px;
+	height: 40px;
+}
+#header .header .header_l{
+	width: 245px;
+	height: 40px;
+	font: 500 12px/40px "微软雅黑";
+	color: #fff;
+	text-indent: 5px;
+}
+#header .header .header_c{
+	width: 305px;
+	height: 40px;
+	font: 500 12px/40px "微软雅黑";
+	color: #fff;
+	text-indent: 5px;
+}
+#header .header .header_c>b{
+	color: #f00;
+}
+#header .header .header_r{
+	width: 450px;
+	height: 40px;
+	position: relative;
+}
+#header .header .header_r a.weixin{
+	margin: 5px 0 0 10px;
+    height: 30px;
+    padding: 0;
+    width: 30px;
+	display: inline-block;
+	text-indent: -9999px;
+	float: right;
+	font: 500 12px/40px "微软雅黑";
+	background: url(../img/wb_icon.png) no-repeat -33px 0;
+}
+#header .header .header_r div.add_weixin {
+    display: none;
+    width: 133px;
+    height: 135px;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    z-index: 1000;
+}
+#header .header .header_r a.jgz_a{
+	margin-top: 9px;
+	display: inline-block;
+	width: 62px;
+	height: 22px;
+	float: right;
+	text-decoration: none;
+	background: url(../img/jgz_a.jpg) no-repeat center;
+}
+#header .header .header_r a.reg, #header .header .header_r a.login{
+	float: right;
+	color: #fff;
+    padding: 0 5px;
+    text-decoration: none;
+	font: 500 12px/40px "微软雅黑";
+}
+/*--------logo栏---------*/
+#top{
+	width: 100%;
+	height: 134px;
+	background: magenta;
+}
+#top .top{
+	height: 134px;
+	background: lemonchiffon;
+	clear: both;
+    overflow: hidden;
+    width: 1000px;
+    /*margin: 0 auto 15px auto;*/
+    position: relative;
+}
+#top .top .search{
+	width: 100%;
+	height: 60px;
+	background: lawngreen;
+}
+#top .top .search a.logo_a{
+	cursor: pointer;
+	text-decoration: none;
+	transition: color .2s ease-in-out;
+}
+
+#top .top .search a.logo_a .logo{
+    float: left;
+    background: url(../img/logonew.png) center center no-repeat;
+    width: 290px;
+    height: 55px;
+    text-indent: -999px;
+    margin-top: 8px;
+}
+#top .top .search .hotpro{
+    float: right;
+    height: 40px;
+    padding-top: 20px;
+    overflow: hidden;
+    width: 200px;
+    margin-right: 400px;
+    background: khaki;
+}
+#top .top .search .hotpro a{
+    font: 12px/20px "microsoft yahei";
+    float: right;
+    padding: 0 5px;
+    white-space: nowrap;
+    color: #333333;
+    cursor: pointer;
+}
+#top .top .search .hotpro>a:hover{
+  	background: #000000;
+    color: #FFFFFF!important;
+    cursor: pointer;
+    text-decoration: none;
+}
+#top .top .search .mainsearch{
+    background-color: #f6f5f5;
+    border: 1px solid #a2a0a0;
+    width: 324px;
+    height: 36px;
+    left: 606px;
+    top: 19px;
+    position: absolute;
+}
+#top .top .search .mainsearch .main_input{
+    border: 0;
+    color: #a2a0a0;
+    height: 35px;
+    _height: 33px;
+    line-height: 35px\9;
+    padding-left: 45px;
+    width: 279px;
+}
+#top .top .search .mainsearch .main_input{
+    background: url(../img/search.png) 0 -47px no-repeat #f6f5f5;
+    border: 0;
+    color: #a2a0a0;
+    height: 36px;
+    _height: 33px;
+    line-height: 35px\9;
+    padding-left: 45px;
+    width: 279px;
+}
+
+#top .top .search .mainbtn {
+    background-color: #ee0065;
+    border: 0;
+    color: #ffffff;
+    font: 500 16px/38px "microsoft yahei";
+    cursor: pointer;
+    width: 65px;
+    height: 38px;
+    left: 935px;
+    top: 19px;
+    position: absolute;
+}
+
+
+/*-------------*/
+.main_nav .nav_cur { float: left; height: 59px; margin-right: 1px; width: 101px; padding-left:18px; }
+.main_nav .nav3{ margin-right:0; width:90px;}
+.main_nav .nav5{ margin-right:17px;}
+.main_nav .nav6{ margin-right:25px; width:100px;}
+.main_nav .nav7{ margin-right:5px;}
+.nav_cur a { color: #FFF; display: block; font: 20px/48px "microsoft yahei"; height: 45px; text-align: center; width: 101px; }
+.main_nav { background: url(../img/nav3.png) no-repeat; clear: both; height: 59px; margin: 15px 0 0; position: relative; }
+.main_nav .app { position: absolute; right: 15px; top: 0; }
+.main_nav .app a { background: url(../img/nav_app.png) right 6px no-repeat; font: 14px/51px "microsoft yahei"; color: #f67fb2; padding-right: 30px; width: 50px; padding-top:6px; }
+.main_nav a { display: inline; float: left; height: 56px; }
+.main_nav a span {color: #fff; display: block; height: 56px; font: 18px/45px "microsoft yahei"; text-align: center; }
+.main_nav a .s1{ padding-left:10px;}
+.main_nav a .s4{ padding-right:10px;}
+.main_nav a.a1 { width: 100px; }
+.main_nav a.a2 { width: 90px; }
+.main_nav a.a3 { width: 85px; }
+.main_nav li { float: left; margin-right: 15px; display: inline; height: 59px; line-height: 59px; }
+.main_nav .nav_line { display: none; position: absolute; border-bottom: 3px solid #ee0065; height: 0; overflow: hidden; left: 0; bottom: 0; }
+
+.main_nav li.active a { border-bottom: 3px solid #ee0065; }
+.navbar_light { position: absolute; bottom: 15px; width: 100px; height: 3px; }
+.light { display: none; position: absolute; left: 0; width: 110px; height: 100%; background-color: #ee0065; }
+
+
+.main_nav{ background-image:url(../img/navBg_20150527.png);}
+.main_nav a.a1{ width:126px;}
+.main_nav a.a2{ width:84px;}
+.main_nav a.a3{ width:95px;}
+.main_nav a.a4{ width:143px;}
+.main_nav a.a5{ width:92px;}
+.main_nav a.a6{ width:106px;}
+.main_nav .nav_cur{ padding-left:3px;}
+.main_nav .app a{ background:none; text-indent:-999em; width:110px;}
+.topbar_r .sina_gz{ height:24px;}
+
+/*-----------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--3、操作节点：
+		createElement("标签名") : 创建新元素
+		createTextNode("") : 创建文本节点
+		创建方法：document.createElement('div');
+		appendChild(node) : 末尾插入一个节点node
+		insertBefore(node,targetNode) : target之前插入节点node
+		replaceChild(newNode,oldNode) : new替换节点old
+		removeChild(node) : 移除父节点的某个子节点-->
+	</head>
+	<body>
+		<ul id="list">
+		    <li>11</li>
+		    <li>22</li>
+		    <li>33</li>
+		</ul>
+		<button id="btn">删除</button>
+		
+		<script>
+		    var list=document.getElementById('list');
+		    var btn=document.getElementById('btn');
+		    var lis=list.children;
+		    
+			/*createElement("标签名") : 创建新元素*/
+		    var newLi1=document.createElement('li');//start、创建元素
+		    var newLi2=document.createElement('li');//start、创建元素
+			/*把文本节点插入新建节点中--方法一*/
+		    //2、创建文本节点
+		    var txtnode=document.createTextNode('我是createTextNode创建的11');
+		    
+		    newLi1.appendChild(txtnode);//3、newLi末尾插入一个文本节点txtnode
+		    
+		    list.appendChild(newLi1);//end、list末尾插入一个节点newLi
+		    
+			/*把文本节点插入新建节点中--方法二*/
+		    newLi2.innerHTML='我是innerHTML创建的22';//2、newLi文本中写入文本
+		    
+		    list.appendChild(newLi2);//end、list末尾插入一个节点newLi
+		
+		
+			/*insertBefore(node,targetNode) : target之前插入节点node*/
+		    list.insertBefore(newLi1,lis[2]);
+			/*replaceChild(newNode,oldNode) : new替换节点old*/
+		    list.replaceChild(newLi2,lis[1]);
+			/*removeChild(node) : 移除父节点的某个子节点*/
+		    btn.onclick=function (){
+		        list.removeChild(lis[1]);
+		    }
+		</script>
+	</body>
+</html>

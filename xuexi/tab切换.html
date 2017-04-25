@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*默认样式&点击后样式*/
+			#title .select{
+			    color:#FFFFFF;
+			    background: magenta;
+			}
+			#content .show{
+			    display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="tab">
+		    <h1 id="title">
+		        <span class="select">标题一</span>
+		        <span>标题二</span>
+		        <span>标题三</span>
+		    </h1>
+		    
+		    <ul id="content">
+		        <li class="show">内容一</li>
+		        <li>内容二</li>
+		        <li>内容三</li>
+		    </ul>
+		</div>
+		<script>
+		
+		  var tit=document.getElementById('title');
+		  var con=document.getElementById('content');
+		  var spans=tit.getElementsByTagName('span');
+		  var lis=con.getElementsByTagName('li');
+		  //第一个for循环 给每一个span绑定点击事件
+		  for (var i = 0, len= spans.length; i < len; i++){
+		      spans[i].index=i;//不同处：获取当前点击事件的索引值为后面设置绑定对象使用
+		      
+		      spans[i].onclick=function(){
+		         //第二个for循环 遍历找出当前点击是的span
+		         //清空所有的绑定对象
+		         for (var j = 0,len = spans.length; j < len;j++) {
+		            spans[j].className='';
+		            lis[j].className='';
+		         }
+		         //单独对点击事件绑定对象，索引值来自之前获取的
+		         this.className='select';
+		         lis[this.index].className='show';
+		      }
+		  }
+//--------------------------------------------------------------------------
+//			var tit=document.getElementById('title');
+//			var con=document.getElementById('content');
+//			var spans=tit.getElementsByTagName('span');
+//			var lis=con.getElementsByTagName('li');
+//			//第一个for循环 给每一个span绑定点击事件
+//			
+//			for (var i = 0, len= spans.length; i < len; i++){
+//				
+//			    spans[i].onclick=function(){
+//			       //第二个for循环 遍历找出当前点击是的span
+//			       
+//			       for (var j = 0,len= spans.length; j < len; j++) {
+//			       	
+//			              if (spans[j]==this) {
+//			                 this.className='select';
+//			                // spans[v].className='select';//效果同上
+//			                  lis[j].className='show';
+//			               } else {//若没被选中清空设置
+//			                  spans[j].className='';
+//			                  lis[j].className='';
+//			              }
+//			       }
+//			    }
+//			 }
+
+
+		</script>
+	</body>
+</html>

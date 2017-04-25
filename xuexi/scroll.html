@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#totop{
+				width: 50px;
+				height: 50px;
+				border: 1px solid #FFC0CB;
+				background: aqua;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box" style="height: 2000px;">
+		    <div id="box1">
+		    	scrollLeft：设置或获取当前左滚的距离，即左卷的距离；<br />
+				scrollTop：设置或获取当前上滚的距离，即上卷的距离；<br />
+				scrollHeight：获取对象可滚动的总高度；<br />
+				scrollWidth：获取对象可滚动的总宽度；<br />
+		    </div>
+		</div>
+		<button id="btn">获取</button>
+		<p id="totop">返回顶部</p>
+		<script>
+			var box=document.getElementById('box');
+		    var box1=document.getElementById('box1');
+		    var btn=document.getElementById('btn');
+		    var show=document.getElementById('show');
+		    var totop=document.getElementById('totop');
+		    
+		    btn.onclick=function(){
+		        console.log(box.scrsollLeft);  //获取父级（box）左滚的距离，即左卷的距离；
+		        console.log(box.scrollTop);  //获取当前父级（box）上滚的距离，即上卷的距离
+		        console.log(box.scrollWidth);  //获取对象（box1）可滚动的总宽度
+		        console.log(box.scrollHeight);  //获取对象（box1）可滚动的总高度
+		    }
+		    //=================================================
+		    
+		    
+		    totop.onclick=function(){
+	        var timer1=null;
+	        var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+	        //document.documentElement访问到<html>根元素(页面没有DTD，或者说没有指定doctype时)
+	        //window.pageYOffset (safari自己的方法)
+	        //document.body   访问到<body>元素,适用（页面没有DTD，或者说没有指定doctype时）
+	        
+	        timer1=setInterval(function(){
+	             
+	             scrollTop-=20;
+	             if(scrollTop<=0){
+	                 /*scrollTop=0;
+	                 return false;*/
+	                 clearInterval(timer1);
+	             }
+	             document.documentElement.scrollTop=scrollTop;
+	             document.body.scrollTop=scrollTop;
+	             window.pageYOffset=scrollTop;
+	        },2)
+	    }
+		    
+		    
+		</script>
+	</body>
+</html>

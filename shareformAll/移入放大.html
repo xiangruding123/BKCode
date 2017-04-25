@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+ 	  div,ul,li,body,p{margin:0; padding: 0; font-size: 14px; font-family: "Microsoft Yahei", "微软雅黑", sans-serif;}
+     .clearfix::after{ clear: both; display: block; height: 0; content: '';}
+	  ul,li{ list-style: none;}
+	  #container{ width:816px; margin: 160px auto;}
+	  #container li{ position:relative;width: 230px;border: 1px solid #ccc; height: 150px; line-height: 150px; text-align: center; margin: 20px; float: left; cursor: pointer;  overflow: hidden;}
+	    #container li img{ 
+	    	width: 230px; height: 150px; display: block;opacity: 100;
+	        -moz-transition:.5s ease-in;
+	        -webkit-transition:.5s ease-in;
+	        -o-transition:.5s ease-in;
+	        -ms-transition:.5s ease-in;
+	        transition:.5s ease-in;
+	    }
+	    #container li:hover img{ transform:scale(1.1,1.1);-moz-transform:scale(1.1,1.1);-webkit-transform:scale(1.1,1.1);-o-transform:scale(1.1,1.1)}
+	    #container li span{color: #ffffff; display: block; width: 230px; height: 90px;position: absolute; top: 0px; left: -230px; margin: 0 auto; line-height: 24px; font-size: 12px;background: #000000; opacity: 0; filter:alpha(opacity=0);padding-top: 60px;}
+	    .explain{ display: block; margin:0 auto;}
+	</style>
+	
+	<!--？？？？？？-->
+	<script src="yan.js"></script>
+	
+	<script type="text/javascript">
+		window.onload=function(){
+		  var imgs = document.getElementsByTagName("img")
+		  var img = document.getElementById("img")
+		  var spans = document.getElementsByTagName("span")
+		  var span1=document.getElementById("span1");
+		  
+		  for(var i = 0;i<imgs.length;i++){
+			      imgs[i].index = i;
+			      imgs[i].onmouseover = function(){
+			           var index = this.index;
+			          startMove(spans[index], {"left":0,"opacity":50})
+			      }
+			  }
+		
+			 for(var j=0;j<spans.length;j++){
+				  spans[j].index=j;
+				  spans[j].onmouseout=function(){
+				       startMove(spans[this.index], {"left":-230,"opacity":0})
+				  }
+			 }
+		}
+	</script>
+	</head>
+	<body>
+	   <ul id="container" class="clearfix">
+	       <li>
+	           <img id="img" src="img/03.jpg">
+	           <span id="span1">如果有来生，我要做一棵树，站成永恒，没有悲欢的姿势。</span>
+	       </li>
+	       <li>
+	           <img id="img" src="img/04.jpg">
+	           <span id="span2">一半在土里安详，一半在风里飞扬，一半洒落阴凉，一半沐浴阳光。</span>
+	       </li>
+	       <li>
+	           <img id="img" src="img/01.jpg">
+	           <span id="span3">非常沉默非常骄傲，从不依靠从不寻找。</span>
+	       </li>
+	       <li>
+	           <img id="img" src="img/03.jpg">
+	           <span id="span4">如果有来生，有没有人爱，我也要努力做一个可爱的人。</span>
+	       </li>
+	       <li>
+	           <img id="img" src="img/02.jpg">
+	           <span id="span5">不埋怨谁，不嘲笑谁，也不羡慕谁，阳光下灿烂，风雨中奔跑，做自己的梦，走自己的路。</span>
+	       </li>
+	       <li>
+	           <img id="img" src="img/01.jpg">
+	           <span id="span6">如果有来生——三毛</span>
+	       </li>
+	   </ul>
+	</body>
+</html>

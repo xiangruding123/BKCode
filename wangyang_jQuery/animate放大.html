@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{padding:0;margin:0;}
+			div{ width:100px; height:100px; background:skyblue; border:1px solid red;border-bottom-left-radius:100px}
+		</style>
+		<script src="js/jquery-1.11.0.js"></script>
+		<script>
+		
+			$(function(){
+				$("input:eq(0)").click(function(){
+					$("div").animate({
+						width:400,
+						height:200,
+						borderLeftWidth:10,
+						borderBottomLeftRadius:250
+					}, 1500);
+				});
+			});
+		
+		</script>
+	</head>
+	<body>
+	
+		<input type="button" value="animate" />
+		<div></div>
+	
+	</body>
+</html>

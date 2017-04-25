@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		/*1*/
+		    var x=0 , y=0 , c=1;
+		    
+		    function add(n) {n=n+1;}
+		    x=add(c);
+		    alert(x);//4
+		    function add(n) {n=n+3; return n;}
+		    y=add(c);
+		    alert(y);//4
+		
+		
+		
+		    //执行过程--分析
+		    var x;//变量和函数都提前声明
+		    var y;
+		    var c;
+		    // function add(n) {n=n+1;}//被覆盖，不会调用此函数
+		    function add(n) {n=n+3; return n;}//函数名相同的函数都提前声明，后面的覆盖前面的
+		    x=0; 
+		    y=0;
+		    c=1;
+		    x=add(c);//4 c作为形参传入函数，
+		    alert(x);//4
+		    
+		    y=add(c);//4
+		    alert(y);//4
+		
+		
+		/*2*/
+		
+		    var i=5,k,x; 
+		    k=++i;   //先加后赋值
+		    i=i++;  //先赋值给i再+1,此时被赋值的i为6，赋值后自+1
+		    
+		    alert(k);//6 
+		    alert(i);//6
+		
+		
+		
+		/*3、逗号操作符 */
+		　　 //逗号操作符中有多条语句时，执行后面语句
+		    if (1,0) {//返回0
+		        alert('123');
+		    } else{
+		        alert('abc');
+		    };//abc
+		
+		    if (0,-2) {//返回-2
+		        alert('123');
+		    } else{
+		        alert('abc');
+		    };//123
+		
+		
+		    var k=0;
+		    for(var i=0, v=0; i<9, v<6; i++, v++){//返回v<6
+		        k = i + v;
+		    }
+		    alert(k);//10
+		
+		    var k=0;
+		    for(var i=0, v=0; i<6, v<9; i++, v++){//返回v<9
+		        k = i + v;
+		    }
+		    alert(k);//16
+		
+		
+		
+		
+		
+		/*4、异步事件*/
+		    for (var i = 0; i < 5; i++) {
+		        setTimeout(function (){//异步代码
+		            console.log(i);//打印 5个5
+		        },0);
+		    };
+		
+		
+		    for (var i = 0; i < 5; i++) {
+		        
+		    };
+		    setTimeout(function (){//异步代码
+		        console.log(i);//打印1个5
+		    },0);
+		
+		
+		
+		    function fn(){
+		        console.log('first' );
+		        setTimeout(function (){//同步代码执行完之后才执行异步代码
+		            console.log( 'second' );
+		        },0);
+		    }
+		    for (var i= 0; i < 5; i++) {
+		        fn();
+		    }
+		    //first first first first first second second second second second
+		    //前5个first是for循环执行5次打印事件
+		    //后5个second是for循环执行5次，分别将异步事件分5次放在队列里面，最后执行异步事件
+		
+		
+		
+		/*5、计时器是异步事件后执行问题*/
+		    var t = true,x = 5;//执行1
+		    setTimeout(function (){//执行4、计时器进入异步队列，先不执行，最后执行。
+		      t = false;
+		      alert(x);
+		      x = 6;
+		    },300);
+		    
+		    while (t){ x = 8; }//执行2-->此处陷入死循环
+		    alert(x);//执行3
+		    //死循环
+		    
+		</script>
+	</body>
+</html>

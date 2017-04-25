@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>字符串去重</title>
+		<script>
+			//字符串去重！
+			var str = "aaaaaaasddeeeeeeeeeehhhhhdddddddddxxxxxxwwwwwwwammmmm";
+			var newarr = "";
+			for (var i=0;i<str.length;i++) {
+				if (newarr.indexOf(str[i]) == -1) {
+					newarr += str[i];
+				}
+			}
+			alert(newarr);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>event事件</title>
+	</head>
+	<body>
+	    <script>
+	        document.onclick=function(ev){//谷歌火狐的写法，IE9以上支持，往下不支持；
+	            var e=ev;
+	            console.log(e);
+	        }
+	        document.onclick=function(){//谷歌和IE支持，火狐不支持；
+	            var e=event;
+	            console.log(e);
+	        }
+	        document.onclick=function(ev){//兼容写法；
+	            var e=ev||window.event;
+	        }
+	        document.oncontextmenu=function(ev){
+	            var e=ev||window.event;
+	            if (ev.preventDefault) {
+	                ev.preventDefault();//w3c阻止默认事件；
+	            }else{
+	                ev.returnValue='false';//IE阻止默认事件；
+	            };
+	        }
+	    </script>
+	</body>
+</html>

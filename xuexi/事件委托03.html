@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>事件委托2</title>
+		<!--四、获取当前事件源
+
+		在火狐中获得触发事件的元素（事件源）可以用：event.target
+		在IE中获得触发事件的元素（事件源）可以用：event.srcElement
+		
+		var Target = event.target||event.srcElement;-->
+		<style>
+			*{margin:0;padding:0;list-style: none;}
+			div{
+			    background: pink;
+			}
+			h3,p,span,h4,h5,var,strong,em{
+			    display: inline-block;
+			    width:230px;
+			    height:40px;
+			    line-height: 40px;
+			    text-align: center;
+			    font-size: 30px;
+			    background: #ccc;
+			    margin:10px;
+			}
+		</style>
+	</head>
+	<body>
+	    <div id="parent">
+	        <h3>我是h3标签</h3>
+	        <p>我是p标签</p>
+	        <span>我是span标签</span>
+	        <em>我是em标签</em>
+	        <h4>我是h4标签</h4>
+	        <strong>我是strong标签</strong>
+	        <var>我是var标签</var>
+	        <h5>我是h5标签</h5>
+	        <span>我是span标签</span>
+	        <p>我是p标签</p>
+	    </div>
+		<script>
+		    var parent=document.getElementById('parent');
+		    var tags=parent.children;
+		    
+		    parent.onmouseover=function(ev){
+		        var e=ev||window.event;
+		        console.log(e); 
+		        var target=e.target||e.srcElement;//事件源
+		        
+		        if (target.id!='parent') {
+		            target.style.background='green';
+		        }
+		    }
+		    
+		    parent.onmouseout=function(ev){
+		        var e=ev||window.event;
+		        var target=e.target||e.srcElement;//事件源
+		        
+		        if (target.id!='parent') {
+		            target.style.background='#ccc';
+		        }
+		    }
+		    
+		    
+		</script>
+	</body>
+</html>

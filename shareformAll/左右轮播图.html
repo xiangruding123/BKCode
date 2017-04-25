@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>该左右轮播图实现方法仅作为参考/不可取</title>
+		<style>
+		
+			#box div{width:20px;height:20px;background: #f00;border-radius: 10px;margin-right:20px;float:left;}
+			#box{position: absolute;left: 50%;bottom: 10px;}
+			
+			#big{width: 960px;height: 450px;position: relative;margin: 50px auto;background: deepskyblue;}
+			#big>img{width: 960px;height: 450px;}
+		</style>
+		<script>
+			var timer;
+			var arr;
+			
+			start=window.onload=function(){
+				arr=document.getElementById("box").getElementsByTagName("div");
+				var img=document.getElementsByTagName("img")[0];
+				timer=setInterval(function(){
+					for(var x=0;x<arr.length;x++){
+						if(arr[x].style.backgroundColor=="yellow"){
+							arr[x].style.backgroundColor="#f00";
+							if(x==arr.length-1){
+								x=-1;
+								arr[0].style.backgroundColor="yellow";
+							}
+							else{
+								arr[x+1].style.backgroundColor="yellow";
+							}
+							img.src="img/0"+(x+2)+".jpg";
+							break;
+						}
+					}				
+				},1000);
+			}
+			
+			
+			function change(ob){
+				var img=document.getElementsByTagName("img")[0];
+				clearInterval(timer);
+				for(i=0;i<4;i++){
+					arr[i].style.backgroundColor="#f00";	
+				}
+				ob.style.backgroundColor="yellow";
+				img.src="img/0"+ob.className+".jpg";
+				start();
+			}
+		</script>
+	</head>
+	<body>
+		<div id="big">
+			<div id="box">
+				<div id="a" class="1" style="background: yellow;" onmouseover="change(this)"></div>
+				<div id="b"class="2" onmouseover="change(this)"></div>
+				<div id="c" class="3" onmouseover="change(this)"></div>
+				<div id="d" class="4" onmouseover="change(this)"></div>
+			</div>
+			<img src="img/01.jpg" />
+		</div>
+	</body>
+</html>

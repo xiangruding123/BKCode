@@ -1,0 +1,70 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.content{
+	width: 900px;
+	height: 550px;
+	background-color: magenta;
+	/*上下50px 左右居中*/
+	margin: 50px auto;
+}
+
+/*pic是在index.html中定义的公共类*/
+.pic{
+	width: 193px;
+	/*边框属性  2px边框宽度  solid实线  red边框颜色*/
+	border: 2px solid pink ;
+	padding: 5px;
+	background-color: lavenderblush;
+	/*阴影 第一个5px向下偏移的距离 第二个5px向右偏移的距离 第三个5px代表虚度*/
+	box-shadow: 5px 5px 5px lightgoldenrodyellow;
+	margin-left: 10px;
+	/*过渡效果及时间 all代表所有 1s过渡时间  linear线性变换（匀速）*/
+	transition: all 0.3s linear;
+	}
+
+.pic1{
+	/*让标签从正常状态到2D或3D的一个过渡 （倾斜，缩放等） */
+	transform: rotate(5deg);
+	/*浏览器的适配 safari和谷歌*/
+	-webkit-transform: rotate(5deg);
+	/*火狐的适配*/
+	-moz-transform: rotate(5deg);
+	/*倾斜rotate(5度)*/
+}
+
+.pic2{
+	transform: rotate(-5deg);
+}
+
+.pic3{
+	transform: rotate(10deg);
+}
+.pic4{
+	transform: rotate(5deg);
+}
+.pic5{
+	transform: rotate(-10deg);
+}
+.pic6{
+	transform: rotate(5deg);
+}
+.pic7{
+	transform: rotate(10deg);
+	}
+.pic8{
+	transform: rotate(-5deg);
+}
+.pic9{
+	transform: rotate(5deg);
+}
+
+/*hover过渡*/
+.pic:hover{
+	/*scale 放大1.5倍*/
+	transform: rotate(0deg) scale(1.5);
+	/*层级*/
+	z-index: 1;
+}

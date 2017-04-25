@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		#box{ position:absolute; left:-150px; top:200px; background:black; width:170px; height:300px; color:white;}
+		li{float:left; list-style:none;}
+		.content{width:150px; height:300px;}
+		.item{width:20px; height:300px; background:blue; text-align:center; cursor:pointer;}
+	</style>
+	<script src="js/startMove.js"></script>
+	<script>
+		window.onload=function(){
+			var box=document.getElementById("box");
+			box.onmouseover=function(){
+				startMove(box, {left:0});
+			}
+			box.onmouseout=function(){
+				startMove(box, {left:-150});
+			}
+		}
+		
+		function getElementsClassName(_className){
+			if(document.getElementsClassName){
+				return document.getElementsClassName(_className);
+			}else{
+				var arr=[];
+				var col=document.getElementsTagName("*");
+				for(var i=0; i<col.length; i++){
+					if(col[i].className==_className){
+						arr.push(col[i]);
+					}
+				}
+				return arr;
+			}
+		}
+	</script>
+	</head>
+<body>
+
+	<div id="box">
+		<li class="content">
+			将此链接分享到<br>
+			百度空间<br>
+			QQ空间<br>
+			新浪微博<br>
+			知乎<br>
+			豆瓣<br>
+		</li>
+		<li class="item">
+			分享到
+		</li>
+	</div>
+
+</body>
+</html>

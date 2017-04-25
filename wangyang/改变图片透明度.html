@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<style type="text/css">
+			#img1{
+				filter:alpha(opacity:30); 
+				opacity:0.3;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oImg = document.getElementById("img1");
+				oImg.onmouseover = function(){
+					//开启定时器，一定记得将之前的关闭掉！
+					clearInterval(oImg.timer);
+					oImg.timer = setInterval(function(){
+						//利用封装函数获取_style对象
+						var _style = getStyle(oImg);	
+						//将图片的透明度增加, 要注意  字符串的加法
+						oImg.style.opacity = parseFloat(_style.opacity) + 0.01;
+						if(_style.opacity >= 1){
+							clearInterval(oImg.timer);
+						}
+					},30);
+				}
+				oImg.onmouseout = function(){
+					//开启定时器，一定记得将之前的关闭掉！
+					clearInterval(oImg.timer);
+					oImg.timer = setInterval(function(){
+						//利用封装函数获取_style对象
+						var _style = getStyle(oImg);	
+						//将图片的透明度减少 
+						oImg.style.opacity = _style.opacity - 0.01;
+						if(_style.opacity <= 0.3){
+							clearInterval(oImg.timer);
+						}
+					},30);
+				}
+			}
+			
+			function getStyle(obj){
+				//如果是IE
+				if(obj.currentStyle) {
+					return obj.currentStyle;
+				} else{ //否则
+					return getComputedStyle(obj, null);
+				}
+			}
+			
+		</script>
+
+	</head>
+
+	<body>
+		<img src="img/bn.jpg" width="600" id="img1" />
+	</body>
+
+</html>

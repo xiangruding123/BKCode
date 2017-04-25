@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>无缝滚动</title>
+    <style>
+    #warp{
+        width: 1200px;
+        height: 300px;
+        overflow: hidden;
+        margin:100px auto 0;
+    }
+    #warp #con{
+        width: 4000px;
+        height: 300px;
+        overflow: hidden;
+    }
+    #warp #con #box1{
+         float: left;
+         overflow: hidden;
+    }
+    #warp #con #box2{
+         float: left;
+         overflow: hidden;
+    }
+    #warp img{
+        float: left;
+        width: 200px;
+        height: 300px;
+    }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <div id="con">
+            <div id="box1">
+                <img src="img/01.jpg" alt="">
+                <img src="img/02.jpg" alt="">
+                <img src="img/03.jpg" alt="">
+                <img src="img/04.jpg" alt="">
+                <img src="img/ml.jpg" alt="">
+                <img src="img/ui.JPEG" alt="">
+            </div>
+            <div id="box2"></div>
+        </div>
+    </div>
+    <script>
+        var warp=document.getElementById('warp');
+        var con=document.getElementById('con');
+        var box1=document.getElementById('box1');
+        var box2=document.getElementById('box2');
+        // box2.innerHTML=box1.innerHTML;
+        var timer1=null,x=0;
+        function scroll(){//滚动函数
+        box2.innerHTML=box1.innerHTML;
+        timer1=setInterval(function(){
+            x++;
+            if (x>=box1.clientWidth) {
+                x=0;
+                warp.scrollLeft=x;
+            }
+            warp.scrollLeft=x;
+        },10)
+        }
+        scroll();
+        warp.onmouseenter=function(){
+            clearInterval(timer1);
+        }
+        warp.onmouseleave=function(){
+            scroll();
+        }
+    </script>
+</body>
+</html>

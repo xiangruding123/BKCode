@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	 <head>
+		  <meta charset="UTF-8">
+		  <title></title>
+		  <style type="text/css">
+				#div1{background:magenta;width:300px;height:50px;color:#fff;margin:0 auto;border-radius:50px 50px 50px 50px;line-height:50px;text-align:center;font-weight:bold;}
+		  </style>
+		  <script language="javascript">
+			    var str="欢迎来到我的世界！";
+				var sLen=str.length;//4
+				var i=0;
+				function neon(){
+				   i++;
+				   i=(i>=sLen)?0:i;//三元运算符：大于字符长度归0，不大于不变
+				   div1.innerHTML=str.substring(0,i)+"<font color='aqua'>"+str.substring(i,i+1)+"</font>"+str.substring(i+1,sLen);
+				}
+				setInterval("neon()",300);
+		 </script>
+	 </head>
+	 <body>
+		  <div id="div1"></div>
+	 </body>
+</html>

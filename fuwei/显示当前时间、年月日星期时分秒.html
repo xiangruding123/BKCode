@@ -1,0 +1,37 @@
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>显示当前时间</title>
+
+	<script type="text/javascript">
+
+
+		//1.显示当前时间（*年*月*日  星期*  *：*：*）
+
+		function showTime (date) {
+			var year = date.getFullYear(); //年
+			var month = date.getMonth() + 1; //月
+			var day = date.getDate(); //日
+			var week = date.getDay(); //星期
+			if (week == 0) { 
+				week = "日";
+			}
+			var hours = date.getHours(); //时
+			var min = date.getMinutes(); //分
+			var sec = date.getSeconds(); //秒
+
+			document.write(year + "年" + month + "月" + day + "日" + " 星期" + week + " " + hours + ":" + min + ":" + sec);
+		}
+		var now = new Date();
+		showTime(now);
+
+
+	</script>
+
+</head>
+<body>
+
+
+</body>
+</html>

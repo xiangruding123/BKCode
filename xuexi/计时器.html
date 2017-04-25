@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="wrap">
+		    <h2>计时开始</h2>
+	        <p id="show"></p>
+	        <button id="btn1">clearInterval()</button>
+	        <button id="btn2">clearTimeout()</button>
+		</div>
+		
+		<script>
+			var show=document.getElementById('show');
+		    var btn1=document.getElementById('btn1');
+		    var btn2=document.getElementById('btn2');
+		    var x=0;
+		    var timer1=null;//设置timer1为空对象类型
+		    var timer2=null;
+		//1.setInterval ( 函数/名称 , 毫秒数 )表示每经过一定的毫秒后，执行一次相应的函数(重复)
+		    timer1=setInterval(function(){//当计时器调用执行完毕时，它将返回一个timerID(timer1),
+		        x++;
+		        show.innerHTML=x;
+		    },500);
+		    btn1.onclick=function(){
+		        clearInterval(timer1);//将该ID传递给clearInterval，便可以终止代码的执行
+		        //清除计时器：clearInterval( );   
+		    }
+		    
+		//2.setTimeout ( 函数/名称 , 毫秒数 )表示经过一定的毫秒后，只执行一次相应的函数(不重复)
+//		    timer2=setTimeout(function(){
+//		        alert('我是一次性计时器');
+//		    },3000)
+//		    btn2.onclick=function(){
+//		        clearTimeout(timer2);//清除计时器 clearTimeout( );
+//		    }
+		</script>
+	</body>
+</html>

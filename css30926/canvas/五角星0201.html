@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>  
+<html>  
+	<head>
+	<meta charset="utf-8">
+	<!--函数 S-->
+	<script type="text/javascript">
+		function canFun(){
+			var canvas=document.querySelector("canvas");  
+			var context=canvas.getContext("2d"); 
+			 
+			<!--五角星路径 S-->  
+			context.moveTo(76,197);
+			context.lineTo(421,197);  
+			context.lineTo(143,399);  
+			context.lineTo(248,71);  
+			context.lineTo(356,399);  
+			context.lineTo(76,197);
+			<!--五角星路径 E-->
+			 
+			<!--中心区域渐变 S-->
+			var radGrad=context.createRadialGradient(200,190,2,250,250,1800);
+			//radGrad.addColorStop(0.0,"white");
+			radGrad.addColorStop(0.05,"#f00");
+			context.fillStyle=radGrad;
+			<!--中心区域渐变 E-->
+			 
+			 
+			<!--描边和填充 S-->
+			context.closePath();
+			context.lineWidth = 8;
+			context.stroke();
+			context.fill();
+			<!--描边和填充 E-->
+			 
+			 
+			<!--保持位置居于浏览器中心 S-->
+			canvas.style.position="absolute";
+			canvas.style.top=(document.documentElement.clientHeight-500)/2+"px";
+			canvas.style.left=(document.documentElement.clientWidth-500)/2+"px";
+			<!--保持位置居于浏览器中心 E-->
+			 
+		}
+		window.onload=window.onresize=canFun;
+		
+	</script>
+		<!--函数 E-->
+	</head>
+	<body>
+		<canvas width="500" height="500" >该浏览器不支持canvas.</canvas>
+	</body>  
+</html> 

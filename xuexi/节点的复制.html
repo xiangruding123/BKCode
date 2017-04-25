@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--2、复制节点：
+		cloneNode(boolean) : 复制一个节点
+		true：深复制，复制节点及其整个子节点树
+		false : 浅复制，只复制节点本身。
+		注意：cloneNode（）方法不会复制添加到DOM节点中的JavaScript属性，例如事件处理程序等。-->
+	</head>
+	<body>
+		<div id="box1">
+		    <h1>深复制与浅复制</h1>
+		    <p>深复制，复制节点及其整个子节点树，浅复制，只复制节点本身</p>
+		</div>
+		<script>
+		    var box1=document.getElementById('box1');
+		    var box2=box1.cloneNode(true);//深复制
+		    var box22=box1.cloneNode(false);//浅复制
+		    document.body.appendChild(box2);
+		    document.body.appendChild(box22);
+		    //将节点复制到body底部，甚至是js代码下面
+		</script>
+		</body>
+</html>

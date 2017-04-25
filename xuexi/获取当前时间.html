@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>获取当前时间</title>
+<style>
+*{color:red;}
+</style>
+</head>
+<body>
+<h1 id="con"></h1>
+<script>
+    var con=document.getElementById('con');
+    var timer=null;
+    timer=setInterval(function(){
+    	
+        var now=new Date();
+        var year=now.getFullYear();
+        var month=now.getMonth()+1;
+        var date=now.getDate();
+        var house=now.getHours();
+        var minutes=now.getMinutes();
+        var second=now.getSeconds();
+        //获取毫秒
+        var millise=now.getMilliseconds();
+       
+       
+       if(house<10){
+            house='0'+house;
+        }
+       
+        if(minutes<10){
+            minutes='0'+minutes;
+        }
+        
+        if(second<10){
+            second='0'+second;
+        }
+        
+        if(millise<10){
+            millise='00'+millise;
+        }else if(millise<100){
+            millise='0'+millise;
+        }
+        con.innerHTML='北京时间：'+year+'年'+month+'月'+date+'号'+house+'时'+minutes+'分'+second+'秒'+millise+'毫秒';
+    },1)
+</script>
+</body>
+</html>

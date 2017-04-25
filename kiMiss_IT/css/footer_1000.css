@@ -1,0 +1,33 @@
+/* share */
+.share_com { clear:both; margin:25px 0;}
+.share_com p { margin:10px 0; text-align:center;font:500 14px/20px microsoft yahei; color:#333333;}
+.share_com .share { clear:both; height:27px; width:385px; margin:20px auto;}
+.share_com .share a {color:#333333; display:block;font:500 12px/27px microsoft yahei;float:left; padding-right:22px;}
+.share_com .share a i {background:url(http://new-icon.ol-img.com/kimiss/0926/img/wb_icon.png) no-repeat; display:inline; margin-right:10px; float:left; height:27px; width:27px;}
+.share_com .share a.sina i { background-position:0 -120px;}
+.share_com .share a:hover.sina i { background-position:0 -150px;}
+.share_com .share a.qq i { background-position:-33px -120px;}
+.share_com .share a:hover.qq i { background-position:-33px -150px;}
+.share_com .share a.ol i { background-position:-66px -120px;}
+.share_com .share a:hover.ol i { background-position:-66px -150px;}
+
+/* friend_link */
+.friend_link{margin:20px 0;}
+.friend_link dt{height:35px;border-bottom:1px solid #e9e9e9;position:relative;font:600 18px/35px microsoft yahei;color:#333333; padding-left:5px;}
+.friend_link dt i{position:absolute;bottom:-8px;left:30px;width:17px;height:8px;background:url(http://new-icon.ol-img.com/kimiss/img/friend_link.png) no-repeat 0 0;}
+.friend_link dd{color:#333333;margin:10px 0;*vertical-align:top; height:24px; line-height:18px; overflow:hidden;}
+.friend_link dd p{ line-height:18px;}
+.friend_link dd a{display:inline-block;margin:3px ;color:#333333;} 
+
+/* bottom */
+.b1{border-bottom: 1px solid #d8d8d8;line-height: 50px;text-align: center;color: #666666;}
+.b1 a{color: #666666;margin:0 5px;}
+.b2{clear:both;overflow:hidden;background:#ececec; width:1000px;margin: 0 auto;}
+.b2 dl{overflow: hidden;padding:20px 0}
+.b2 dl:first-child{border-bottom:1px solid #dcd8d8;}
+.b2 dt{float:left;font-size:14px;width:155px;color:#888888;}
+.b2 dd{width:790px;overflow:hidden;}
+.b2 dd a{margin:0 3px;line-height:1.8em;color:#333333;}
+.b3{background-color: #858585;color: #ececec;padding:10px 0;text-align: center;line-height: 30px;position:relative;width:1000px;margin: 0 auto;}
+.b3 p{ color: #ececec; line-height: 30px;}
+.gongshang{position: absolute;right:15px;top:5px;}

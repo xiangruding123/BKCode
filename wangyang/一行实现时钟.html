@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<div id="div1"></div>
+	<script>
+		setInterval(function(){var d=new Date();div1.innerHTML=d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日 星期"+"日一二三四五六".charAt(d.getDay())+" "+d.getHours()+":"+d.getMinutes()+":"+((d.getSeconds()<10)?"0"+d.getSeconds():d.getSeconds())},1000);
+	</script>
+	</body>
+	
+</html>

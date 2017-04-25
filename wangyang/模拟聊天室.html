@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>聊天对话框</title>
+		<style type="text/css">
+			*{font-size: 14px; padding:0; margin:0;}
+			.main{
+				position: relative;
+				margin: 20px auto;
+				border: 1px solid steelblue;
+				width: 430px;
+				height: 400px;
+			}
+			.msgInput{
+				display: block;
+				width: 406px;
+				height: 60px;
+				margin: 10px auto;
+				
+			}
+			.sendbtn{
+				position: absolute;
+				width: 100px;
+				height: 29px;
+				bottom: 5px;
+				right: 10px;
+			}
+			.content{
+				list-style: none;
+				width: 410px;
+				height: 280px;
+				margin: 5px auto;
+				border: 1px dotted #D1D3D6;
+				overflow-y: scroll;
+			}
+			.msgContent{
+				width:auto;
+				max-width: 250px;
+				height: auto;
+				word-break: break-all;
+				margin: 5px;
+				padding: 3px;
+				border-radius: 5px;
+			}
+			
+			.content .left{
+				float: left;
+				text-align: left;
+				background-color: lightgrey;
+			}
+			.content .right{
+				float: right;
+				text-align: right;
+				background-color: yellowgreen;
+			}
+			
+			
+		</style>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript">
+			window.onload=function(){
+				var sendBtn = document.getElementById("sendbtn");
+				var oUL = document.getElementById("content");
+				var msgInput = document.getElementById("msg_input");
+				
+				sendBtn.onclick = function(){
+					//创建一个空的div，用来清除浮动
+					var nullDiv = document.createElement("div");
+					nullDiv.style.clear = "both";
+					//获取输入框内容
+					var content = document.getElementById("msg_input").value;
+					//创建li，将聊天消息添加到对话框
+					var li = document.createElement("li");
+					li.className = "msgContent right";
+					li.innerHTML = content;
+					//先把清除浮动的DIV追加，再追加li
+					oUL.appendChild(nullDiv);
+					oUL.appendChild(li);
+					
+					document.getElementById("msg_input").value = "";
+					li.scrollIntoView();
+				}
+				
+				msgInput.onkeypress = function(e){
+					var evt = e || event;
+					var keycode = evt.keyCode || evt.which;
+					if( (keycode == 13 || keycode == 10) && evt.ctrlKey){
+						sendBtn.onclick();
+					}
+				}
+			}
+		</script>
+		
+	</head>
+	
+	<body>
+		<div id="main" class="main">
+			<ul id="content" class="content">
+				<li class="msgContent left">hello?</li>
+				<div style="clear: both;"></div>
+				<li class="msgContent left">你好</li>
+				<div style="clear: both;"></div>
+				<li class="msgContent right">在吗？</li>
+				<div style="clear: both;"></div>
+				<li class="msgContent left">呵呵</li>
+				<div style="clear: both;"></div>
+				<li class="msgContent left">goodbye</li>
+				<div style="clear: both;"></div>
+				<li class="msgContent right">。。。。</li>
+				<div style="clear: both;"></div>
+				<li class="msgContent right">哈哈哈哈哈哈哈哈或或或或或</li></ul>
+			<textarea id="msg_input" class="msgInput"></textarea>
+			<button id="sendbtn" class="sendbtn">发送</button>
+		</div>
+	</body>
+</html>

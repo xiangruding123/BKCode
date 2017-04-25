@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>鼠标事件</title>
+	<style>
+	*{margin:0;padding:0;list-style: none;}
+		#dot{
+		    width:80px;
+		    height:80px;
+		    line-height: 30px;
+		    text-align: center;
+		    font-size:24px;
+		    background: #D00000;
+		    color:#fff;
+		    cursor:move;
+		    position:absolute;
+		    /* left:0;
+		    top:0; */
+		}
+	</style>
+	</head>
+	<body>
+	    <div id="dot"></div>
+	</body>
+		<script>
+		    var dot=document.getElementById('dot');
+		    var x,y;
+		    var l1,t1;
+		    var lm,tm;
+		    var le,te;
+		    var a=true;
+		    dot.onmousedown=function(ev){
+		        a=true;
+		        var e=window.event||ev;
+		        x=e.offsetX;
+		        y=e.offsetY;
+		        l1=e.clientX-x;
+		        t1=e.clientY-y;
+		        dot.style.left=l1+'px';
+		        dot.style.top=t1+'px';
+		        console.log(x,y);
+		    }
+		    dot.onmousemove=function(ev){
+		        if(a){
+		            var e=window.event||ev;
+		            var lm=e.clientX-x;
+		            var tm=e.clientY-y;
+		            dot.style.left=lm+'px';
+		            dot.style.top=tm+'px';
+		        }
+		    }
+		    dot.onmouseup=function(ev){
+		        a=false;
+		    }
+		</script>
+</html>

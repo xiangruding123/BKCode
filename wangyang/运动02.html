@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+#div1{ position:absolute; width:50px; height:50px; background:red;}
+#line{ position:absolute; width:1px; height:500px; background:blue; left:500px;}
+</style>
+<script>
+window.onload=function(){
+	var div1=document.getElementById("div1");
+	//匀速运动
+	/*var timer=setInterval(function(){
+		div1.style.left=parseInt(div1.style.left)+1+"px";
+		if(parseInt(div1.style.left)==450){
+			clearInterval(timer);
+		}
+	}, 10);*/
+	
+	//加速运动
+	/*var speed=1;
+	var timer=setInterval(function(){		
+		div1.style.left=parseInt(div1.style.left)+ speed++ +"px";
+		console.log( speed );
+		if(parseInt(div1.style.left)>=450){
+			div1.style.left="450px"
+			clearInterval(timer);
+		}
+	}, 100);*/
+	
+	//减速运动（摩擦力）
+	/*var speed=50;
+	var timer=setInterval(function(){		
+		div1.style.left=parseInt(div1.style.left)+ speed-- +"px";
+		console.log( speed );
+		if(parseInt(div1.style.left)>=450){
+			div1.style.left="450px"
+			clearInterval(timer);
+		}
+	}, 500);*/
+	
+	
+	var end=0;	//设置目标值
+	var timer=setInterval(function(){	//开启定时器
+		var start=parseInt(div1.style.left);	//取出起始值
+		//取出速度，（即起始点到目标点过度时的步长）每次执行该函数时，都重新拿新起始点与目标点的间距的六分之一作为步长
+		var speed=(end-start)/6;	
+		//从小到大过度时，因为是正数，所以小数应向上取整数，最后的步长值为+1；
+		//从大到小过度时，因为是负数，所以小数应向下取整数，最后的步长值为-1；
+		speed=(speed>0)?Math.ceil(speed):Math.floor(speed);
+		//更新对象的属性
+		div1.style.left=start+speed+"px";
+		console.log(speed);
+		if(start==end){//如果已经过度到目标值，则清除定时器
+			clearInterval(timer);
+		}
+	}, 60)	//每隔60毫秒执行一次函数
+	
+}
+</script>
+</head>
+<body>
+
+<div id="line"></div>
+
+<div id="div1" style="left:450px;"></div>
+
+</body>
+</html>

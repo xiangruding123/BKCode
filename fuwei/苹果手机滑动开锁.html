@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+			window.onload = function() {
+				var box = document.getElementById("box");
+				var pic = document.getElementById("pic");
+				var move = document.getElementById("move");
+				var disX = 0;
+				
+				pic.onmousedown = function(evt) {
+					var e = evt || window.event;
+					disX = e.clientX;
+					document.onmousemove = function(evt) {
+						var e = evt || window.event;
+						var x =e.clientX - disX;
+						if (x<=0) {
+							x = 0;
+						}else if (x>=271) {
+							x = 271;
+						}
+						pic.style.left =  x + "px";
+						toBg();
+					}
+					
+					
+					document.onmouseup = function() {
+						document.onmousemove = null;
+						var l = parseInt(pic.style.left);
+						if ( l< 140) {
+							pic.style.left = 0+'px';
+						}else{
+							pic.style.left = 271+'px';
+						}
+						toBg();
+					}
+				}
+				document.ondragstart = function(){
+					return false;
+				}
+			}
+			
+			function toBg () {
+				if (parseInt(pic.style.left) == 271) {
+					box.style.background = "url(iphoneUnlock/iphone2.jpg)";
+					move.style.display = "none";
+				}
+			}
+			
+		</script>
+		
+		
+		<style type="text/css">
+			*{padding: 0; margin: 0;}
+			#box{ width: 426px; height: 640px; position: relative; top: 0; left: 50%; margin-left: -213px;}
+			img{display: block;}
+			#pic{border-radius: 10px;}
+			#move{position: absolute; top: 545px; left: 31px; width: 364px; height: 62px;}
+		</style>
+	</head>
+	<body>
+		<div id="box" style="background: url(iphoneUnlock/iphone.jpg); ">
+			<div id="move">
+				<img id="pic" src="iphoneUnlock/unlock_btn.jpg" style=" position: absolute; top: 0; left: 0; "/>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table {
+				    border-collapse: separate;
+				    border-width: 0px 0px 1px 1px;
+				    margin: 10px auto;
+				    font-size: 20px;
+				}
+				td, th {
+				    width: 81px;
+				    height: 45px;
+				    text-align: center;
+				    vertical-align: middle;
+				    color: #5d6b7a;
+				    position: relative;
+				    font-size: 16px;
+				}
+				 
+				.thead th{
+				    background-color: #ffa6a6;
+				    color: white;
+				    height: 50px;
+				    font-weight: bold;
+				    font-size: 14px;
+				}
+				/*匹配所有表格的奇数行*/
+				tbody tr:nth-child(2n+1){
+				    background: #fff;
+				}
+				 
+				/*匹配所有的偶数行*/
+				tbody tr:nth-child(2n){
+				     
+				    background:#f5f8fc;
+				 
+		</style>
+	</head>
+	<body>
+		<table cellspacing="0">
+	    <thead>
+	        <tr class="thead"> 
+	            <th>Mon</th>
+	            <th>Tue</th>
+	            <th>Wed</th>
+	            <th>Thu</th>
+	            <th>Fri</th>
+	            <th>Sat</th>
+	            <th>Sun</th>
+	        </tr>
+	    </thead>
+	    <tbody id="tbody"></tbody>
+	</table><br>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	<script>
+		var today = new Date();
+         
+        today.setDate(1); 
+         
+//      获取每个月的第一天是星期几，这样决定日历在开始的位置
+        var week = today.getDay();
+         
+        //获取当前月最后一天时间 
+        var last=new Date(today.getFullYear(), today.getMonth()+1,0);
+         
+//        获取最后一天是几号
+        var lastDate=last.getDate();
+         
+    //1号的位置还有多少天，+1是因为求出的星期几时起始位置
+	    var firstNum=Number(7-week+1);
+	         
+	        var y = last.getYear(); 
+	    var m = last.getMonth()+1; 
+	    var d = last.getDate();
+	 
+	    //获取当前月一共有几周
+	    var weekNum=getMonthWeek(y, m, d);
+	         
+	    for(var i=0;i<weekNum;i++){
+	          var dateList='';
+	              var trList='';
+	        //  第一个星期和最后一个星期分开处理
+	 
+	        //  第一个星期
+	        if(i<1){
+	                     
+	            for(var k=0;k<firstNum;k++){
+	                         
+	                dateList+='<td style="background:#fff;">'+(k+1)+'</td>';
+	            }
+	                     
+	            trList='<td style="background:#fff;" colspan="'+(week-1)+'">'+dateList+'</td>';
+	                     
+	        }else if(i<(weekNum-1)){
+	     
+	                for(var k=firstNum+7*(i-1);k<firstNum+7*i;k++){
+	                    dateList+='<td>'+(k+1)+'</td>';
+	                }
+	                         
+	                 trList='<tr>'+dateList+'</td>';
+	     
+	        //  最后一个星期
+	        }else{
+	                     
+	            for(var k=firstNum+7*(i-1); k<lastDate;k++){
+	                         
+	                dateList+='<td>'+(k+1)+'</td>';
+	            }
+	                     
+	            trList='<tr>'+dateList+'</td>';
+	        }
+	     
+	            $('#tbody').append(trList);
+	 
+	        }
+	 
+	//获取当前月一共有几周的函数
+	function getMonthWeek (a, b, c) {
+	     
+	    var date = new Date(a, parseInt(b) - 1, c);
+	    var w = date.getDay();
+	    var d = date.getDate();
+	    return Math.ceil((d + 6 - w) / 7);        
+	};  
+	</script>
+</html>

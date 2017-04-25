@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin:0; padding:0}
+			.banner{ height:700px;}
+			.div1{height:700px; background:red;}
+			.div2{height:500px; background:blue;}
+			.div3{height:900px; background:orange;}
+			.div4{height:400px; background:yellow;}
+			.div5{height:650px; background:green;}
+			.div6{height:1000px; background:pink;}
+			.div7{height:400px; background:gray;}
+			.lt{ position:fixed; left:300px; top:200px; height:280px; width:40px; border-left:1px solid gray; border-top:1px solid gray;}
+			.lt>span{width:39px; height:39px; border-bottom:1px solid gray; border-right:1px solid gray; display:block; background:white; text-align:center; line-height:39px;}
+		
+		
+		</style>
+		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+		<script>
+			$(function(){
+				var arr=[];//用于存放楼层的top值
+				$("div:not(.lt,.banner)").each(function(i, elem){
+					arr.push(elem.offsetTop);
+				});
+				//将最后一层的高度加入数组中，相当于除了最后一位的其他位为top，最有一位为倒数第二位加高度
+				var l=$("div:not(.lt,.banner)").length;
+				arr.push(arr[arr.length-1]+$("div:not(.lt,.banner)").eq(l-1).height());
+				//求页面可视区域的高度的一半
+				var h=parseInt(document.documentElement.clientHeight/2);
+				//滚动条改变时，触发事件
+				
+				
+				$(document).scroll(function(){
+					var s = $(this).scrollTop();//求因滚动条被隐藏的页面高度
+					var index;//表示当前楼层的下标
+					for(var i=arr.length-1; i>=0; i-- ){
+						//如果滚动条top大于楼层top时（该楼在页面上显示了过一半时）			
+						if(s>=arr[i] ){
+							//console.log(i)
+							index=i;	//记录该楼下标
+							break;
+						}
+					}		
+					$("span").css("background","white");//楼层背景为白色
+					$("span").eq(index).css("background","gray");//当前楼层背景为灰色
+				});
+			});
+		</script>
+	</head>
+	<body>
+		
+		<div class="lt">
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+			<span>6</span>
+			<span>7</span>
+		</div>
+		
+		<div class="banner">banner</div>
+		
+		<div class="div1">div1</div>
+		<div class="div2">div2</div>
+		<div class="div3">div3</div>
+		<div class="div4">div4</div>
+		<div class="div5">div5</div>
+		<div class="div6">div6</div>
+		<div class="div7">div7</div>
+		
+		<div class="banner">footer</div>
+		
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>aaaaa</title>
+</head>
+<body>
+    <script>
+    // //将字符串转变为驼峰样式
+           var srt1="the_sec_container";
+           var arr= srt1.split('_');
+           // document.write(arr);
+           for (var i = 0; i < arr.length; i++) {
+               arr[i]=arr[i].charAt(0).toLocaleUpperCase()+arr[i].substring(1);
+           }
+           document.write(arr.join(''));
+           
+           
+           
+    //     返回只带数字的字符串
+//      var st1 = 'hgo3476H5course75';
+//      var st2 = st1.substring(3,7)+st1.substring(8,9)+st1.substring(15,17);//后面写的数字不包括
+//      document.write(st2);
+
+    </script>
+</body>
+</html>

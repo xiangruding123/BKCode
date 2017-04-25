@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+#oText{ width:300px; height:30px; border:1px solid gray;}
+#oDiv{ width:300px; border:1px solid gray; display:none;}
+</style>
+<script>
+var str="1a22a33A444a5555Aa";
+var reg=/a/gi;
+
+//alert( str.replace(reg, function(w){return "|"+w}) );
+
+
+/*while( i=reg.exec(str) ){ 
+	console.log(i.index);
+}*/
+
+
+
+window.onload=function(){
+	var oText=document.getElementById("oText");
+	var oDiv=document.getElementById("oDiv");
+	var arr=["Java","JAvaScript","PHP","JSP","ASP","ASP.NET","C#","VB","SQL"];
+	
+	
+	oText.onkeyup=function(){
+		oDiv.innerHTML="";
+		oDiv.style.display="none";
+		var str=oText.value;
+		
+		if(str!=""){
+			
+			var reg=eval("/"+str+"/gi");
+			
+			for(var i=0; i<arr.length; i++){
+				var v=arr[i];
+				var col1=v.split(reg);
+				var col2=v.match(reg);
+				if(col2){
+					var l=col2.length;
+					var txt="";
+					for(var j=0; j<l; j++){
+						txt+=col1[j]+"<font color=red>"+col2[j]+"</font>";					
+					}
+					txt+=col1[j];
+					
+					
+					console.log( v );
+					console.log( col1 );
+					console.log( col2 );
+					console.log( txt );
+					console.log( "----------------------------" );
+					
+					
+					if(txt!=""){
+						var div=document.createElement("div");
+						div.innerHTML=txt;
+						div.onclick=function(){
+							oText.value=this.innerText;
+							oDiv.style.display="none";
+						}
+						oDiv.appendChild(div);
+					}
+				}
+			}
+			if(oDiv.innerHTML!=""){
+				oDiv.style.display="block";
+			}
+		}
+	}
+}
+</script>
+</head>
+<body>
+
+<input type="text" id="oText" autocomplete="off" />
+<div id="oDiv"></div>
+
+</body>
+</html>

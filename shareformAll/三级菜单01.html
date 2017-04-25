@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{padding: 0; margin: 0;}
+			ul{list-style:none; text-align: center;}
+			li{float:left;height:30px; width:150px;line-height: 30px; background: red;}
+			ul ul{display: none;position:relative ;}
+			ul ul ul{position: absolute; left:150px;}
+		</style>
+	</head>
+	<body>
+		<ul>
+		   <li>购物	
+		   	 <ul >
+		     <li>洗护
+		        <ul ><li>洗衣液</li><li>洗面奶</li><li>洗手液</li><li>牙膏</li></ul></li>
+		   	 <li>零食
+		   	    <ul  ><li>薯片</li><li>饼干</li><li>辣条</li><li>面包</li></ul></li>
+		   	 <li>水果
+		   	    <ul ><li>火龙果</li><li>哈密瓜</li><li>梨</li><li>苹果</li></ul></li>
+		   	 <li>美妆
+		   	   <ul  ><li>唇彩</li><li>眼影</li><li>眉笔</li><li>定妆粉</li></ul></li>
+		   	 </ul></li>			  
+		 <li>游戏	
+		   	 <ul >
+		     <li>热门
+		        <ul><li>剑灵</li><li>英雄联盟</li><li>炉石传说</li><li>穿越火线</li></ul></li>
+		   	 <li>奇幻
+		   	    <ul ><li>激战2</li><li>TEAR</li><li>龙剑</li><li>魔域</li></ul></li>
+		   	 <li>休闲
+		   	    <ul ><li>桃源</li><li>神武</li><li>问道</li><li>大话</li></ul></li>
+		   	 <li>武侠
+		   	   <ul  ><li>笑傲江湖</li><li>传奇</li><li>天下</li><li>传奇世界</li></ul></li>
+		   	 </ul></li>	
+		 <li>广州	
+		   	 <ul >
+		     <li>1
+		        <ul><li>a</li><li>b</li><li>c</li><li>d</li></ul></li>
+		   	 <li>2
+		   	    <ul><li>a</li><li>b</li><li>c</li><li>d</li></ul></li>
+		   	 <li>3
+		   	    <ul><li>a</li><li>b</li><li>c</li><li>d</li></ul></li>
+		   	 <li>4
+		   	   <ul><li>a</li><li>b</li><li>c</li><li>d</li></ul></li>
+		   	 </ul></li>	
+		</ul>
+	</body>
+	<script>
+       var li = document.getElementsByTagName("li");     
+       for(var i=0; i<li.length;i++){
+       	li[i].index = i;
+       	 li[i].onmousemove= function (){      	 	
+       	  this.lastChild.style.display = "block";      	  
+       	 }
+       	li[i].onmouseout= function (){      	 	
+       	  this.lastChild.style.display = "none";       	 
+       	 }
+       	
+       }
+ 
+	</script>
+</html>

@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	div>img{width:600px; height:800px; border:1px solid gray;}
+	td>img{width:30px; height:30px; border:1px solid gray;}
+	</style>
+	<script>
+		window.onload=function(){
+			var Imgs=document.getElementsByTagName("img");
+			
+			for(var i=1; i<Imgs.length; i++){
+				Imgs[i].onclick=function(){
+					
+					Imgs[0].src=this.src;
+				}
+			}
+		}
+	</script>
+	</head>
+	<body>
+		<div><img src="img/bn.jpg" /></div>
+		<table>
+			<tr>
+				
+				<td><img src="img/bn.jpg" /></td>
+				<td><img src="img/ook.JPEG" /></td>
+				<td><img src="img/vb.jpg" /></td>
+				<td><img src="img/zs.jpg" /></td>
+				<td><img src="img/zs1.jpg" /></td>
+				<td><img src="img/zs2.jpg" /></td>
+				
+			</tr>
+		</table>
+
+	</body>
+</html>

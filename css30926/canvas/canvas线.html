@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*#mycanvas{border: 1px solid #FF0000;}*/
+		</style>
+	</head>
+	<body>
+		<canvas id="mycanvas" width=700 height=800 ></canvas>
+	</body>
+	<script>
+		var canvas=document.getElementById("mycanvas");
+		var ctx=canvas.getContext("2d");
+		
+			ctx.moveTo(100,100);//第一个起点s
+            ctx.lineTo(200,200);//第二个点
+            ctx.lineTo(300,100);//第三个点（以第二个点为起点）
+            
+            ctx.lineTo(200,0);
+            ctx.lineTo(100,100);
+            
+            ctx.lineWidth=3;
+            ctx.strokeStyle = 'red';
+            ctx.stroke();
+		
+	</script>
+</html>
+
+

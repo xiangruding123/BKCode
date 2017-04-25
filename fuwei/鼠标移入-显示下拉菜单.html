@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>作业_下拉菜单</title>
+		<style>
+			li#menu{
+				background: red;
+			}
+			#ul_id li{
+				background: green;
+			}
+		</style>
+		<script>
+			window.onload = function() {
+				var oMenu = document.getElementById("menu");
+				var oMenuItem = document.getElementById("ul_id");
+				oMenu.onmouseover = function() {
+					show(oMenuItem);
+				}
+				oMenu.onmouseout = function() {
+					hide(oMenuItem);
+				}
+			}
+			
+			function show(item){
+				item.style.display = "block";
+			}
+			function hide(item) {
+				item.style.display = "none";
+			}
+			
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li id="menu">菜单
+				<ul id="ul_id" style="display: none;">
+					<li>菜单1</li>
+					<li>菜单2</li>
+					<li>菜单3</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>

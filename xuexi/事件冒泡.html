@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--事件冒泡是事件流的第三个阶段，通过事件冒泡可以在这个阶段对事件做出响应
+        　　关于冒泡，事件对象中包含bubbles、cancelBubble、stopPropagation()和stopImmediatePropagation()这四个相关的属性和方法-->
+        
+        <!--bubbles属性返回一个布尔值，表示当前事件是否会冒泡。该属性为只读属性
+　　         发生在文档元素上的大部分事件都会冒泡，但focus、blur和scroll事件不会冒泡。所以，除了这三个事件bubbles属性返回false外，其他事件该属性都为true-->
+        
+        
+        <!--stopPropagation()方法表示取消事件的进一步捕获或冒泡，无返回值-->
+        
+        
+        <!--　stopImmediatePropagation()方法不仅可以取消事件的进一步捕获或冒泡，而且可以阻止同一个事件的其他监听函数被调用，无返回值
+       		 使用stopIPropagation()方法，可以阻止冒泡，但无法阻止同一事件的其他监听函数被调用-->
+       		 
+       		 
+       	<!--使用stopImmediatePropagation()方法，即可以阻止冒泡，也可以阻止同一事件的其他监听函数被调用-->
+       		 
+       		 
+       		 
+       	<!--　cancelBubble属性只能用于阻止冒泡，无法阻止捕获阶段。该值可读写，默认值是false。当设置为true时，cancelBubble可以取消事件冒泡-->
+       		
+       		
+       	<!--当使用stopIPropagation()方法或stopImmediatePropagation()方法时，关于cancelBubble值的变化，各浏览器表现不同-->
+       	
+       	
+       	
+		<script>
+		window.onload=function(){
+			//点击按钮时，按钮内容为true，说明click事件默认可冒泡
+//			test.onclick = function(e){
+//			    test.innerHTML =e.bubbles;//true
+//			}
+			
+			//滚动时，div内容变成false，说明scroll事件默认不可冒泡
+//			test.onscroll = function(e){
+//			    test.innerHTML =e.bubbles;//false
+//			}
+
+
+			//点击按钮时，按钮内容为'button'，因为阻止了<button>向<body>的冒泡
+//			test.onclick = function(e){
+//			    e = e || event;
+//			    e.stopPropagation();
+//			    test.innerHTML +='button\n';
+//			}
+//			document.body.onclick = function(e){
+//			    test.innerHTML += 'body\n'
+//			}
+
+
+
+
+
+			//使用stopIPropagation()方法，<button>内部变为'button'，且背景颜色变成浅蓝
+//			test.addEventListener('click',function(e){
+//			    e = e || event;
+//			    e.stopPropagation();
+//			    test.innerHTML +='button\n';    
+//			})
+//			test.addEventListener('click',function(e){
+//			    e = e || event;
+//			    test.style.background = 'lightblue';    
+//			})
+//			document.body.onclick = function(e){
+//			    test.innerHTML += 'body\n'
+//			}
+
+
+
+
+
+			//使用stopImmediatePropagation()方法，<button>内部变为'button'，且背景颜色不变
+//			test.addEventListener('click',function(e){
+//			    e = e || event;
+//			    e.stopImmediatePropagation();
+//			    test.innerHTML +='button\n';    
+//			})
+//			test.addEventListener('click',function(e){
+//			    e = e || event;
+//			    test.style.background = 'lightblue';    
+//			})
+//			document.body.onclick = function(e){
+//			    test.innerHTML += 'body\n'
+//			}
+
+
+
+//			test.onclick = function(e){
+//			    e = e || event;
+//			    e.cancelBubble = true;
+//			    test.innerHTML +='button\n';
+//			}
+//			document.body.onclick = function(e){
+//			    test.innerHTML += 'body\n'
+//			}
+
+
+
+
+
+
+			//chrome/safari/opera中，cancelBubble的值为false
+			//IE9+/firefox中，cancelBubble的值为true
+//			test.onclick = function(e){
+//			    e = e || event;
+//			    e.stopPropagation();
+//			    test.innerHTML = e.cancelBubble;
+//			}
+
+			
+			
+			//兼容:
+			var handler = function(e){
+			    e = e || event;
+			    
+			    
+			    if(e.stopPropagation){
+			        e.stopPropagation();
+			    }else{
+			        e.cancelBubble = true;
+			    }
+			}
+
+
+
+			
+		}
+		</script>
+	</head>
+	<body>
+		<!--<button id="test" style="height: 30px;width: 200px;"></button>-->
+		<!--<div id="test" style="height: 50px;width: 200px;overflow:scroll;background:pink;line-height:60px;">内容</div>-->
+		<button id="test" style="height: 30px;width: 200px;"></button>
+	</body>
+</html>

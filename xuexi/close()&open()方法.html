@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	    <button id="btn1">打开新窗口</button><br>
+	    <button id="btn2">关闭新窗口</button><br>
+	    <button id="btn3">设置窗口大小</button><br>
+	    <button id="btn4">调整窗口大小</button><br>
+		<script>
+		    var btn1=document.getElementById('btn1');
+		    var btn2=document.getElementById('btn2');
+		    var btn3=document.getElementById('btn3');
+		    var btn4=document.getElementById('btn4');
+		    var n;
+			/*1、打开新窗口*/
+		    btn1.onclick=function(){
+		        m=window.open('计时器.html','','width=800,height=400,left=400,top=300');  //打开具体页面可以调整大小
+		        //n=window.open('','','width=500,height=500,left=400,top=300');  //打开空白页可以调整大小
+		    }
+			/*2、关闭浏览器窗口--window.close()(DOM里设置)*/
+		    btn2.onclick=function(){
+		        m.close();   //关闭计时器.html的窗口
+		    }
+		    
+			/*3、调整窗口大小 ;&大小 */ 
+		    //设置窗口大小；window.resizeTo(width,height);
+		    btn3.onclick=function(){
+		        n.resizeTo(500,500);
+		    }
+		    //调整窗口大小:window.resizeBy(width,height);
+		    //把窗口大小增加或减小指定的宽度和高度。
+		    btn4.onclick=function(){
+		        n.resizeBy(100,-100);
+		    }
+		</script>
+	</body>
+</html>

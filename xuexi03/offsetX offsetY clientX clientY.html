@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>offsetX offsetY clientX clientY</title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#box{
+				width: 500px;
+				height: 600px;
+				position: relative;
+				left: 100px;
+				top: 100px;
+				background: lightblue;
+			}
+			#box01{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				left: 100px;
+				top: 100px;
+				background: magenta;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="box01"></div>
+		</div>
+	</body>
+	<script>
+		var oBox = document.getElementById('box01');
+		
+		oBox.onmousemove=function(e){
+		    e = e || event;
+		    
+		    oBox.innerHTML ='offsetX:' + e.offsetX + ';offsetY:' + e.offsetY + '<br />oBox.offsetWidth:' + oBox.offsetWidth + ';oBox.offsetHeight:' + oBox.offsetHeight +'<br>clientX:' + e.clientX +';clientY:'+e.clientY+'<br>oBox.clientwidth:' + oBox.clientWidth +';oBox.clientHeight:'+oBox.clientHeight;
+		}
+	</script>
+</html>

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#box{
+		width: 600px;
+		height: 600px;
+		border: solid 1px #000;
+		margin: 80px auto;
+	}
+	#btn{
+		width: 100px;
+		height: 100px;
+		background: #f00;
+		position: absolute;
+		text-align: center;
+		line-height: 100px;
+		cursor: pointer;
+	}
+	</style>
+	<script>
+		window.onload = function(){
+			var box =document.getElementById("box");
+			var btn =document.getElementById("btn");
+			btn.onmousedown = function(event){
+				var evt = event || window.event;
+				var x = evt.offsetX;
+				var y = evt.offsetY;
+				document.onmousemove = function(event){
+				var evt = event || window.event;
+				btn.style.left = evt.clientX-x+"px";
+				btn.style.top = evt.clientY-y+"px";
+				
+				if(btn.offsetLeft<box.offsetLeft){
+					btn.style.left =box.offsetLeft+"px";
+				}
+				if(btn.offsetLeft>(box.offsetLeft+box.offsetWidth-btn.offsetWidth)){
+					btn.style.left =(box.offsetLeft+box.offsetWidth-btn.offsetWidth)+"px";
+				}
+				if(btn.offsetTop<box.offsetTop){
+					btn.style.top =box.offsetTop+"px";
+				}
+				if(btn.offsetTop>(box.offsetTop+box.offsetHeight-btn.offsetHeight)){
+					btn.style.top =(box.offsetTop+box.offsetHeight-btn.offsetHeight)+"px";
+				}
+			}
+				
+			}
+			document.onmouseup = function(){
+				document.onmousemove =null;
+			}
+			document.onmousedown =function(){
+				return false;
+			}
+		}
+	</script>
+	</head>
+	<body>
+		<div id="box">
+		<div id="btn">点我拖拽</div>
+	</div>
+	</body>
+</html>

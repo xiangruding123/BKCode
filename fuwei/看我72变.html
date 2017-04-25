@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload = function() {
+				var box = document.getElementById("box");
+				var i = 1;
+				var fontTmp = 5;
+				setInterval(function() {
+					var colors = ["red", "yellow", "green", "black", "blue"];
+					box.style.color = colors[i++]; 
+					box.style.fontSize = numFromStr(box.style.fontSize) + fontTmp +"px";
+					if(i==colors.length) {
+						i = 0;
+						fontTmp *= -1;
+					}
+				}, 50)
+			}
+			function numFromStr(str) {
+				var index = str.indexOf("px");
+				var num = Number(str.substring(0, index));
+				return num;
+			}
+	</script>
+
+	</head>
+	<body>
+		<div id="box" style="width: 400px; height: 400px; background: pink; font-size: 12px; color: red;">看我72变</div>
+	</body>
+</html>

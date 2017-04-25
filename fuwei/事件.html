@@ -1,0 +1,76 @@
+<head>
+<meta charset="UTF-8">
+<title>鼠标事件</title>
+<style>
+*{margin:0;padding:0;list-style: none;}
+#con{
+    width:300px;
+    height:300px;
+    background: #ccc;
+    border:1px solid #666;
+    margin:10px auto;
+}
+#con #box{
+    width:200px;
+    height:200px;
+    margin:50px auto;
+    background: pink;
+}
+</style>
+</head>
+<body>
+    <div id="con">
+        <div id="box"></div>
+    </div>
+</body>
+
+
+<script>
+    var con=document.getElementById('con');
+    
+    var x=0,y=0,z=0,a=0,b=0,c=0;
+    //onclick ---------鼠标点击事件
+    document.onclick=function(){
+        x++;
+        console.log('鼠标点击_onclick'+x);
+    }
+    //oncontextmenu----鼠标右键点击
+    document.oncontextmenu=function(){
+        alert('鼠标右击事件');//先弹出弹框后显示菜单
+    }
+    //onmouseover -----鼠标移上(包括子元素)
+    con.onmouseover=function(){
+        y++;
+        console.log('鼠标移上_onmouseover'+y);
+    }
+    //onmouseout ------鼠标移出（包括子元素）
+    con.onmouseout=function(){
+        z++;
+        console.log('鼠标移出_onmouseout'+z);
+    }
+    //onmouseenter -----鼠标移上
+    con.onmouseenter=function(){
+        y++;
+        console.log('鼠标移上_onmouseenter'+y);
+    }
+    //onmouseleave------鼠标移出
+    con.onmouseleave=function(){
+        z++;
+        console.log('鼠标移出_onmouseleave'+z);
+    }
+    //onmousedown -----鼠标按下
+    document.onmousedown=function(){
+        a++;
+        console.log('鼠标按下_onmousedown'+a);
+    }
+    //onmouseup  ------鼠标抬起
+    document.onmouseup=function(){
+        b++;
+        console.log('鼠标按下_onmouseup'+b);
+    }
+    //onmousemove -----鼠标移动
+    con.onmousemove=function(){
+        c++;
+        console.log(c);
+    }
+</script>

@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{padding:0;margin:0;}
+		li{ list-style:none; position:relative; width:200px; height:200px; overflow:hidden; float:left;}
+		img{ position:absolute; left:5px; top:5px; width:190px; height:190px; z-index:1;}
+		p{ position:absolute; background:gray; width:0; height:0; z-index:0;}
+		.p1{ left:0; top:0;}
+		.p2{ right:0; bottom:0;}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	<script>
+	
+		$(function(){
+			$("li").mouseenter(function(){
+				var p1=$(this).find(".p1");
+				var p2=$(this).find(".p2");
+				p1.animate({
+					width:200,
+					height:200
+				});
+				p2.animate({
+					width:200,
+					height:200
+				});
+			});
+			//animate
+			$("li").mouseleave(function(){
+				var p1=$(this).find(".p1");
+				var p2=$(this).find(".p2");
+				p1.animate({
+					width:0,
+					height:0
+				});
+				p2.animate({
+					width:0,
+					height:0
+				});
+			});
+			
+		});
+	
+	</script>
+</head>
+<body>
+
+	<ul>
+		<li>
+			<img src="img/ml.jpg" />
+			<p class='p1'></p>
+			<p class='p2'></p>
+		</li>
+		<li>
+			<img src="img/ml1.jpg" />
+			<p class='p1'></p>
+			<p class='p2'></p>
+		</li>	
+		
+		<li>
+			<img src="img/ll.jpg" />
+			<p class='p1'></p>
+			<p class='p2'></p>
+		</li>	
+	</ul>
+
+</body>
+</html>

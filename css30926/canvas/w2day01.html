@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#mycanvas{border: 1px solid #FF0000;}
+		</style>
+	</head>
+	<body>
+		<canvas id="mycanvas" width=400 height=400 ></canvas>
+	</body>
+	<script>
+		var canvas=document.getElementById("mycanvas");
+		var ctx=canvas.getContext("2d");
+
+		//填充
+		ctx.fillStyle="#0000FF";
+		//ctx.rect(50,50,100,100);
+		//ctx.fill();
+		//上两行合并为下一行同样可以实现
+		ctx.fillRect(50,50,100,100);
+		ctx.clearRect(75,50,50,50);
+		
+		
+		//边框
+		ctx.strokeStyle="#7CFC00";
+		ctx.lineWidth = 10;
+		//ctx.rect(200,200,100,100);
+		//ctx.stroke();
+		//上两行合并为下一行同样可以实现
+		ctx.strokeRect(200,200,100,100);
+		
+	</script>
+</html>

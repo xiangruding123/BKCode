@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin:0;padding:0;}
+			div{width:150px;height:300px;background: pink;display:none;position: absolute;}
+			span{color:red;}
+		</style>
+	</head>
+	<body>
+		<div>
+		    <span>第一页</span>
+		    <span>下一页</span>
+		    <span>刷新</span>
+		</div>
+		<script>
+		    var div=document.getElementsByTagName('div')[0];
+		    document.oncontextmenu=function(ev){//菜单右击事件
+		        div.style.display='block';
+		        var e=window.event||ev;
+		        if(e.preventDefault){//组织默认右击事件
+		            e.preventDefault();
+		        }else{
+		            e.returnValue=false;
+		        }
+		        var winH=document.documentElement.clientHeight;
+		        var winW=document.documentElement.clientWidth;
+		        var divH=div.offsetHeight;
+		        var divW=div.offsetWidth;
+		        var x=e.clientX;
+		        var y=e.clientY;
+		        
+		        if (winH-y<divH) {
+		            div.style.top=(y-divH)+'px';
+		        } else {
+		            div.style.top=y+'px';
+		        }
+		        if (winW-x<divW) {
+		            div.style.left=(x-divW)+'px';
+		        } else {
+		            div.style.left=x+'px';
+		        }
+		        
+		    }
+		</script>
+	</body>
+</html>

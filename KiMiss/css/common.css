@@ -1,0 +1,19 @@
+body {font-family:microsoft yahei;}
+a{text-decoration:none;color:#333333;-webkit-transition: color .2s ease-in-out;-moz-transition: color .2s ease-in-out;-o-transition: color .2s ease-in-out;-ms-transition: color .2s ease-in-out;transition: color .2s ease-in-out;}
+a { color:#333333; cursor:pointer;}
+a:hover { color:#f13384; text-decoration:none;}
+img{ -webkit-transition: -webkit-transform 0.4s ease; -moz-transition: -moz-transform 0.4s ease; -ms-transition: -ms-transform 0.4s ease;}
+img:hover{ transform:scale(1.04, 1.04);-ms-transform:scale(1.04, 1.04); -webkit-transform:scale(1.04, 1.04);}
+img.nohover:hover{transform:scale(1, 1);-ms-transform:scale(1, 1); -webkit-transform:scale(1, 1);}
+
+
+
+a.userid { color:#f67fb2;padding: 2px;}
+a.userid:hover { background-color:#ee0065; color:#ffffff;}
+a.more { color:#f67fb2;padding: 2px;}
+a.more:hover{background-color:#000000;color:#FFFFFF;text-decoration:none;}
+
+.l{float: left;}
+.r{float: right;}
+.w{margin: 0 auto;}
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style media="screen">
+			#wrap {
+			width: 500px;
+			height: 500px;
+			border: 5px solid black;
+			border-radius: 500px;
+			margin: auto;
+			position: relative;
+			}
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<div id="wrap"></div>
+	</body>
+<script type="text/javascript">
+	for (var i = 1; i < 61; i++) {                    //制作刻度
+		var positer =document.createElement('div'); // 设置一个新的div 命名为positer  也可以在css 样式中写 这里我写在 js里
+		positer.style.width = '10px';
+		positer.style.height = '500px';
+		positer.style.position = 'absolute';
+		positer.style.left = '245px';
+		// positer.style.background = 'blue';
+		wrap.appendChild(positer);                         // 把positer 放入 wrap 中
+		
+		var scale = document.createElement('div');   //设置一个新的div 命名为scale （也可以写在css中）
+		scale.style.width = '5px';
+		scale.style.height = '10px';
+		scale.style.background = 'gray';
+		scale.style.margin = 'auto';
+		positer.appendChild(scale);                         //  把scale 放入 positer 中
+		
+		var number = document.createElement('span');   
+		number.style.display = "inline-block";
+		positer.appendChild(number);
+		number.innerHTML = i ;                                // 把 i 插入 number中
+		number.style.color = 'gray';
+		number.style.fontSize = '0.5em';
+		var warp = document.getElementById('wrap');   
+		
+		positer.style.transform = "rotate("+i * 6+"deg)";   // positer 随着 i的变化旋转的角度也变化
+		number.style.transform = "rotate(-"+i * 6+"deg)"; 
+		if (i % 5 ==0 ) {                      // 当 i能被5整除时
+			scale.style.width = '8px';          
+			scale.style.height = '20px';
+			scale.style.background = 'black';
+			number.innerHTML =(i / 5);    // 把（i／5）的值插入到number 中
+			number.style.color = 'black';    // 改变颜色
+			number.style.fontSize = '2em';  //  改变字体大小
+		}
+	}
+	dot =document.createElement('div');  // 定义中间的中心轴
+	dot.style.width = '20px';
+	dot.style.height = '20px';
+	dot.style.background ='red';
+	dot.style.position = 'absolute';
+	dot.style.borderRadius = '20px';
+	dot.style.top = '240px';
+	dot.style.left = '240px';
+	dot.style.zIndex = 100;
+	wrap.appendChild(dot);    //把dot 放入 wrap中
+	// 定义时针
+	hour = document.createElement('div');
+	hour.style.width = '0';
+	hour.style.height = '120px';
+	hour.style.border = '4px solid black';
+	hour.style.position = 'absolute';
+	hour.style.borderRadius = '20px';
+	hour.style.transformOrigin = 'bottom';  // 定义它的起始转动的位置
+	hour.style.left = '246px';
+	hour.style.top = '126px';
+	wrap.appendChild(hour);      // 把 hour 放入 wrap中
+	//定义分针
+	minute = document.createElement('div');
+	minute.style.width = '0';
+	minute.style.height = '160px';
+	minute.style.border = '3px solid black';
+	minute.style.borderRadius = '20px';
+	minute.style.position = 'absolute';
+	minute.style.transformOrigin = 'bottom';
+	minute.style.left = '247px';
+	minute.style.top = '87px';
+	wrap.appendChild(minute);
+	//定义秒针
+	second = document.createElement('div');
+	second.style.width = '0';
+	second.style.height = '300px';
+	second.style.border = '2px solid red';
+	second.style.position = 'absolute';
+	second.style.left = '248px';
+	second.style.transformOrigin = '1px 250px';     // 定义秒针起始转动的位置 1px指 它宽度的一半 250px指正个 wrap 的一半
+	wrap.appendChild(second);
+	
+	function timeCounter(){                             //定义函数 命名为 timeCounter
+		var currentDate = new Date();                 //取现在的时间赋值于变量 currentDate
+		var Hhour = currentDate.getHours();       // 取现在的小时
+		var Mminute = currentDate.getMinutes();  // 取现在的分钟
+		var Ssecond = currentDate.getSeconds();  // 取现在的秒
+		var seconds = Hhour * 3600 + Mminute * 60 + Ssecond ;    // 把今天所有的秒数赋值给变量 seconds
+		hour.style.transform = 'rotate('+seconds / 120+'deg)';        // 时针每秒转的度数
+		minute.style.transform = 'rotate('+seconds * 0.1+'deg)';    // 分针每秒转的度数
+		second.style.transform = 'rotate('+seconds * 6+'deg)';      // 秒针 每秒转的度数
+	}
+	setInterval('timeCounter()', 1000);  // 重复函数timeCounter 每1000毫秒执行一次 也就是1秒
+</script>
+</html>

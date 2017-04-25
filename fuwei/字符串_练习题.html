@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+		
+			
+			
+			/*
+			var bi=0;
+			var sm=0;
+			function bi_sm(str){
+				for (var i=0;i<=str.length-1;i++) {
+					if (str[i]>="A" && str[i]<="Z") {
+						bi++;
+					}else if (str[i]>="a" && str[i]<="z") {
+						sm++;
+					}
+				}
+			}
+			var str = "hemanKlLloa! manAaEme xiaTmann grumYandinOg";
+			bi_sm(str);
+			document.write(""+bi+"     "+sm);
+			*/
+			/*
+			str = "I hate BeiJing!"
+			var ss = str.substring(3,6);
+			document.write(ss);
+			*/
+			/*
+			 var str = "I hate BeiJing!";
+			 var newStr = str.substring(3, 6);
+			 document.write(newStr);
+			 document.write("<br/>");
+			 */
+			
+			/*
+				https://www.baidu.com/s?name=avery&age=20&sex=male&like=
+				取出name,age和sex的值
+			*/
+			/*
+			var str = "https://www.baidu.com/s?name=avery&age=20&sex=male&like=";
+			
+			var st1 = str.split("?");
+			var arr = st1[1];
+			var st2 = arr.split("&");
+			
+			for (var i=0;i<=st2.length-1;i++) {
+				var ss = st2[i].split("=");
+				var dd = ss[0];
+				var ff = ss[1];
+				if (ff!="") {
+					document.write(" "+dd+":"+ff+"<br />");
+				}
+			}
+			*/
+			/*
+				1, 已知有两个字符串str1 = ‘hello’ str2 = ‘world’,将两个字符串组成一个;
+				2, 已知字符串str = “I love BeiJing”,找出love的范围
+				3, 已知字符串 str = “I hate BeiJing!”,提取第3个字符到第5个字符
+				4, 将字符串str = “When I was young, I love a girl in neighbor class.”中,从young提取到girl。但是不许数
+			*/
+				/*
+				str1 = "hello";
+				str2 = "world";
+				var str = str1+str2;
+				alert(str);
+			*/
+			/*
+			str = "I love BeiJing";
+			
+			var ss = str.indexOf("love");
+			var ss1 = "love";
+			var dd = ss1.length;
+			//var oo = ss+dd;
+			alert(""+ss+"   "+dd);
+			*/
+			/*
+			 str = "I hate BeiJing!";
+			 var st = str.substring(3,6);
+			 alert(st);
+			*/
+			/*
+			str = "When I was young, I love a girl in neighbor class.";
+			
+			var sr1 = str.indexOf("young");
+			var sr2 = str.indexOf("girl");
+			var ss = "girl";
+			var len = sr2+ss.length;
+			var jiequ = str.substring(sr1,len);
+			alert(jiequ);
+			
+			*/
+			
+			/*喵喵
+			//使字符串中单词用空格隔开
+				var str="HelloMyWorld";
+				function seperate(str){
+					for(var i=0;i<str.length;i++){
+						var n=str.charCodeAt(i);
+						
+						if(n>=65&&n<=90){
+						 str[i]=String.fromCharCode(n-25);
+						}
+						document.write(str[i]);
+					}
+					
+				}
+				seperate(str);
+		*/
+				
+			/*
+			function yanCode(){
+				var str = "";
+				for (var i=0;i<4;i++) {
+					var gaiLv = Math.random();
+					
+					if (gaiLv < 0.5) {
+						str+=parseInt((Math.random()*10));
+					} else {
+						str += String.fromCharCode(parseInt(Math.random()*26+97));
+					}
+				}
+				return str;
+			}
+			document.write(yanCode());
+			*/
+			/*
+			var str = 'WelcomeToQianFeng';
+			var arr = new Array();
+			for (var i = 0; i < 124; i++){arr[i] = 0;}
+			for(var i = 0; i < str.length; i++){
+			     arr[str.charCodeAt(i)]++;
+			}
+			
+			var max = 0;
+				var maxIndex = 0;
+				for (var i = 0; i < 124; i++){
+					if (max < arr[i]) {
+						max = arr[i];
+						maxIndex = i;
+					}
+				}
+				document.write(String.fromCharCode(maxIndex)+" "+max)
+*/
+
+
+/*
+			var str = "WelcomeToQianFeng";
+			
+			function tongJi(str){
+				var maxLength = 0,result = "";
+				while(str != "" )
+				{
+					var oldStr = str;
+					var getStr = str.substr(0,1);
+					
+					str = str.replace(new RegExp(getStr,"g"),"");
+					
+					if(oldStr.length - str.length > maxLength)
+					{
+						maxLength = oldStr.length - str.length;
+						result = getStr+""+maxLength;
+					}	
+				}
+				return result;
+			}
+			alert(tongJi(str));
+*/
+
+			var str=prompt("请输入一个纯字母的字符串");
+			var zimu="";
+			var num=0;
+			for(var i=65;i<123;i++){
+			var a=String.fromCharCode(i);
+			
+			var arr1=str.split(a);
+			
+			if(arr1.length-1>num){
+				zimu=a;
+				num=arr1.length-1;
+				}
+			}
+			document.write(zimu+num);
+			
+								
+			
+			
+			
+			
+				
+				 
+		</script>
+	</head>
+	<body>
+		<!--<input type="text" placeholder="用户名" id="uName" onblur="checkUserName()" />
+		<input type="text" placeholder="密码" id="pwd" onblur="checkPwd()" />
+		<button id="btn" onclick="checkAll()"> 登录 </button>
+		<p id="error"></p>-->
+		
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>事件委托4-from</title>
+		<!--五、获取目标源
+
+		1、在mouseover事件中，它指向鼠标来自哪个元素
+		event.relatedTarget火狐获取触发事件的目标源，与target相反，也是事件委托类型
+		fromElement IE获取触发事件的目标源，与srcElement相反，也是事件委托类型
+		
+		var from=event.relatedTarget||event.fromElement;-->
+		
+		<!--2、在mouseout事件中，它指向鼠标去往的那个元素
+
+		event.relatedTarget火狐获取触发事件的目标源，与target相反，也是事件委托类型
+		event.toElement IE获取触发事件的目标源，与srcElement相反，也是事件委托类型
+		
+		var to=event.relatedTarget||event.toElement;-->
+		
+		<style>
+			*{margin:0;padding:0;list-style: none;}
+			#box{
+			    width:200px;
+			    height:200px;
+			    margin:10px auto;
+			    border:1px solid #666;
+			    position: relative;
+			    overflow: hidden;
+			}
+			#box img{
+			    width:140px;
+			    height:140px;
+			    position:absolute;
+			    top:10px;
+			    left:30px;
+			}
+			#box h3{
+			    width:200px;
+			    height:40px;
+			    line-height: 40px;
+			    position: absolute;
+			    top:160px;
+			    left:0;
+			    text-align: center;
+			    background: #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+		    <img src="img/w14.jpg" alt="">
+		    <h3>风景名胜</h3>
+		</div>
+		<script>
+		    var box=document.getElementById('box');
+		    var img=box.getElementsByTagName('img')[0];
+		    var timer=null,t=0;;
+		    box.onmouseover=function(ev){
+		        var e=ev||window.event;
+		        var from=e.relatedTarget||e.fromElement;//鼠标来自哪里
+		        while (from) {//阻止动画反复执行
+		            if (from==this) {
+		                return false;
+		            }
+		            from=from.parentNode;
+		        }
+		        t=-150;
+		        clearInterval(timer);
+		        timer=setInterval(function(){
+		            t+=2;
+		            if(t>=10){
+		                t=10;
+		            }
+		            img.style.top=t+'px';
+		        },10)
+		    }
+		</script>
+	</body>
+</html>
+<!-- 获取目标源 var from=event.relatedTarget||event.fromElement -->
+<!-- 在mouseover事件中，它指向鼠标来自哪个元素 -->

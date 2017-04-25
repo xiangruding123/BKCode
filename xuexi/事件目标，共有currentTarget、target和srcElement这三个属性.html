@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>关于事件目标，共有currentTarget、target和srcElement这三个属性</title>
+
+		<style>
+			.in{height: 30px;background-color: lightblue;margin:0 10px;}
+		</style>
+
+		<script>
+		window.onload=function(){
+//1111: currentTarget属性返回事件当前所在的节点，即正在执行的监听函数所绑定的那个节点
+//一般地，currentTarget与事件中的this指向相同。但在attachEvent()事件处理程序中，this指向window
+
+//			box.onclick = function(e){
+//			    e = e || event;
+//			    var tags =  box.getElementsByTagName('li');
+//			    tags[0].innerHTML = e.currentTarget;
+//			    tags[1].innerHTML = (e.currentTarget === this);
+//			}
+
+
+//2222: currentTarget属性返回事正在执行的监听函数所绑定的节点，而target属性返回事件的实际目标节点
+
+//			box.onmouseover = function(e){
+//			    e = e || event;
+//			    e.target.style.backgroundColor = 'pink';
+//			}
+//			box.onmouseout = function(e){
+//			    e = e || event;
+//			    e.target.style.backgroundColor = 'lightblue';
+//			}
+		
+		
+//333: srcElement属性与target属性功能一致
+
+//			box.onclick = function(e){
+//			    e = e || event;
+//			    e.srcElement.style.backgroundColor = 'pink';
+//			}
+//			box.onmouseout = function(e){
+//			    e = e || event;
+//			    e.srcElement.style.backgroundColor = 'lightblue';
+//			}
+
+
+			//实现兼容！！！！！
+			var handler = function(e){
+			    e = e || event;
+			    var target = e.target || e.srcElement;
+			}
+
+
+
+		}
+		</script>
+		
+		
+	</head>
+	<body>
+		<ul id="box">
+		    <li class="in">1</li>
+		    <li class="in">2</li>
+		</ul>
+	</body>
+</html>

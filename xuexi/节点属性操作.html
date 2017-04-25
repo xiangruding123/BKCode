@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<style>
+		    *{margin:0; padding:0; list-style:none;}
+		    .red{
+		        background: red;
+		    }
+		    .blue{
+		        background: blue;
+		    }
+		</style>
+		<!--五、属性常见操作方法
+		获取节点上name属性的值
+		getAttribute("name")
+		获取节点上type属性
+		getAttributeNode("type")
+		设置节点上name属性的值为value
+		setAttribute("name","value")
+		删除节点上的name属性
+		removeAttribute("name")-->
+	</head>
+	
+	<body>
+	    <div id="box11" abc="0" class="red">1111</div>
+	    <div id="box22" abc="1">2222</div>
+	    <button id="btn">删除</button>
+		<script>
+		    var box1=document.getElementById('box11');
+		    var box2=document.getElementById('box22');
+		    var btn=document.getElementById('btn');
+		    alert(box1.getAttribute('id'));//box11
+		    //1、获取节点上id属性的值
+		    alert(box1.id);///box11--->常用在获取内置属性
+		    alert(box1.getAttribute('abc'));//0-->常用在获取自定义属性
+		    //2、设置节点上class属性的值为blue
+		    box2.setAttribute('class','blue');
+		    //3、删除属性class
+		    btn.onclick=function (){
+		        box1.removeAttribute('class');
+		    }
+		</script>
+	</body>
+</html>

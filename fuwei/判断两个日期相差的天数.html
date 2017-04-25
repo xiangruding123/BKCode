@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>判断两个日期相差天数</title>
+		<style></style>
+		<script>
+			// 判断两个日期相差的天数
+			 function intervalDays(date1, date2) {
+
+			 	//获取两个日期的时间戳, 距离1970/1/1/0时的毫秒数
+			 	var time1 = date1.getTime();
+			 	var time2 = date2.getTime();
+
+			 	//时间间隔(毫秒)
+			 	var timeInterval = time1 < time2 ? time2 - time1 : time1 - time2;
+			 	// var timeInterval = Math.abs(time1-time2);
+
+			 	//间隔天数
+			 	var dayInterval = timeInterval / (1000 * 3600 * 24);
+
+			 	return dayInterval;
+			 }
+
+			 var date1 = new Date("2015/2/1");
+			 var date2 = new Date("2015/3/5");
+			 var dayInterval = intervalDays(date1, date2);
+			 alert(dayInterval);
+
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>

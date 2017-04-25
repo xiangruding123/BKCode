@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>e.clientX和e.clientY</title>
+		
+		<!--　clientX/Y表示鼠标指针在可视区域中的水平和垂直坐标-->
+		
+		<style type="text/css">
+			body{background: red;}
+			div{width: 100px;height: 100px;}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var bb = document.getElementById("ii");
+				document.onmousemove = function(evt){
+					var e = evt || window.event;
+					bb.style.left = e.clientX - 100 +"px";
+					bb.style.top = e.clientY - 100 +"px";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="ii" style="position: absolute;">
+			<img src="img/girl.gif"  />
+		</div>
+	</body>
+</html>

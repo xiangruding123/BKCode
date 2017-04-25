@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+		    <ul id="list1">
+		        <li>11first<span>aa</span></li>
+		        <li>22<span>bb</span></li>
+		        <li>33new<span>cc</span></li>
+		        <li>44last<span>dd</span></li>
+		    </ul>
+		    <ul id="list2"><li>11<span>aa</span></li><li>22<span>bb</span></li><li>33<span>cc</span></li></ul>
+		</div>
+			<script>
+			    var list1=document.getElementById('list1');
+			    var lis2=list1.getElementsByTagName('li')[1];
+			    var list2=document.getElementById('list2');
+			    var lis22=list2.getElementsByTagName('li')[1];
+			/*1、childNodes：所有子节点*/
+			    /*若按照list1方式缩进写的话，IE6、7、8支持，其他“不支持”
+			    若按照list2方式不缩进写的话，都支持
+			    但一般都按list1的缩进方式写，故弃之*/
+			    var nodes1=list1.childNodes;
+			    var nodes2=list2.childNodes;
+			    alert(nodes1.length);//9(4个元素节点(li)+5个文本节点(回车))
+			    alert(nodes2.length);//3(三个元素节点)
+			
+			/*2、nextSibling：下一个兄弟节点*///IE6、7、8支持
+			    var li31=lis2.nextSibling;//IE6、7、8支持,其他不支持
+			    var li32=lis2.nextElementSibling;//其他支持，IE6、7、8不支持
+			    alert(li31.innerHTML);//undefined
+			    alert(li32.innerHTML);//33<span>cc</span>
+			    //为获取下一个兄弟节点封装函数
+			    function nextNode(obj){
+			        if (obj.nextElementSibling) {
+			            return obj.nextElementSibling;//其他支持
+			        } else {
+			            return obj.nextSibling;//IE6、7、8支持
+			        }
+			    }
+			    var li3=nextNode(lis2);
+			    alert(li3.innerHTML);//33new<span>cc</span>
+			
+			/*3、previousSibling：上一个兄弟节点*/
+			    function previousNode(obj){//为获取上一个兄弟节点封装函数
+			        if (obj.previousElementSibling) {
+			            return obj.previousElementSibling;//其他支持
+			        } else {
+			            return obj.previousSibling;//IE6、7、8支持
+			        }
+			    }
+			    var li1=previousNode(lis2);
+			    alert(li1.innerHTML);//11first<span>aa</span>
+			
+			/*4、firstChild : 第一个子节点*/
+			    function firstChild(obj){
+			        if (obj.firstElementChild) {
+			            return obj.firstElementChild;//其他支持
+			        } else {
+			            return obj.firstChild;//IE6、7、8支持
+			        }
+			    }
+			    var list1child1=firstChild(list1);
+			    alert(list1child1.innerHTML);//11first<span>aa</span>
+			
+			
+			/*5、lastChild：最后一个子节点*/
+			    function lastChild(obj){
+			        if (obj.lastElementChild) {
+			            return obj.lastElementChild;//其他支持
+			        } else {
+			            return obj.lastChild;//IE6、7、8支持
+			        }
+			    }
+			    var list1child4=lastChild(list1);
+			    alert(list1child4.innerHTML);//44last<span>dd</span>
+			/*6、children：所有是标签类型的子节点*/
+			    lis=list1.children;//都支持，可以直接使用
+			    alert(lis.length);//4
+			    alert(lis[0].innerHTML);//11first<span>aa</span>
+			/*7、parentNode：父节点*///都支持，可以直接使用
+			    alert(lis[0].parentNode.parentNode.id);//box
+			</script>
+		</body>
+</html>

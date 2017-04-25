@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>计算器</title>
+	<style type="text/css">
+		table{width:600px;height:400px;position:absolute;left:50%;top:50%;margin-left:-300px;margin-top:-200px; border:1px solid #ccc;}
+    	input{width:100%;height:100%; border:1px solid #ccc; font-size:20px; cursor:pointer;}
+		#ce,#space{width:300px;}
+    </style>
+</head>
+	<script>
+    	window.onload=function(){
+			var tx01=document.getElementById("tx01");
+			
+			var ce=document.getElementById("ce");
+			var space=document.getElementById("space");
+			
+			var num9=document.getElementById("num9");
+			var num8=document.getElementById("num8");
+			var num7=document.getElementById("num7");
+			var num6=document.getElementById("num6");
+			var num5=document.getElementById("num5");
+			var num4=document.getElementById("num4");
+			var num3=document.getElementById("num3");
+			var num2=document.getElementById("num2");
+			var num1=document.getElementById("num1");
+			var num0=document.getElementById("num0");
+			var	dian=document.getElementById("dian");
+			
+			var	jia=document.getElementById("jia");
+			var	jian=document.getElementById("jian");
+			var	cheng=document.getElementById("cheng");
+			var	chu=document.getElementById("chu");
+			
+			var s="";
+			function fun01(){
+				s+=this.value;
+				tx01.value=s;	
+			}
+			num9.onclick=fun01;
+			num8.onclick=fun01;
+			num7.onclick=fun01;
+			num6.onclick=fun01;
+			num5.onclick=fun01;
+			num4.onclick=fun01;
+			num3.onclick=fun01;
+			num2.onclick=fun01;
+			num1.onclick=fun01;
+			num0.onclick=fun01;
+			dian.onclick=fun01;
+			jia.onclick=fun01;
+			jian.onclick=fun01;
+			cheng.onclick=fun01;
+			chu.onclick=fun01;
+			
+			function fun02(){
+				tx01.value=eval(s);		
+			}
+			deng.onclick=fun02;
+			
+			function fun03(){
+				tx01.value="";
+				s="";
+			}
+			ce.onclick=fun03;
+			
+			space.onclick=function(){
+				str=tx01.value;
+				console.log(str);
+				str=str.substring(0,str.length-1);
+				console.log(str);
+				tx01.value=str;
+				s=str;
+			}
+		}
+    </script>
+<body>
+	<table>
+    	<thead>
+            <tr>
+            	<th colspan="4"><input type="text" value="" id="tx01"/></th>
+        	</tr>
+        </thead>
+        <tbody>
+        	<tr>
+            	<td colspan="2"><input type="button" value="CE" id="ce"/></td>
+            	<td colspan="2"><input type="button" value="BackSpace" id="space"/></td>
+            </tr>
+            
+            <tr>
+                <td><input type="button" value="7" id="num7"/></td>
+                <td><input type="button" value="8" id="num8"/></td>
+                <td><input type="button" value="9" id="num9"/></td>
+                <td><input type="button" value="/" id="chu"/></td>
+            </tr>
+            
+            <tr>
+                <td><input type="button" value="4" id="num4"/></td>
+                <td><input type="button" value="5" id="num5"/></td>
+                <td><input type="button" value="6" id="num6"/></td>
+                <td><input type="button" value="*" id="cheng"/></td>
+            </tr>
+            
+            <tr>
+                <td><input type="button" value="1" id="num1"/></td>
+                <td><input type="button" value="2" id="num2"/></td>
+                <td><input type="button" value="3" id="num3"/></td>
+                <td><input type="button" value="-" id="jian"/></td>
+            </tr>
+            
+            <tr>
+                <td><input type="button" value="0" id="num0"/></td>
+                <td><input type="button" value="." id="dian"/></td>
+                <td><input type="button" value="=" id="deng"/></td>
+                <td><input type="button" value="+" id="jia"/></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

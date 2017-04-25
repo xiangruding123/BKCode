@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>百分比实现水平垂直居中</title>
+		
+		<!--已知元素高度后，使用绝对定位将top设置为50%，mergin-top设置为内容高度的一半(height + padding) / 2；内容超过元素高度时需要设置overflow决定滚动条的出现
+　　               原理：top：50%元素上边界位于包含框中点，设置负外边界使得元素垂直中心与包含框中心重合；-->
+
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				
+				position: absolute;
+				left: 50%;
+				margin-left: -100px;
+				top: 50%;
+				margin-top: -100px;
+				
+				border: 1px solid #ccc;
+				background: khaki;
+			}
+		</style>
+	</head>
+	<body>
+		<div>该方法： <br />浏览器兼容性高支持ie6 ie7 <br />浏览器兼容性高支持ie6 ie7 <br />浏览器兼容性高支持ie6 ie7 <br />浏览器兼容性高支持ie6 ie7</div>
+	</body>
+</html>

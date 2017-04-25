@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>敏感字</title>
+		<style>
+			#con{
+			    font-size: 20px;
+			    color:red;
+			    width:500px;
+			    background: #ccc;
+			}
+			#txt{
+			    font-size: 20px;
+			    color:blue;
+			    width:500px;
+			}
+		</style>
+	</head>
+	<body>
+	    <textarea id="txt" cols="50" rows="10">
+	    </textarea>
+	    <button id="btn">发布</button>
+	    <div id="con"></div>
+		<script>
+		    var txt=document.getElementById('txt');
+		    var btn=document.getElementById('btn');
+		    var con=document.getElementById('con');
+		    var reg=/中国政府 |菲律宾|南海|泰国|中国人民解放军/g;
+		    btn.onclick=function(){
+		        var connet=txt.value.replace(reg,function(x){
+		            // alert(x);//每次匹配到的词
+		            var a='';
+		            for (var i = 0; i < x.length; i++) {
+		                a+='*';
+		            }
+		            return a;
+		        });
+		        con.innerHTML=connet;
+		    }
+		</script>
+	</body>
+</html>
+<!-- con可写入文字： -->
+<!-- 中国政府 可以把在仁爱礁的菲律宾军舰拖走，把菲律宾赶出仁爱礁。中国政府 可以在南海诸岛继续建设填海建岛。因为南海各国在经济上是比不了中国的，他们填1米海，中国政府能填100米，最后，仍然是中国占便宜。中国在南海加大巡逻力度，使中国人民解放军在南海占领常态化。每年都在南海举行以救援中国人民解放军救助、人道主义援助为目的军事演习，甚至可以邀请东盟各国（例如泰国、柬埔寨）参加，震慑周边诸国。通过政治、外交、文化交流、经济援助、赠送军舰等手段拉拢分裂东盟国家。（例如柬埔寨、泰国这样与中国政府 南海无利益纠纷的国家）继续加强海军建设，例如建造两栖攻击舰、船坞,中国人民解放军 -->

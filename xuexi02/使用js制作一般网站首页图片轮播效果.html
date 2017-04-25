@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <style>
+        .warp{
+            width: 600px;
+            height: 750px;
+            position: relative;
+            margin:30px auto 0;
+            overflow: hidden;
+        }
+        #box{
+            width: 600px;
+            height: 750px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            overflow: hidden;
+            /*overflow-x:auto;*/
+        }
+        #box #con{
+            width: 6000px;
+            height: 750px;
+            overflow: hidden;
+        }
+        #con img{
+            float: left;
+            width: 600px;
+            height: 750px;
+        }
+        #btnL{
+            position: absolute;
+            left: 0px;
+            top: 366px;
+            width: 36px;
+            height: 36px;
+            background: url(images/btnL.png) 0 0 no-repeat;
+            cursor: pointer;
+        }
+        #btnR{
+            position: absolute;
+            right: 0px;
+            top: 366px;
+            width: 36px;
+            height: 36px;
+            background: url(images/btnR.png) 0 0 no-repeat;
+            cursor: pointer;
+        }
+        #num{
+            position: absolute;
+            bottom: 10px;
+            left: 148px;
+            overflow: hidden;
+            list-style: none;
+        }
+        #num li{
+            float: left;
+            margin:0 5px;
+            font-size: 16px;
+            line-height: 25px;
+            height: 25px;
+            width: 25px;
+            background: #ccc;
+            text-align: center;
+            cursor: pointer;
+        }
+        #num li.select{
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="warp">
+        <div id="box">
+            <div id="con">
+                <img src="img/01.jpg" alt="">
+                <img src="img/02.jpg" alt="">
+                <img src="img/03.jpg" alt="">
+                <img src="img/04.jpg" alt="">
+                <img src="img/ml.jpg" alt="">
+                <img src="img/ui.JPEG" alt="">
+            </div>
+        </div>
+        <div id="btnL"></div>
+        <div id="btnR"></div>
+        <ul id="num">
+            <li class="select">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <script>
+        var box=document.getElementById('box');
+        var con=document.getElementById('con');
+        var imgs=con.getElementsByTagName('img');
+        var btnL=document.getElementById('btnL');
+        var btnR=document.getElementById('btnR');
+        var num=document.getElementById('num');
+        var lis=num.getElementsByTagName('li');
+        var timer1=null,timer2=null;
+        var imgw=imgs[0].clientWidth;
+        var x=0;
+        function imgScroll(){//图片切换
+          var start=box.scrollLeft;
+            var end=imgw*x;
+            var change=end-start;
+            var minstep=0;
+            var maxstep=30;
+            var stepLength=change/maxstep;
+                clearInterval(timer2);
+                timer2=setInterval(function(){
+                    minstep++;
+                    // console.log(minstep);
+                    if (minstep>=maxstep) {
+                        clearInterval(timer2);
+                    }
+                    start+=stepLength;
+                    box.scrollLeft=start;
+                },20)    
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className='none';
+                }
+                lis[x].className='select';
+        }
+        function move(){//默认向左每隔3s滚动
+            clearInterval(timer1);
+            timer1=setInterval(function(){
+                x++;
+                if (x>=imgs.length) {
+                    x=0;
+                }
+              imgScroll();
+              for (var i = 0; i < lis.length; i++) {
+                  lis[i].className='none';
+                  lis[x].className='select';
+              }
+                },3000);
+            }
+        move();//启动默认滚动函数；
+        btnR.onclick=function(){
+            clearInterval(timer1);
+            x++;
+            if (x>=imgs.length) {
+                x=0;
+            }
+          imgScroll();
+          move();
+        }
+        btnL.onclick=function(){
+            clearInterval(timer1);
+            x--;
+            if (x<0) {
+                x=imgs.length-1;
+            }
+          imgScroll();
+            move();
+        }
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].index=i;
+            lis[i].onclick=function(){
+                x=this.index;
+                imgScroll();
+                move();
+            }
+        }
+
+    </script>
+</body>
+</html>

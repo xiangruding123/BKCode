@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			字母数字组合验证码（四位） 概率0.5
+			*/	
+			/*
+			AJNB  4545
+			A Z 65 90 90-65+1
+			//0.5
+			parseInt(Math.random()*26+65)
+			parseInt(Math.random()*26+97)
+			//0.5
+			parseInt(Math.random()*10)
+			
+			Math.random()  0-1 0-0.5正面  0.5-1反面
+			*/
+			
+			 function yanCode() {
+			 	var str = "";
+			 	for(var i=0; i<4; i++) {
+			 		var gaiLv = Math.random();
+			 		
+			 		if(gaiLv<0.5) {
+			 			str += parseInt(Math.random()*10);
+			 		} else {
+			 			str += String.fromCharCode(parseInt(Math.random()*26+65));
+			 		}
+			 	}
+			 	return str;
+			 }
+			 alert(yanCode());
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

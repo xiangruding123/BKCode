@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//从小到大排序
+			function aa(str1){
+				for (var i=0;i<str1.length-1;i++) {
+					for (var j=0;j<str1.length-1-i;j++) {
+						if (str1[j] > str1[j+1]) {
+							var temp;
+							temp = str1[j];
+							str1[j] = str1[j+1];
+							str1[j+1] = temp;
+						}
+					}
+				}
+				return str1;
+			}
+			//var str1 = [7,6,5,4,3,2,1];
+			var str= prompt("请输入纯数字：");
+			var str1 = str.split("");
+			var ss = aa(str1);
+			
+			document.write(ss);
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

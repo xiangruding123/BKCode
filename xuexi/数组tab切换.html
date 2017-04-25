@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>错误的！！！！！！</title>
+			<style>
+				/*默认样式&点击后样式*/
+				#title .select{
+				    color:#FFFFFF;
+				    background: magenta;
+				}
+				#content .show{
+				    display: block;
+				}
+			</style>
+	</head>
+	<body>
+		<div id="tab">
+		    <h2 id="title">
+		        <span class="select">标题一</span>
+		        <span>标题二</span>
+		        <span>标题三</span>
+		    </h2>
+		    
+		    <ul id="content">
+		        <li class="show">内容一</li>
+		        <li>内容二</li>
+		        <li>内容三</li>
+		    </ul>
+		</div>
+		<script>
+			var tab=document.getElementById('tab');
+	        var spans=tab.getElementsByTagName('span');
+	        var img=tab.getElementsByTagName('img')[0];
+	        var h2=tab.getElementsByTagName('h2')[0];
+	        
+	        var arr=[['img/w10.jpg','img/w11.jpg','img/w12.jpg'],['战狼','速度与激情8','暴疯语']];
+	        
+	        for (var i = 0; i < spans.length; i++) {
+	            spans[i].onclick=function(){
+	            	
+	                for (var j = 0; j < spans.length; j++) {
+	                    if(spans[j]==this){
+	                        this.className='show';
+	                        
+	                        img.src=arr[0][j];//通过数组传递数据
+	                        
+	                        h2.innerHTML=arr[1][j];
+	                    }else{
+	                        spans[j].className='';
+	                    };
+	                };
+	            };
+	        };
+		</script>
+	</body>
+</html>

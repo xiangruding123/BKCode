@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			function quChong(str){
+				var strArr = str.split("");
+				strArr.sort();
+				var resultArr = [];
+				var strTmp = "";
+				for (var i in strArr) {
+					if (strArr[i] != strTmp) {
+						resultArr.push(strArr[i]);
+						strTmp = strArr[i];
+					}
+				}
+			}
+			
+			var str = "hjshjshdjuwiuasdqweas";
+			alert(str);
+
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

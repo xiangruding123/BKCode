@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript">
+/*			var str1 = new String("abc");
+			var str2 = new String("abc");
+			var str3 = "abc";
+			var str4 = "abc";*/
+			//1, 使用new
+			// var people = new Object();
+			// people.name = "张三"; //添加属性并赋值
+			// people.age = 22;
+			// alert(people);
+			// alert(people.name); //显示people的name属性值
+	
+			//2, 可以省略new
+			// var box = Object();
+			// box.danWei = "毫克";
+			// box.weight = 30;
+		
+			//3, 使用字面量 
+			/*
+				数组的字面量: []
+				对象的字面量: {}
+			*/
+			// var person = {name: "张三", age:30};
+			// alert(person.name);
+			
+			// var person = {"name": "张三", "age":30};
+			// alert(person.name);
+			
+			//4, 使用字面量定义, 用传统赋值方式
+			// var person = {};
+			// person.name = "张三";
+			// person.age = 33;
+			// alert(person.name);
+			
+//			var person = new Object();
+//			person.name = "张三";
+//			person.age = 12;
+//			alert(person.name);
+//			var car = new Object();
+//			car.speed = 50;
+//			car.drive = function(){
+//				return 1000/car.speed;
+//			}
+//			alert(car.drive())
+//			var d = new Date();
+//			alert(d)
+//			d.setFullYear(2014)
+//			alert(d.getFullYear());//返回data对象的年
+//			alert(d.getMonth()+1);//返回data对象的月
+//			alert(d.getDate());//返回data对象的天
+//			alert(d.getHours())//返回data对象的小时
+//			alert(d.getMinutes()); //返回data对象的分钟
+//			alert(d.getSeconds());//返回data对象的秒钟
+//			alert(d.getDay())
+//			alert(d.getTime());
+//			console.log(d.toString())
+//			console.log(d)
+//			console.log(typeof d.toString())
+//			console.log(typeof d)
+			/*function getTime (n) {
+				var d = new Date();
+				d.setTime(d.getTime()+n*24*60*60*1000);
+				alert(d.toLocaleDateString());
+			}
+			var n = Number(prompt())
+			getTime(n);*/
+			
+			
+			/*
+			 	function mySetDate(date, n) {
+				var year = date.getFullYear();
+				var month = date.getMonth() + 1;
+				var day = date.getDate();
+				var theMonthDay = 31;
+				if(month == 2) {
+					theMonthDay = (year%4==0&&year%100!=0 || year%400==0)? 29 : 28;
+				} else if(month == 4|| month == 6||month == 9 || month == 11) {
+					theMonthDay = 30;
+				}
+	
+				if(day+n<=theMonthDay) {
+					day += n;
+				} else {
+					month++;
+					day = n-(theMonthDay-day);
+					if(month>12) {
+						year++;
+						month = 1;
+					}
+				}
+				var afterDay = new Date();
+				afterDay.setFullYear(year);
+				afterDay.setMonth(month-1);
+				afterDay.setDate(day);
+				return afterDay.toLocaleDateString();
+			}
+			alert(mySetDate(new Date("2016-8-8"), -10));
+			*/
+			
+			
+			var timer;
+			
+			function getTime (num) {
+				var hour  = document.getElementById("hour");
+				var minute = document.getElementById("minute");
+				var second = document.getElementById("second");
+				
+				var t = document.getElementById("t");
+				
+				var flag = 0;
+				timer = setInterval(function () {
+					flag++;
+					t.innerHTML = show(parseInt(flag%100));
+					hour.innerHTML = show(parseInt(flag/360000)%24);
+					minute.innerHTML = show(parseInt(flag/6000)%60);
+					second.innerHTML = show(parseInt(flag/100)%60);
+				},10);
+				
+			}
+			function endTime () {
+				timer = clearInterval(timer)
+			}
+			
+			function show (num) {
+				if(num<10){
+					return "0"+num;
+				}else{
+					return num;
+				}
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<span id="hour">00</span>时 
+		<span id="minute">00</span>分 
+		<span id="second">00</span>秒
+		<span id="t">00</span>
+		<input type="button" value="开始" onclick="getTime()" />
+		<input type="button" value="结束" onclick="endTime()" />
+	</body>
+</html>

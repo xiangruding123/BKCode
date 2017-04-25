@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>reg1</title>
+	</head>
+	<body>
+		<script>
+		    var str1='1abc12Abc34abc56aBc78';
+			/*定义正则表达式*/
+		    //构造函数方式
+		    var reg1=new RegExp('abc','gi');
+		    //普通方式
+		    var reg2=/^abc/g//^abc
+		
+			/*正则的索引*/
+		    var str='abcdeabfg';
+		    var reg=new RegExp('ab','g');
+		    console.log(reg.test(str));//true
+		    //获取索引
+		    console.log(reg.lastIndex);//2-上一次匹配结束的位置
+		
+			/*regexp对象de方法*/
+		    //test:检索字符串中指定值，返回true或false
+		    console.log(reg1.test(str1));//true
+		    //设置正则的索引
+		    reg1.lastIndex=11;//下次从11开始匹配
+		    //exec： 检索字符串返回查找结果的第一个值
+		    console.log(reg1.exec(str1));//["abc", index: 0, input: "abc12Abc34abc56aBc78"]
+		
+			/*string对象de方法*/
+		    //match：返回所有正则表达式的匹配（加g）
+		    console.log(str1.match(reg1));//["abc", "Abc", "abc", "aBc"]
+		    //search：检索与正则表达式相匹配的值
+		    console.log(str1.search(reg1));//0-字符串第0个就与reg匹配
+			/*js的换行符：\n*/
+		    console.log('abc\n123');
+		    //replace：替换与正则表达式匹配的子串
+		    var str3=str1.replace(reg1,'***');
+		    document.write(str3);
+		    
+		    var str2='abc12Abc34\nabc56aBc78';
+		    var reg2=new RegExp('^abc','g');//^abc
+		    console.log(str2.match(reg2));//['abc']
+		    var reg3=new RegExp('^abc','gm');//mm：代表多行匹配，只对^和$模式有用
+		    console.log(str2.match(reg3));//['abc','abc']
+		</script>
+	</body>
+</html>

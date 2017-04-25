@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+	    <input type="button"  value="自由画笔" onclick="drawPen()"/>
+	    <div>
+	        选择画笔颜色： <input id="color" class="color" style="width: 60px;" width="10px" value="66ff00" onchange="changePenColor()">
+	    </div>
+	    <div>
+	        选择画笔宽度： 
+	        <select id="penWidth" onchange="changePenWidth()">
+	            <option>2</option>
+	            <option>4</option>
+	            <option>6</option>
+	            <option>8</option>
+	        </select>
+	    </div>
+	        <canvas id="can" width="800" height="600" style="border:1px solid #999;" >您的浏览器不支持canvas画图功能，推荐使用Google浏览器!</canvas>
+	</div>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	
+	<!--<script type="text/javascript"  src="./script/jcanvas.js"></script>
+	<script type="text/javascript"  src="./script/jcanvas-ext.js"></script>
+	<script type="text/javascript"  src="./script/jscolor.js"></script>-->
+	
+	<script type="text/javascript">
+		function drawPen(){
+		    var color= "#"+$("#color").val();
+		    var width=$("#penWidth option:selected").text();
+		    CanvasExt.drawPen("can",color,width);
+		}
+	</script> 
+	<script>
+		var layer=0;    //图层索引  
+		CanvasExt={
+		    drawPen:function(canvasId,penColor,penWidth){
+		                var that=this;
+		                that.penColor=penColor;
+		                that.penWidth=penWidth;
+		                //canvas DOM对象  
+		                var canvas=document.getElementById(canvasId);
+		                //canvas 的矩形框
+		                var canvasRect = canvas.getBoundingClientRect();
+		
+		                //矩形框的左上角坐标
+		                var canvasLeft=canvasRect.left;
+		                var canvasTop=canvasRect.top;
+		
+		                //画图坐标原点
+		                var sourceX=0;
+		                var sourceY=0;
+		
+		                var layerIndex=layer;
+		                var layerName="layer";
+		
+		
+		
+		                //鼠标点击按下事件，画图准备
+		                canvas.onmousedown=function(e){
+		
+		                    //设置画笔颜色和宽度
+		                    var color=that.penColor;
+		                    var width=that.penWidth;
+		
+		                    //设置原点坐标
+		                    sourceX=e.clientX-canvasLeft;       
+		                    sourceY=e.clientY-canvasTop;        
+		
+		                    //鼠标移动事件，画图
+		                    canvas.onmousemove=function(e){
+		
+		                        layerIndex++;
+		                        layer++;
+		                        layerName+=layerIndex;
+		                        //当前坐标
+		                        var currX=e.clientX-canvasLeft;
+		                        var currY=e.clientY-canvasTop;
+		
+		                        //画线
+		                        $("#"+canvasId).drawLine({
+		                          layer:true,
+		                          name:layerName,
+		                          strokeStyle: color,
+		                          strokeWidth: width,
+		                          x1: sourceX, y1: sourceY,
+		                          x2: currX,
+		                          y2: currY
+		                        });
+		
+		                        //设置原点坐标
+		                        sourceX=currX;
+		                        sourceY=currY;
+		                    }
+		            }
+		                //鼠标没有按下了，画图结束
+		                canvas.onmouseup=function(e){
+		                    $("#"+canvasId).drawLayers().saveCanvas();
+		                    canvas.onmousemove=null;
+		    },
+		     setPenColor:function(penColor){
+		           this.penColor=penColor;
+		      },
+		      setPenWidth:function(width){
+		           this.penWidth=width;
+		       }
+		}
+	</script>
+	</body>
+</html>

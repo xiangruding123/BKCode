@@ -1,0 +1,170 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>瀑布流不重复</title>
+		<style>
+  div{
+  	width: 300px;
+   border-radius: 3px;
+   border:solid 1px #000;
+   position: absolute; 
+   left:0;
+   top:0;
+  }
+  img{
+  	width:300px;
+    height: auto;
+  }
+  p{
+    text-align: center;
+    line-height: 20px;
+    color: #f0f;
+  }
+
+	</style>
+	<script>
+  var json={
+        list:[
+       
+      
+          {src:"img/w1.jpg", title:"W两个世界"},
+          {src:"img/w2.jpg", title:"W两个世界"},
+          {src:"img/w3.jpg", title:"W两个世界"},
+          {src:"img/w7.jpg", title:"W两个世界"},
+          {src:"img/w7.jpg", title:"W两个世界"},
+          {src:"img/w7.jpg", title:"W两个世界"},
+          {src:"img/w7.jpg", title:"W两个世界"},
+          {src:"img/w8.jpg", title:"W两个世界"},
+          {src:"img/w9.jpg", title:"W两个世界"},
+          {src:"img/w10.jpg", title:" W两个世界"},
+          {src:"img/w11.jpg", title:"W两个世界"},
+          {src:"img/w12.jpg", title:"W两个世界"},
+          {src:"img/w13.jpg", title:"W两个世界"},
+          {src:"img/w14.jpg", title:"W两个世界"},
+          {src:"img/w15.jpg", title:"W两个世界"},       
+          {src:"img/w16.jpg", title:"W两个世界"},
+          {src:"img/w16.jpg", title:"W两个世界"},
+          {src:"img/w16.jpg", title:"W两个世界"}
+          ]
+        }
+   function chuJian(){//创建一组div
+          var body=document.body;
+               var arr=json.list;
+               for( var i=0;i<arr.length;i++){
+                     // console.log(arr[i])
+                   var obj=arr[i];
+
+                   var div=document.createElement('div');
+                    body.appendChild(div);
+
+                    var img=document.createElement('img');
+                    img.src = obj.src;
+                   //alert(img.src)
+                    div.appendChild(img);
+                 
+                   var p = document.createElement('p');
+                   p.innerHTML = obj.title;
+                   div.appendChild(p);
+               }
+   
+      } 
+     
+   
+
+      function pbl(){//给div排版 
+        var aDiv=document.getElementsByTagName('div'); 
+           var winwidth=document.documentElement.clientWidth||document.body.clientWidth;
+          //宽度
+           var divwidth=aDiv[0].offsetWidth;
+           //能存放div的个数
+           var num = Math.floor(winwidth/divwidth);
+        // alert(win)
+         //div 相隔的边距
+          var   dis = winwidth%divwidth/(num+1);
+
+            var pois=[];
+             for(var i=0;i<num;i++){
+                pois[i]={x:divwidth+dis,y:0}
+               }              
+        //排列每一个图片的位置
+            var index=0;
+            for(var j=0;j<aDiv.length;j++){
+                var index=getIndex(pois);
+                aDiv[j].style.left=( pois[index].x )*index+dis+'px';
+                aDiv[j].style.top=pois[index].y+'px';
+                pois[index].y+=aDiv[j].offsetHeight+10;
+             
+            }
+      }  
+           
+      function getIndex(pois){ //获取最小的高度 
+          var xy=0; 
+          var minheight=pois[0].y;
+          for(var i=0;i<pois.length;i++){
+                if(minheight>pois[i].y){
+                  minheight=pois[i].y;
+                   xy=i;
+                }
+          }
+        return xy;
+      } 
+
+      window.onresize=function(){
+        pbl();//当窗口尺寸发生变化时，图片重新排版
+
+      }                       
+        window.onscroll = function(){//卷轴滚动事件scroll 
+             if(load()){//判断真假
+                chuJian();
+                pbl();  
+             }
+       }
+
+       function load(){//判断卷轴的高度,从而判断是否需要新建div （新建的div记得排版啊）
+        // 卷轴卷上去的高度scrollTop
+          var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+          //可视屏幕的高度
+          var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
+          //获取新建目前所有div >>>> 获得最下面的 div的坐标
+          var oDiv=document.getElementsByTagName('div');
+          var ofTop=oDiv[oDiv.length-1].offsetTop
+          //当还差400px看到最后的div的时候  >>>新建一波 排版
+              if(ofTop<scrollTop+clientHeight+400){
+                return true;
+              }else{
+                return false;
+              }
+       }
+    
+  window.onload=function(){//初始状态的时候排版第一排的屏幕宽度包含了下拉卷轴当加载产生卷轴的时候屏幕的clientWidth会变小; 一次进行第二次排版 ;
+            pbl();pbl();
+        }
+
+	</script>
+</head>
+<body>
+  <div><img src="img/w7.jpg" title:"123" alt=""><p>W两个世界</p></div>
+	<div><img src="img/w8.jpg" title:"123" alt=""><p>W两个世界</p></div>
+  <div><img src="img/w9.jpg" title:"123" alt=""><p>W两个世界</p></div>
+   <div><img src="img/w10.jpg" title:"123" alt=""><p>W两个世界</p></div>
+  <div><img src="img/w11.jpg" title:"123" alt=""><p>W两个世界</p></div>
+   <div><img src="img/w12.jpg" title:"123" alt=""><p>W两个世界</p></div>
+  <div><img src="img/w13.jpg" title:"123" alt=""><p>W两个世界</p></div>
+   <div><img src="img/w14.jpg" title:"123" alt=""><p>W两个世界</p></div>
+  <div><img src="img/w15.jpg" title:"123" alt=""><p>W两个世界</p></div>
+   <div><img src="img/w16.jpg" title:"123" alt=""><p>W两个世界</p></div>
+  <div><img src="img/w1.jpg" title:"123" alt=""><p>W两个世界</p></div>
+   <div><img src="img/w2.jpg" title:"123" alt=""><p>W两个世界</p></div>
+  <div><img src="img/w3.jpg" title:"123" alt=""><p>W两个世界</p></div>
+   <div><img src="img/w1.jpg" title:"123" alt=""><p>W两个世界</p></div>
+  <div><img src="img/w14.jpg" title:"123" alt=""><p>W两个世界</p></div>
+   <div><img src="img/w15.jpg" title:"123" alt=""><p>W两个世界</p></div>
+  <div><img src="img/w16.jpg" title:"123" alt=""><p>W两个世界</p></div>
+   <div><img src="img/w1.jpg" title:"123" alt=""><p>W两个世界</p></div>
+  <div><img src="img/w2.jpg" title:"123" alt=""><p>W两个世界</p></div>
+   <div><img src="img/w3.jpg" title:"123" alt=""><p>W两个世界</p></div>
+	
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>column</title>
+	    <style>
+		    *{margin:0;padding: 0;overflow: hidden;}
+		    .box{width: 100px;height: 100px;background-color: red;display: block;overflow: auto;}
+		    .txt{width:1000px;}
+		    .txt .box{margin:10px;}
+		    .txt2{-webkit-column-count:4;}
+		    .txt2 .box{margin:0;}
+		     
+	    </style>
+	</head>
+	<body>
+	 <h2>没有分栏</h2>
+	 <div class="txt">
+	    <div class="box"></div>
+	    <div class="box"></div>
+	    <div class="box"></div>
+	    <div class="box"></div>
+	</div>
+	 
+	<h2>设置分栏后:div不再需要浮动布局(float:left) <span style="color: red;font-weight: 100;">感觉没多大用处</span> </h2>
+	<br />
+	<br />
+	 <div class="txt txt2">
+	    <div class="box">止呕后is啊哈还考试考试差点开始看止呕后is啊哈还考试考试差点开始看</div>
+	    <div class="box">止呕后is啊哈还考试考试差点开始看止呕后is啊哈还考试考试差点开始看</div>
+	    <div class="box">止呕后is啊哈还考试考试差点开始看止呕后is啊哈还考试考试差点开始看</div>
+	    <div class="box">止呕后is啊哈还考试考试差点开始看止呕后is啊哈还考试考试差点开始看</div>
+	</div>
+	</body>
+</html>

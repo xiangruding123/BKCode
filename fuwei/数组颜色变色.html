@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简易变色龙</title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}	
+			
+		</style>
+		<script>
+			/*
+		window.onload = function() {
+			var box = document.getElementById("box");
+			var btn = document.getElementById("btn");
+			btn.onclick = function() {
+				var colors = ["red", "blue", "yellow", "green", "black"];
+				var i=1;
+				setInterval(function(){
+					box.style.backgroundColor = colors[i];
+					if(i == 4) {		//当下标加到==4时 进行判断：强制转换成-1； 再i++从下标为0开始又一次循环。
+						i=-1;
+					}
+					i++;
+				}, 1000)
+			}
+		}
+		*/
+		
+		window.onload = function() {
+				var box = document.getElementById("box");
+				var btn = document.getElementById("btn");
+				btn.onclick = function() {
+					var colors = ["red", "blue", "yellow", "green", "black"];
+					var i=1;
+					setInterval(function(){
+						box.style.backgroundColor = colors[i];
+						i++;
+						if(i == 5) {
+							i=0;
+						}
+					}, 1000)
+				}
+			}
+
+
+
+		</script>
+	</head>
+	<body>
+		<div id="box"></div>
+		<button id="btn">换色龙</button>
+	</body>
+</html>

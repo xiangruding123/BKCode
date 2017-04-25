@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*#mycanvas{border: 1px solid #FF0000;}*/
+		</style>
+	</head>
+	<body>
+		<canvas id="mycanvas" width=700 height=800 ></canvas>
+	</body>
+	<script>
+		var canvas=document.getElementById("mycanvas");
+		var ctx=canvas.getContext("2d");
+		
+
+//		var lg = ctx.createLinearGradient(350,0,0,0);
+//		lg.addColorStop(0,"red");
+//		lg.addColorStop(0.5,"green");
+//		lg.addColorStop(1,"blue");
+//		ctx.fillStyle = lg;
+//		ctx.fillRect(10, 10, 350, 350);
+		
+
+		var lg=ctx.createRadialGradient(200,200,10,200,200,200);
+		lg.addColorStop(0,"red");
+		lg.addColorStop(0.25,"green");
+		lg.addColorStop(0.5,"skyblue");
+		lg.addColorStop(0.75,"gray");
+		lg.addColorStop(1,"blue");
+		ctx.fillStyle=lg;
+		ctx.fillRect(0,0,400,400);
+		
+		
+	</script>
+</html>
+

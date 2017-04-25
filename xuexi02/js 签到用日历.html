@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table {
+			    border-collapse: separate;
+			    border-width: 0px 0px 1px 1px;
+			    margin: 10px auto;
+			    font-size: 20px;
+			}
+			td, th {
+			    width: 81px;
+			    height: 45px;
+			    text-align: center;
+			    vertical-align: middle;
+			    color: #5d6b7a;
+			    position: relative;
+			    font-size: 16px;
+			}
+			 
+			.thead th{
+			    background-color: #ffa6a6;
+			    color: white;
+			    height: 50px;
+			    font-weight: bold;
+			    font-size: 14px;
+			}
+			/*匹配所有表格的奇数行*/
+			tbody tr:nth-child(2n+1){
+			    background: #fff;
+			}
+			 
+			/*匹配所有的偶数行*/
+			tbody tr:nth-child(2n){
+			     
+			    background:#f5f8fc;
+			     
+			}
+		</style>
+	</head>
+	<body>
+		<table cellspacing="0">
+		   <thead>
+			    <tr class="thead">
+			       <th>Mon</th><br>           <th>Tue</th><br>           <th>Wed</th>
+			       <th>Thu</th><br>           <th>Fri</th><br>           <th>Sat</th>
+			       <th>Sun</th>
+			    </tr>
+		   </thead>
+		
+		<tbody id="tbody"><br> <!--因为一个月最多五个星期-->
+		   <tr class="firstLine">
+		      <td colspan=""></td><br>  
+		   </tr>
+		   <tr class="secondLine"></tr>
+		   <tr class="thirdLine"></tr>
+		   <tr class="fourLine"></tr> 
+		   <tr class="fiveLine"></tr> 
+		</tbody>
+		</table>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	<script>
+				 var today = new Date();
+		        today.setDate(1); 
+		         
+		//      获取每个月的第一天是星期几，这样决定日历在开始的位置
+		        var week = today.getDay();
+		         
+		        //获取当前月最后一天时间 
+		        var last=new Date(today.getFullYear(), today.getMonth()+1,0);
+		         
+		//        获取最后一天是几号
+		        var lastDate=last.getDate();
+		 
+		//   每个月1号的起始位置。比如1号时星期2，那么第一行就缩进1格，所以是week-1;
+		        $('tbody tr').eq(0).find('td:first').attr('colspan',week-1);
+		 
+		             
+		    var firstNum=Number(7-week+1);  //1号往后的位置还有多少天，+1是因为求出的星期几时起始位置
+		    <br>　　　　　//每一行的数字
+		    var firstLine='';
+		    var secondLine='';
+		    var thirdLine='';
+		    var fourLine='';
+		    var fiveLine='';
+		         
+		//  第一个星期天数
+		        for(var i=0;i<firstNum;i++){
+		        firstLine+='<td>'+(i+1)+'</td>';
+		     }
+		//  第二个星期天数
+		    for(var i=firstNum;i<firstNum+7;i++){
+		       secondLine+='<td>'+(i+1)+'</td>';
+		      }<br>
+		   // 第三个星期天数
+		        for(var i=firstNum+7;i<firstNum+7+7;i++){<br>
+		            thirdLine+='<td>'+(i+1)+'</td>';
+		     }<br>
+		    // 第四个星期天数<br>     for(var i=firstNum+7+7;i<firstNum+7+7+7;i++){
+		       fourLine+='<td>'+(i+1)+'</td>';<br>      }
+		<br>   //如果 有第五个星期，因为不是从1号不是星期一算起的，所以可能有第五个星期
+		    if(lastDate-firstNum+7+7+7+7>0){
+		             
+		    for(var i=firstNum+7+7+7;i<lastDate;i++){
+		                 
+		         fiveLine+='<td>'+(i+1)+'</td>';
+		     }
+		            $('.fiveLine').append(fiveLine);
+		    }
+		        <br> $('.firstLine').append(firstLine);
+		 $('.secondLine').append(secondLine);
+		 $('.thirdLine').append(thirdLine);
+		 $('.fourLine').append(fourLine);
+	</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box1">aaa<span>标签11</span></div>
+		<div id="box2"><!-- 注释abc -->bbb<span>标签22</span></div>
+		
+		<script>
+			/*节点的获取*/
+			var box1=document.getElementById('box1');//元素节点
+			var box2=document.getElementById('box2');//元素节点
+			var attr=box1.getAttributeNode('id');//注释节点
+			var txt=box1.firstChild;//文本节点
+			var comme=box2.firstChild;//注释节点
+			var doc=document;//文档节点
+			
+			/*nodeName 属性返回节点的名称*/
+			console.log(box1.nodeName);//DIV(标签名称)---元素节点
+			console.log(box2.nodeName);//DIV(标签名称)---元素节点
+			console.log(attr.nodeName);//id(属性名称)---属性节点
+			console.log(txt.nodeName);//#text---文本节点nodeName永远是#text
+			console.log(comme.nodeName);//#comment---注释节点的nodeName永远是 #comment
+			console.log(doc.nodeName);//#document---文档节点的nodeName永远是 #document
+			
+			/*nodeValue 属性返回节点的值*/
+			 console.log(box1.nodeValue);//null---元素节点返回值为undefined 或 null
+			 console.log(box1.innerHTML);//aaa<span>标签11</span>对于元素节点，用innerHTML设置值/获取值
+			 console.log(box1.innerText);//aaa标签11
+			 console.log(box2.nodeValue);//null
+			 console.log(attr.nodeValue);//box1
+			 console.log(txt.nodeValue);//aaa
+			 console.log(comme.nodeValue);//注释abc
+			 console.log(doc.nodeValue);//null
+			
+			/*nodeType 属性返回一个整数，这个数值代表节点的类型*/
+			console.log(box1.nodeType);//1--元素节点
+			console.log(box2.nodeType);//1--元素节点
+			console.log(attr.nodeType);//2--属性节点
+			console.log(txt.nodeType);//3--文本节点
+			console.log(comme.nodeType);//8--注释节点
+			console.log(doc.nodeType);//9--文档节点
+		</script>
+	</body>
+</html>

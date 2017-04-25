@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>导航菜单</title>
+	<style>
+		*{margin:0; padding:0}
+		#div1{ height:30px;}
+		#div1 ul{width:450px;}
+		#div1 li{width:150px; float:left; height:30px; list-style:none; background:#f5f5f5;}
+		#div2{overflow:hidden; height:0px;background:red; }
+	</style>
+	<script src="js/jquery-1.11.0.js"></script>
+	
+	<script>
+	
+	
+		var arr=["aaaaaa","bbbbbbbb","ccccccccc"];
+	
+		$(function(){
+			$("#div1 li,#div2").mouseenter(function(e){
+				$("#div2").stop().animate({height:200});
+				var i = $(this).index();
+				if(e.target!=div2){
+					
+					$("#div2").html(arr[i]);
+				}
+			});
+			
+			
+			$("#div1 li,#div2").mouseleave(function(){
+				$("#div2").stop().animate({height:0});
+			});
+			
+		});
+	</script>
+	</head>
+	<body>
+		
+		<div id="div1">
+			<ul>
+				<li><a>导航1</a></li>
+				<li><a>导航2</a></li>
+				<li><a>导航3</a></li>
+			</ul>
+		</div>
+		
+		<div id="div2">
+		内容
+		</div>
+	
+	</body>
+</html>

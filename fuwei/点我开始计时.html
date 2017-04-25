@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>点我开始计时（时分秒）</title>
+		<script>
+			//var i=1;
+			//参数  函数体功能  返回值
+			function btnClick() {
+				var hour = document.getElementById("hour");
+				var min = document.getElementById("min");
+				var sec = document.getElementById("sec");
+				//每隔一秒计数变量++，并且还要反映到页面上
+				var i=1;
+				setInterval(function(){
+					i++;
+					hour.innerHTML = show(parseInt(i/3600)%24);
+					min.innerHTML = show(parseInt(i/60)%60);
+					sec.innerHTML = show(i%60);
+				}, 1000)
+			}
+			function show(num) {
+				if(num<10) {
+					//5  05
+					return "0"+num;
+				}
+				return num;
+			}
+
+		</script>
+	</head>
+	<body>
+		<span id="hour">00</span>时<span id="min">00</span>分<span id="sec">00</span>秒
+		<button onclick="btnClick()">点我开始计时</button>
+
+	</body>
+</html>

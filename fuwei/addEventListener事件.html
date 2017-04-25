@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<!--obj.addEventListener("click",function(){},true/false);
+		addEventListener()含有三个参数，一个是事件名称，另一个是事件执行的函数，最后一个是事件捕获，
+		这里的事件名称跟直接写的事件名称不一样，在这里前面没有on,-->
+
+		<!--最后是true和false的解释，，事件在执行时都会有俩个流，一个是捕获事件流，另一个是冒泡事件流，进来的事件是捕获事件，出去的事件是冒泡事件，true的话会捕获进来时的，false的话会捕获出去时的，-->
+		
+		<!--还有就是按以往的方法定义事件的话后面的会覆盖掉前面的事件函数，
+		但是按这种方式写的话几个事件函数都会执行，-->
+		
+		
+		
+		<script>
+			window.onload = function(){
+				
+				var mybtn = document.getElementById("btn");
+				
+				mybtn.addEventListener("click",function(){
+					alert("aaa");
+				})
+				
+				mybtn.addEventListener("click", function() {
+					alert("bbb");
+				})
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn" type="button" style="width: 50px;height: 25px;">按钮</button>
+	</body>
+</html>

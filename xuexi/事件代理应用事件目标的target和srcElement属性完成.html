@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--　有一个需求，一个<ul>中有5个<li>，移入时变浅蓝，移出时变品红-->
+		<style>
+			#box{background-color: pink;}
+			.in{height: 30px;}
+		</style>
+	
+	</head>
+	<body>
+		<ul id="box">
+		    <li class="in">1</li>
+		    <li class="in">2</li>
+		    <li class="in">3</li>
+		    <li class="in">4</li>
+		    <li class="in">5</li>
+		</ul>
+		<script>
+			
+			//常规方法
+//			var tags = box.getElementsByTagName('li');
+//			
+//			for(var i = 0; i < tags.length; i++){
+//			    tags[i].onmouseover = function(e){
+//			        this.style.backgroundColor = 'lightblue';
+//			    }
+//			    tags[i].onmouseout = function(e){
+//			        this.style.backgroundColor = 'pink';
+//			    }
+//			}
+
+			//事件代理方法
+			box.onmouseover = function(e){
+			    e = e || event;
+			    var target = e.target || e.srcElement;
+			    target.style.backgroundColor = 'lightblue';
+			}
+			box.onmouseout = function(e){
+			    e = e || event;
+			    var target = e.target || e.srcElement;
+			    target.style.backgroundColor = 'pink';
+			}
+
+
+
+		</script>
+	</body>
+</html>

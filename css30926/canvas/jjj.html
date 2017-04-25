@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="690" height="431" style="border:1px solid #c3c3c3;">
+			Your browser does not support the canvas element.
+		</canvas>
+		<script>
+			var canvas=document.getElementById("myCanvas");
+			var cxt=canvas.getContext("2d");
+			
+			var img=new Image();
+			img.src="img/w12.jpg";
+			
+			cxt.drawImage(img,0,0);
+			
+			
+		</script>
+	</body>
+</html>

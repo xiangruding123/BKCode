@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>table切换</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#tab{
+				width: 400px;
+				margin: 50px auto;
+				border: 1px solid #FFC0CB;
+			}
+			.nav {
+				width: 400px;
+				height: 24px;
+				line-height: 24px;
+				background: mediumaquamarine;
+			}
+			
+			.nav a {
+				width: 80px;
+				display: inline-block;
+				color: #c00;
+				text-align: center;
+				text-decoration: none;
+			}
+			
+			.div {
+				width: 398px;
+				height: 200px;
+				padding-top: 30px;
+			}
+			
+		</style>
+		<script>
+			window.onload = function() {
+				var nav1 = document.getElementById("nav1");
+				var nav2 = document.getElementById("nav2");
+				var div1 = document.getElementById("div1");
+				var div2 = document.getElementById("div2");
+				
+				//点击tab1
+				nav1.onclick = function() {
+					this.style.background = "red";
+					this.style.color = "yellow";
+					
+					nav2.removeAttribute("style"); 
+					nav3.removeAttribute("style");
+					
+					div1.style.display = "block";
+					div2.style.display = "none";
+					div3.style.display = "none";
+					
+				}
+				
+				//点击tab2
+				nav2.onclick = function(){
+					this.style.background = "red";
+					this.style.color = "yellow";
+					
+					nav1.removeAttribute("style");
+					nav3.removeAttribute("style");
+					
+					div1.style.display = "none";
+					div2.style.display = "block";
+					div3.style.display = "none";
+				}
+				
+				
+				//点击tab3
+				nav3.onclick = function(){
+					this.style.background = "red";
+					this.style.color = "yellow";
+					
+					nav1.removeAttribute("style");
+					nav2.removeAttribute("style");
+					
+					div1.style.display = "none";
+					div2.style.display = "none";
+					div3.style.display = "block";
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div id="tab">
+			<div id="nav" class="nav">
+				<a href="#" id="nav1" style="background: red; color: yellow;">tab1</a>
+				<a href="#" id="nav2">tab2</a>
+				<a href="#" id="nav3">tab3</a>
+			</div>
+			<div id="content">
+				<div id="div1" class="div">内容11111111</div>
+				<div id="div2" class="div" style="display: none;">内容2222222222</div>
+				<div id="div3" class="div" style="display: none;">内容3333333333</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	    <button id="btn">获取</button>
+	    <h3 id="con1"></h3>
+	    <h3 id="con2"></h3>
+	    <h3 id="con3"></h3>
+	    <h3 id="con4"></h3>
+	</body>
+	
+	<script>
+	    btn.onclick=function(){
+	        con1.innerHTML='窗口相对于屏幕的X坐标:'+window.screenLeft+';    窗口相对于屏幕的Y坐标:'+window.screenTop;
+	        con2.innerHTML='窗口相对于屏幕的X坐标:'+window.screenX+';    窗口相对于屏幕的Y坐标:'+window.screenY;
+	        con3.innerHTML='窗口可视区宽度'+document.documentElement.clientWidth+';    窗口可视区高度'+document.documentElement.clientHeight;
+	        con4.innerHTML='文档宽度'+document.documentElement.offsetWidth+';    文档高度'+document.documentElement.offsetHeight;
+	    }
+	</script>
+</html>

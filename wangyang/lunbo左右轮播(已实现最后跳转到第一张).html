@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{margin:0;padding:0;}
+		li{list-style:none;}
+		.box{width:810px; height:320px; overflow:hidden; position:relative;}
+		.box>ul{width:4050px; height:320px; position:absolute; left:0;}
+		.box>ul>li{width:810px; height:320px; float:left;}
+		
+		.box>ol{ position:absolute; bottom:0px; right:0px}
+		.box>ol>li{ float:left; font-size:20px; padding-right:10px; cursor:pointer;}
+		.selected{color:red;}
+	</style>
+	
+	
+	<script src="js/startMove.js"></script>
+	<script>
+		window.onload=function(){
+			var ul=document.getElementsByTagName("ul")[0];
+			var ol=document.getElementsByTagName("ol")[0];
+			var aLi=ol.children;
+			//创建
+			var cLi=ul.children;
+			var li=document.createElement("li");
+			li.innerHTML=cLi[0].innerHTML;
+			ul.appendChild(li);
+			
+			
+			var now=0;	//用于记录当前显示图片的索引
+			for(var i=0; i<aLi.length; i++){
+				var li=aLi[i];
+				li.index=i;
+				li.onclick=function(){
+					now=this.index;
+					tab();
+				}
+			}
+			//用于显示图片
+			function tab(){
+				for(var i=0; i<aLi.length; i++){
+					var li=aLi[i];
+					li.className="";
+				}
+				aLi[now].className="selected";
+				//ul.style.top = -320*now+"px";
+				startMove(ul, {left:-810*now});
+			}
+			//定时器
+			function next(){
+				now++;
+				if(now==aLi.length){
+					aLi[now-1].className="";
+					aLi[0].className="selected";
+					startMove(ul, {left:-810*now}, function(){
+						//console.log( now );
+						if(now==aLi.length){
+							now=0;
+							ul.style.left="0";
+						}
+					});
+				}else{
+					tab();
+				}
+			}
+			var timer=setInterval(next, 2000);//执行轮播
+			var box=document.getElementsByClassName("box")[0];
+			box.onmouseover=function(){
+				clearInterval(timer);
+			}
+			box.onmouseout=function(){
+				timer=setInterval(next, 2000);
+			}
+		}
+	</script>
+</head>
+<body>
+	
+	<div class="box">
+		<ul>
+			<li><img src="img/01.jpg" /></li>
+			<li><img src="img/02.jpg" /></li>
+			<li><img src="img/03.jpg" /></li>
+			<li><img src="img/04.jpg" /></li>
+		</ul>
+		<ol>
+			<li class="selected">●</li>
+			<li>●</li>
+			<li>●</li>
+			<li>●</li>
+		</ol>
+	</div>
+
+</body>
+</html>

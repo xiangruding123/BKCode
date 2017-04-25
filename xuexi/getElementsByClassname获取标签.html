@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box1">
+		    <div class="con">
+		        <span>我是span标签111</span>
+		    </div>
+		    <div class="con">
+		        <span>我是span标签222</span>
+		    </div>
+		    <div class="con">
+		        <span>我是span标签333</span>
+		    </div>
+		</div>
+		
+		<div id="box2">
+		    <div class="con">
+		        <span>我是span标签444</span>
+		    </div>
+		    <div class="con">
+		        <span>我是span标签555</span>
+		    </div>
+		</div>
+		
+		<script>
+			/*全局获取*/
+//		    function byClass1(oClass){//对于全局获取封装成函数
+//		        var tags=document.all?document.all:document.getElementsByTagName('*');//获取全部的标签
+//		        var arr=[];//创建数组
+//		        for (var i = 0; i < tags.length; i++) {//for循环遍历
+//		            if (tags[i].className==oClass) {
+//		                arr.push(tags[i]);//把类名相同的放在一个数组里
+//		            };
+//		        };
+//		        return arr;
+//		    }
+//		    var cons=byClass1('con');//调用全局函数，传入参数（所要遍历的类名）
+//		   
+//		    alert(cons.length);//测试
+//		    alert(cons[3].innerHTML);//测试
+
+
+			/*局部获取*/
+		    function byClass2(parentID,oClass){//对于局部获取封装成函数
+		        var parent=document.getElementById(parentID);//获得局部的ID
+		        var tags=parent.all?parent.all:parent.getElementsByTagName('*');//不同处：获取特定ID下的所有标签
+		        var arr=[];
+		        for (var i = 0; i < tags.length; i++) {
+		            if (tags[i].className==oClass) {
+		                arr.push(tags[i]);
+		            };
+		        };
+		        return arr;
+		    }
+		    var cons=byClass2('box1','con'); //调用局部函数，传入参数（特定的ID名，所要遍历的类名）
+		   
+		    alert(cons.length);//测试
+		    alert(cons[2].innerHTML);//测试
+		    
+		</script>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		#box {
+			width: 1000px;
+			height: 600px;
+			position: relative;
+			margin: 20px auto;
+			background: #000000;
+			border: 2px solid #1dff00;
+		}
+		
+		.ball {
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			border-radius: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var box = document.getElementById('box');
+	for (var i = 0; i < 100; i++) {
+		//设置背景色
+		var r = Math.floor(Math.random() * 256);
+		var g = Math.floor(Math.random() * 256);
+		var b = Math.floor(Math.random() * 256);
+		//随机位置
+		var l = Math.floor(Math.random() * 961);
+		var t = Math.floor(Math.random() * 561)
+		//创建球的div
+		var ball = document.createElement('div');
+		ball.className = 'ball';
+		ball.style.cssText = 'background-color:rgb(' + r + ',' + g + ',' + b + ');left:' + l + 'px;top:' + t + 'px';
+		//给球一个初始位置
+		ball.left = l;
+		ball.top = t ;
+		//添加速度
+		ball.speedX = Math.floor(Math.random() * 11 + 1);
+		ball.speedY = Math.floor(Math.random() * 11 + 1);
+		box.appendChild(ball)
+	}
+	//在box里添加球
+	var balls = box.getElementsByTagName('div');
+	for (var i = 0; i < balls.length; i++) {
+		balls[i].move = function () {
+			var self = this;
+			this.timer = setInterval(function () {
+				self.left += self.speedX;
+				self.top += self.speedY;
+				if (self.left > 960) {
+					self.speedX = -self.speedX;
+				} else if (self.left < 0) {
+					self.speedX = -self.speedX;
+				}
+				if (self.top > 560) {
+					self.speedY = -self.speedY;
+				} else if (self.top < 0) {
+					self.speedY = -self.speedY
+				}
+				self.style.left = self.left + 'px';
+				self.style.top = self.top + 'px';
+			}, 10)
+		}
+		balls[i].move()
+	}
+</script>
+
+</html>

@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		
+			window.onload= function(){
+				var objCb = document.getElementsByName("cb");
+
+				cb1.onclick = function(){
+					var v = this.checked;
+					//alert(this.checkd)
+					for (var i=0;i<objCb.length;i++) {
+						//alert(objCb[i].value+"\n"+v);
+						objCb[i].checked = v;
+					}
+				}
+				
+				cb2.onclick = function(){
+					for (var i=0;i<objCb.length;i++) {
+						objCb[i].checked = !objCb[i].checked;
+					}
+				}
+		
+			}
+			
+		</script>
+	</head>
+	<body>
+		<form title="描 &#10;述" name="form1" action="">
+			爱好：
+			<label><input type="checkbox" name="cb" value="吃饭" />吃饭</label>
+			<label><input type="checkbox" name="cb" value="睡觉" />睡觉</label>
+			<label><input type="checkbox" name="cb" value="打豆豆" />打豆豆</label>
+			<br />
+			<label><input type="checkbox" id="cb1" />全选</label>
+			<label><input type="checkbox" id="cb2" />反选</label>
+		
+		</form>
+		
+	</body>
+</html>

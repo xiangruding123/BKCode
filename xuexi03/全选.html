@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input name="all_checkboxes" type="checkbox" id="all_checkboxes" onclick = "checked_all();">全选
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	<script>
+	    //attr只能运行一次：  
+        function checked_all(){
+              $("input[name='all_checkboxes']:checkbox").each(function(){ 
+                  $(this).attr("checked",$("#all_checkboxes").attr("checked"));
+             });
+        }
+
+        //prop可以实现多次点击：
+//      function checked_all(){
+//            $("input[name='all_checkboxes']:checkbox").each(function(){ 
+//                    $(this).prop("checked",$("#all_checkboxes").prop("checked"));
+//            });
+//      }
+        
+        
+	</script>
+</html>

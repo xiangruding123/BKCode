@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+	*{margin:0;padding:0;}
+	li{list-style:none;}
+	.box{width:810px; height:320px; overflow:hidden; position:relative;}
+	.box>ul{width:810px; height:320px;}
+	.box>ul>li{width:810px; height:320px; position:absolute;opacity:0;}
+	.box>ol{ position:absolute; bottom:0px; right:0px}
+	.box>ol>li{ float:left; font-size:20px; padding-right:10px; cursor:pointer;}
+	.box>ol>.selected{color:red;}
+	.box>ul>.selected{opacity:1;}
+	</style>
+	<script src="js/startMove.js"></script>
+	<script>
+		window.onload=function(){
+			var ul=document.getElementsByTagName("ul")[0];
+			var ol=document.getElementsByTagName("ol")[0];
+			var aLi=ol.children;
+			var cLi=ul.children;
+			cLi[0].style.opacity=1;//显示第一张图片
+			var now=0;	//用于记录当前显示图片的索引
+			for(var i=0; i<aLi.length; i++){
+				var li=aLi[i];
+				li.index=i;
+				li.onclick=function(){
+					now=this.index;
+					tab();
+				}
+			}
+			//用于显示图片
+			function tab(){
+				for(var i=0; i<aLi.length; i++){
+					var li=aLi[i];
+					li.className="";
+					startMove(cLi[i], {opacity:0});//所有的图片隐藏
+				}
+				aLi[now].className="selected";
+				startMove(cLi[now], {opacity:100});//当前的图片显示
+			}
+			//定时器
+			function next(){
+				now++;
+				if(now==aLi.length)now=0;
+				tab();
+			}
+			var timer=setInterval(next, 4000);//执行轮播
+			var box=document.getElementsByClassName("box")[0];
+			box.onmouseover=function(){
+				clearInterval(timer);
+			}
+			box.onmouseout=function(){
+				timer=setInterval(next, 4000);
+			}
+		}
+	</script>
+</head>
+<body>
+
+
+<div class="box">
+	<ul>
+		<li><img src="img/01.jpg" /></li>
+		<li><img src="img/02.jpg" /></li>
+		<li><img src="img/03.jpg" /></li>
+		<li><img src="img/04.jpg" /></li>
+	</ul>
+	<ol>
+		<li class="selected">●</li>
+		<li>●</li>
+		<li>●</li>
+		<li>●</li>
+	</ol>
+</div>
+
+
+</body>
+</html>

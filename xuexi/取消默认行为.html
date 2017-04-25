@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>取消默认行为</title>
+	</head>
+	<body>
+		
+		<!--==1==cancelable属性返回一个布尔值，表示事件是否可以取消。该属性为只读属性。返回true时，表示可以取消。否则，表示不可取消   [注意]IE8-浏览器不支持-->
+		
+		<!--<a id="test" href="#">链接</a>
+		test.onclick= function(e){
+		    e = e || event;
+		    //test.innerHTML = e.cancelable;
+		}-->
+			
+		<!--==2==defaultPrevented属性表示默认行为是否被阻止，返回true时表示被阻止，返回false时，表示未被阻止-->
+		
+		<!--preventDefault()方法取消浏览器对当前事件的默认行为，无返回值　[注意]IE8-浏览器不支持-->
+		<!--returnValue属性可读写，默认值是true，但将其设置为false就可以取消事件的默认行为，与preventDefault()方法的作用相同    [注意]firefox和IE9+浏览器不支持-->
+		
+		
+		<!--<a id="test" href="">链接</a>
+		test.onclick= function(e){
+		    e = e || event;
+
+		    if(e.preventDefault){
+		        e.preventDefault(); 
+		    }else{
+		        e.returnValue = false;
+		    }
+		    //test.innerHTML = e.defaultPrevented;
+		}-->
+		
+		
+			
+		<!--==3==return false;阻止默认行为-->
+		<!--<a id="test" href="http://www.cnblogs.com">链接</a>
+		
+		test.onclick= function(e){
+		    return false;
+		}-->
+		
+			
+		
+	</body>
+</html>

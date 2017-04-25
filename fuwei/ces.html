@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#boc{
+				width: 200px;
+				height: 36px;
+				border: 1px solid #aaa;
+			}
+			body{
+				margin: 30px;
+			}
+			#progressBar{
+				
+				height: 36px;
+				background: red;
+			}
+			
+		</style>
+		<script type="text/javascript">
+		/*
+			alert(Math.max(3, 5, "aa", 9, 2));
+			alert(Math.min(3, 5, 9, 2));
+			alert(Math.ceil(6.9));
+		*/
+		
+		//document.write(Math.sqrt(0));
+		
+		//document.write(parseInt(Math.random()*25)+97);
+			/*
+			 
+			var num1=prompt("输入第一个日期")
+			var num2=prompt("输入第一个日期")
+				if(num1<num2){
+					var t=0;
+					t=num1;
+					num1=num2;
+					num2=t
+				}
+			date=new Date(num1) 
+			date1=new Date(num2)
+			var jian=date.getTime()-date1.getTime()
+			alert(jian/86400000)
+			*/
+			
+			/*
+			function dayInterval(date1, date2) {
+				var time1 = date1.getTime();
+				var time2 = date2.getTime();
+				var timeInterval = Math.abs(time1-time2);
+				return timeInterval/(24*60*60*1000);
+			}
+			
+			var date1 = new Date("2015-3-2");
+			var date2 = new Date("2015-1-8");
+			document.write(dayInterval(date1, date2));
+			*/
+			
+			
+			window.onload = function() {
+			var progressBar = document.getElementById("progressBar");
+			var progressNum = document.getElementById("progressNum");
+			var i=0;
+			var timer = setInterval(function(){
+				i++;
+				progressNum.innerHTML = i;
+				progressBar.style.width = i+"%";     //宽度按百分比来算！
+				if(i==100) {
+					clearInterval(timer);
+				}
+			}, 50)
+		}
+
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<div id="boc">
+			<div id="progressBar"></div>
+		</div>
+		<span id="progressNum">0</span>%
+		
+	</body>
+</html>

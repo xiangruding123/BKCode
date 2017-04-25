@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*h1:before{
+				content: "wowoowowowo";
+				font-family: "微软雅黑";
+				font-size: 20px;
+				background: red;
+			}*/
+			
+			/*:empty{background: magenta;}
+			td{width: 100px;height: 30px;border: 1px solid #ccc;}*/
+			
+			/*:target{
+				background: yellow;
+			}*/
+			/*使用该选择器来对页面中的某个target元素（该元素的id当做页面中的超链接来使用）指定样式，该样式只在用户点击了页面中的超链接，并且跳转到target元素后起作用。*/
+		
+			/*属性值中包含用val指定的字符的话，则该元素使用这个样式*/
+			/*li[class*=af]{
+				background: magenta;
+			}*/
+			
+
+
+			/*li[class$=af]{
+				background: magenta;
+			}*/
+			
+			/*li[class]{
+				background: mediumaquamarine;
+			}*/
+			/*li[class=afaaa]{
+				background: magenta;
+			}*/
+			/*======*/
+			/*a:link{
+				text-decoration: none;
+				color: blue;
+			}
+			a:visited{
+				text-decoration: none;
+				color: salmon;
+			}
+			a:hover{
+				text-decoration: none;
+				color: lawngreen;
+			}
+			a:active{
+				text-decoration: none;
+				color: darkorange;
+			}*/
+		
+			/*li:first-child{
+				background: magenta;
+			}
+			li:last-child{
+				background: mediumseagreen;
+			}
+			li:first-child:before{
+				content: url(img/tt.jpg);
+			}
+			li:last-child:after{
+				content: url(img/tt.jpg);
+			}*/
+			
+			/*:root{
+				background: mistyrose;
+			}
+			body{
+				background: mediumpurple;
+			}*/
+			
+			/*li *:not(a){
+				background: salmon;
+			}*/
+			
+			/*li:nth-child(4){
+				background: khaki;
+			}*/
+			/*li:nth-last-child(1){
+				background: khaki;
+			}*/
+			
+			/*li:nth-child(odd){
+				background: khaki;
+			}
+			li:nth-child(even){
+				background: darkcyan;
+			}*/
+			
+			/*li:nth-of-type(odd){
+				background: aqua;
+			}
+			li:nth-of-type(even){
+				background: antiquewhite;
+			}*/
+			
+			
+			/*n:所有的行
+			n+2:除第1行外所有的行
+			2n:每2行选择一行
+			3n:每3行选择一行
+			2n+4:从第4行开始隔1行选择1行*/
+			
+			/*li:nth-child(2n+4){
+				background: skyblue;
+			}*/
+			/*li:nth-last-child(-n+3){
+				background: skyblue;
+			}*/
+			
+			/*li:nth-child(1):nth-last-child(1){
+				background: royalblue;
+			}*/         /*这是错误的*/
+			
+			/*li:only-child{
+				background: maroon;
+			}*/
+			
+		</style>
+	</head>
+	<body>
+		<!--<h1>bbbbb</h1>-->
+		<table>
+			<tr>
+				<td>vv</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>cccccccc</td>
+			</tr>
+		</table>
+		
+		<!--<p id="meau">
+			<a href="#text1">mmmmmmm</a>
+			<a href="#text2">mmmmmmm</a>
+			<a href="#text3">mmmmmmm</a>
+			<a href="#text4">mmmmmmm</a>
+		</p>
+		<div id="text1">
+			<h2>nnnnnn</h2>
+			<p>...jjjjjjjjjjjj</p>
+		</div>	
+		<div id="text2">
+			<h2>aaaaasdssssssss</h2>
+			<p>...tttttttttt</p>
+		</div>	
+		<div id="text3">
+			<h2>rrrrrrrr</h2>
+			<p>...eeeeeeeeeeeeeee</p>
+		</div>	-->
+		
+		<!--<ul>
+			<li class="afaaa">1111nnnnnnnnnn</li>
+			<li class="afammbaa">222nnnnnnnnnn</li>
+			<li class="aaffa">333nnnnnnnnnn</li>
+			<li class="affdaa">444nnnnnnnnnn</li>
+			<li class="aaaftta af">555nnnnnnnnnn</li>
+			<li class="aaafwwa af">666nnnnnnnnnn</li>
+			<li class="aaafttyya">777nnnnnnnnnn</li>
+		</ul>-->
+		
+		
+		<!--reversed="reversed"-->   <!--倒序-->
+		<!--<ol type="1" >
+			<li><a href="#">111mmmmmmmmmmmmm</a><br /> <span>oooooooooooo</span><br /><i>oppppppppppppppp</i> <br /><b>ssssssssss</b></li>
+			<p>kjslkjdsajjlksjdl</p>
+			<li><a href="#">222mmmmmmmmmmmmm</a> </li>
+			<p>kjslkjdsajjlksjdl</p>
+			<li><a href="#">333mmmmmmmmmmmmm</a> </li>
+			<p>kjslkjdsajjlksjdl</p>
+			<li><a href="#">444mmmmmmmmmmmmm</a> </li>
+			<p>kjslkjdsajjlksjdl</p>
+			<li><a href="#">555mmmmmmmmmmmmm</a> </li>
+			<p>kjslkjdsajjlksjdl</p>
+			<li><a href="#">666mmmmmmmmmmmmm</a> </li>
+			<p>kjslkjdsajjlksjdl</p>
+			<li><a href="#">666mmmmmmmmmmmmm</a> </li>
+			<p>kjslkjdsajjlksjdl</p>
+			<li><a href="#">666mmmmmmmmmmmmm</a> </li>
+			<p>kjslkjdsajjlksjdl</p>
+			<li><a href="#">666mmmmmmmmmmmmm</a> </li>
+			<p>kjslkjdsajjlksjdl</p>
+			<li><a href="#">666mmmmmmmmmmmmm</a> </li>
+			<p>kjslkjdsajjlksjdl</p>
+			<li><a href="#">666mmmmmmmmmmmmm</a> </li>
+			<p>kjslkjdsajjlksjdl</p>
+		</ol>-->
+		
+		<!--<ol>
+			<li><b>vvvvvvvvv</b></li>
+			<li><a href="#">111mmmmmmmmmmmmm</a></li>
+			<li>mmmmmmmmmmmm</li>
+			<li>mmmmmmmmmmmm</li>
+			<li>mmmmmmmmmmmm</li>
+			<li>mmmmmmmmmmmm</li>
+			<li>mmmmmmmmmmmm</li>
+			<li>mmmmmmmmmmmm</li>
+			<li>mmmmmmmmmmmm</li>
+			<li>mmmmmmmmmmmm</li>
+			<li>mmmmmmmmmmmm</li>
+		</ol>-->
+		
+		
+		
+		
+		
+	</body>
+</html>

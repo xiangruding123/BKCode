@@ -1,0 +1,1027 @@
+/*
+a img{opacity:1; filter:alpha(opacity=100);-webkit-transition: opacity .2s ease-in-out;-moz-transition: opacity .2s ease-in-out;-o-transition: opacity .2s ease-in-out;-ms-transition: opacity .2s ease-in-out;transition: opacity .2s ease-in-out;}
+a:hover img{opacity:0.75; filter:alpha(opacity=75);}
+*/
+
+.main_nav { background: url(http://new-icon.ol-img.com/kimiss/0926/img/nav.png) no-repeat; clear:both; height:54px; margin:15px 0; position:relative;}
+.main_nav .app { position:absolute; right:15px; top:0;}
+.main_nav .app a { background:url(http://new-icon.ol-img.com/kimiss/0926/img/nav_app.png) right 0 no-repeat;font: 14px/51px "microsoft yahei"; color:#f67fb2; padding-right:30px; width:50px;}
+/*
+.main_nav .a1:hover, .main_nav .a2:hover, .main_nav a span.current { border-bottom:3px solid #ee0065;}
+*/
+.main_nav a { display:inline; float:left; height:51px;}
+.main_nav a span { color:#ffffff;display:block; height:51px;font:18px/38px "microsoft yahei"; text-align:center;}
+.main_nav a.a1{ width:110px;}
+.main_nav a.a2{ width:90px;}
+
+.main_nav li {float: left;margin-right:16px;display: inline;height: 54px;line-height: 54px;}
+.main_nav .nav_line { display:none;position: absolute;border-bottom: 3px solid #ee0065;height: 0;overflow: hidden;left: 0;bottom: 0;}
+.main_nav li.active a { border-bottom:3px solid #ee0065;}
+
+.navbar_light{position: absolute; bottom:15px; width:100px; height:3px;}
+.light{ display:none; position:absolute; left:0; width:110px; height:100%; background-color:#ee0065;}
+
+.c p{color: #888888;font:12px/22px "microsoft yahei";}
+/* C1 */
+.c1{}
+.c1_l{
+	float:left;
+	width:310px;
+	margin-left: 5px;
+}
+.c1_c {float:left; display:inline; margin-left:30px;width:330px;}
+.c1_r {
+	float:right;
+	width:300px;
+	margin-right: 5px;
+}
+.c1_l_1{
+	overflow:hidden;
+	position:relative;
+	width:310px;
+	height:466px;
+	left: -5px;
+}
+.c1_l_1_1{overflow:hidden;width:310px;height:430px;}
+.c1_l_1 ul{position:absolute;top:0;left:0;width:10000px;}
+.c1_l_1 ul li{overflow:hidden;float:left;width:310px;height:430px;}
+.c1_l_1 ul li img{width:310px;height:430px;}
+.c1_l_1_l,.c1_l_1_r{display:none;top:200px;position:absolute;width:16px;height:31px;}
+.c1_l_1:hover .c1_l_1_l,.c1_l_1:hover .c1_l_1_r{display:block;}
+.c1_l_1_l{left:10px;}
+.c1_l_1_r{right:10px;background-position:-18px 0;}
+.g_nav{position:absolute;bottom:0;left:0;width:310px;height:36px;text-align:center;}
+.g_nav a{cursor:pointer;display:inline-block;margin:7px 0;width:22px;height:16px;background:url(http://new-icon.ol-img.com/kimiss/0926/img/scro_icon.png) no-repeat -22px 0;}
+.g_nav a.active{background:url(http://new-icon.ol-img.com/kimiss/0926/img/scro_icon.png) no-repeat 0 0;}
+.c1_l_2 { margin-top:5px;}
+
+.c1_l_2_c { overflow:hidden;width:310px; height:470px;}
+.c1_l_2_c dl { border-top:1px solid #ededed; height:80px; padding:20px 0; width:310px;}
+.c1_l_2_c dl.first { border: 0;}
+.c1_l_2_c dl dt, .c1_l_2_c dl dd { display:inline; float:left;}
+.c1_l_2_c dl dt { height:80px; width:110px; overflow:hidden;}
+.c1_l_2_c dl dd.name { margin-left:12px;font: 14px/20px "microsoft yahei"; height:40px; overflow:hidden; width:180px;}
+.c1_l_2_c dl dd.btn { margin-left:12px;font: 12px/25px "microsoft yahei"; padding-top:15px; width:180px;}
+
+.c1_c_1 {}
+.c1_c_1 h3{overflow:hidden;height:30px;margin-bottom:10px;text-align:center;}
+.c1_c_1 h3 a{font:22px "microsoft yahei";}
+.c1_c_1_b { margin-top:15px; overflow:hidden;}
+.c1_c_1_b li{float:left;overflow:hidden;width:155px;height:25px;line-height:25px;background: url(http://new-icon.ol-img.com/kimiss/0926/img/scro_icon.png) no-repeat -90px 0;padding-left:10px;}
+.c1_c_2{position:relative;overflow:hidden;width: 330px;height:23px;line-height:23px; background: url(http://new-icon.ol-img.com/kimiss/0926/img/icons.png) 0 0 no-repeat #f6f5f5; margin-top:30px;}
+.c1_c_2 ul{position:absolute;top:0;left:60px;width:270px;}
+.c1_c_2 li{height:23px;line-height:23px; overflow:hidden;text-align:center;}
+.c1_c_2 a{margin:0 10px;}
+.c1_c_3{margin:30px 0 0; height:150px; overflow:hidden;}
+.c1_c_3_r{overflow: hidden; float:left; width:195px;}
+.c1_c_3_r_t{height: 22px; border-bottom:1px solid #b2b2b2;}
+.c1_c_f{float:left;font:16px/22px "microsoft yahei"; height:22px;width: 110px;overflow:hidden;color: #000000;}
+.c1_c_3_r_s{float: right;color: #9e9e9e;font: 500 12px/20px Century Gothic, Arial; margin-top:3px;}
+.c1_c_3_r h4{font:16px/30px microsoft yahei; margin:10px 0; height:30px; width:195px; overflow:hidden;}
+.c1_c_3_r li{background:url(http://new-icon.ol-img.com/kimiss/0926/img/icons.png) no-repeat 0 -25px;height: 25px;padding-left: 10px;}
+.c1_c_3_r li a{font:500 14px/25px "microsoft yahei";}
+.c1_c_4{margin:30px 0 0; overflow:hidden;}
+.c1_c_4_t {height: 35px; border-bottom:1px solid #b2b2b2;}
+.c1_c_4_t_l{float: left;color: #000000;font: 500 20px/35px "microsoft yahei";letter-spacing: 5px;}
+.c1_c_4_t_r{float: right;font: 500 12px/20px Century Gothic, Arial; margin-top:10px;}
+.c1_c_4_item { clear:both; margin-top:30px; overflow:hidden;}
+.c1_c_4_c { height:50px; overflow:hidden;}
+.c1_c_4_c_r {overflow:hidden;}
+.c1_c_4_c_r .name {font:12px/20px "microsoft yahei"; display:block; margin-bottom:5px;}
+.c1_c_4_c_r .proname {font:16px/25px "microsoft yahei"; display:block;height:25px; width:270px;overflow:hidden;}
+.c1_c_4_b { height:70px; margin-top:12px; overflow:hidden;}
+.c1_c_4_b a { height:70px; width:300px; overflow:hidden;}
+
+.c1_r_1 { background-color:#f6f5f5; color:#9f9f9f; font:12px/25px "microsoft yahei"; height:195px; padding:10px 20px;}
+.c1_r_1 p { color:#888888; font-size:12px; text-align:center; padding-top:5px;}
+.c1_r_1 .pink {font:16px/20px Arial;}
+.c1_r_1 .login_box { background-color:#ffffff; height:100px; margin-top:5px; padding:5px 3px 3px 5px;overflow:hidden; width:250px;}
+.c1_r_1_l {float:left; height:96px; width:99px;}
+.c1_r_1_l a.login { background-color:#000000; color:#ffffff; font:24px/65px "Microsoft YaHei"; float:left; height:65px; text-align:center; width:96px;letter-spacing: 5px;}
+.c1_r_1_l .wb { background:url(http://new-icon.ol-img.com/kimiss/0926/img/wb_icon.png) no-repeat; float:left; display:inline-block; margin:3px 3px 0 0; height:30px; width:30px;}
+.c1_r_1_l .wb_qq { background-position: 0 -60px;}
+.c1_r_1_l .wb_ol { background-position: -33px -60px;}
+.c1_r_1_l .wb_sina { background-position: -66px -60px;}
+.c1_r_1_l .wb_qq:hover { background-position: 0 -90px;}
+.c1_r_1_l .wb_ol:hover { background-position: -33px -90px;}
+.c1_r_1_l .wb_sina:hover { background-position: -66px -90px;}
+.c1_r_1 a.login:hover { text-decoration:none;}
+.c1_r_1_r { float:left; width:150px;}
+.c1_r_1_r a.other { display:inline-block; float:left; margin:0 2px 2px 0; height:48px; text-align:center; overflow:hidden; width:48px;}
+.c1_r_1 .login_info {border-top: 1px solid #d2d2d2; margin-top:10px;}
+.c1_r_1 .login_t{border-top: 1px solid #ffffff; height:48px; padding:20px 25px 10px 25px; width:208px;}
+.c1_r_1 .login_t dt, .c1_r_1 .login_t dd { float:left; display:inline;}
+.c1_r_1 .login_t dt { height:75px; width:48px; vertical-align:top;}
+.c1_r_1 .login_t dd { color:#9f9f9f; font:12px/25px "Microsoft YaHei"; margin-left:10px; overflow:hidden; width:148px;}
+.c1_r_1 .login_b { clear:both; overflow:hidden; padding:10px 25px;}
+.login_b_item{ float:left; display:inline; margin-bottom:10px; height: 20px;line-height:20px; width:100px;}
+.login_b_item i { background:url(http://new-icon.ol-img.com/kimiss/0926/img/login_icon.png) no-repeat; float: left; height: 20px;margin-right:10px; width:20px;}
+.login_b_item i.guifang { background-position: 0 0;}
+.login_b_item i.night { background-position: 0 -20px;}
+.login_b_item i.xiaoxi { background-position: 0 -40px;}
+.login_b_item i.miyou { background-position: 0 -60px;}
+
+.c1_r_2{overflow:hidden;width: 300px;padding:20px 0 0 0;}
+.c1_r_2 li{float: left; display:inline;width:135px;height:25px;overflow:hidden;margin:0 15px 0 0;line-height: 25px;}
+.c1_r_3 { margin-top:25px; height:250px;}
+.c1_r_3_l { float:left; display:inline; margin-top:10px; width:85px; background-color:#ffffff; overflow:hidden;}
+.c1_r_3_l li{ background-color:#ececec;width: 80px;height: 39px;margin-bottom: 1px; float:left;}
+.c1_r_3_l li a { display:block; height:39px; font:14px/39px "Microsoft YaHei"; padding-left:5px; width:75px;}
+.c1_r_3_l li a:hover, .c1_r_3_l li.active a{background: #000; color:#ffffff;text-decoration:none; width:78px;}
+.c1_r_3_r { float:right; display:inline; margin-top:10px; height:200px; width:215px; overflow:hidden;position: relative;}
+.c1_r_3_r li{width: 215px;height:200px;position: absolute;top: 0; display:none;}
+.c1_r_3_over{text-align: center;position:absolute;bottom: 0px;left:0;width:100%;height:30px;}
+.c1_r_3_over_bg{position:absolute;bottom: 0px;left:0;width:100%;height:30px;background:rgba(0,0,0,0.7);filter:alpha(opacity=70);-moz-opacity:0.7;-khtml-opacity: 0.7;opacity: 0.7;}
+.c1_r_3_over span{ position:absolute; bottom:0; left:0; display:block; height:30px; width:100%; text-align:center;font:12px/30px "Microsoft YaHei";color:#ffffff;}
+.c1_r_4 { margin-top:30px;}
+.c1_r_4_c {height:335px; overflow:hidden; position:relative; margin-top:10px; width:300px;}
+.c1_r_4_con { border:5px solid #e7e7e7; background-color:#ffffff; height: 325px; overflow: hidden; position: relative; width:280px;}
+.dv_scroll { position: absolute;}
+.c1_r_4_item { border-bottom:2px solid #e7e7e7; display:block; height:100px; padding:12px; position:relative; overflow:hidden; width:256px;}
+.c1_r_4_item_r { overflow:hidden;}
+.c1_r_4_item_r .p1 a {font:500 16px/25px "microsoft yahei";}
+.c1_r_4_item_r .p2 {font:500 12px/20px "microsoft yahei"; margin-bottom:10px; color:#888888;}
+.c1_r_4_item_r .p3 { float:left; height:45px; overflow:hidden; width:145px;}
+.c1_r_4_item_r .p3 a {font:500 14px/22px "microsoft yahei";}
+/* 滚动条 */
+.dv_scroll_bar {position:absolute; height:335px; right:0; top:0; width:5px;}
+.dv_scroll_bar .Scrollbar-Track{ border-left:1px solid #e7e7e7;position:absolute; left:0; top:0; width:2px; height:335px;}
+.dv_scroll_bar .Scrollbar-Handle{background-color:#333333;position:absolute; left:-2px; top:0; width:5px; height:70px; overflow:hidden;cursor:pointer;}
+.dv_scroll_bar .Scrollbar-Handle:hover{background-color:#ee0065;}
+.dv_scroll_text {position:absolute;}
+/* C2 */
+.c2_t { border-bottom:1px solid #b2b2b2; clear:both; height:35px;padding: 0 5px;}
+.c2_t h2 {float: left;color: #000000;font: 500 20px/35px "microsoft yahei";}
+.c2_t a.more{float: right; font: 500 12px/20px "microsoft yahei"; margin-top:10px;}
+.c2_c { margin:15px 0 0 0; overflow:hidden; width:1000px;}
+.c2_c li { background:url(http://new-icon.ol-img.com/kimiss/0926/img/line_y.png) 0 0 no-repeat; float:left; display:inline; padding: 0 28px; width:120px;}
+.c2_c li:first-child, .c2_c li.first { background:none; padding: 0 28px 0 0;}
+.c2_c li:last-child, .c2_c li.last { padding: 0 0 0 26px !important;}
+.c2_c li .img { height:120px; width:120px;}
+.c2_c li .txt { padding:0 5px;font:12px/20px "microsoft yahei"; overflow:hidden; margin:5px 0; height:40px; width:110px;}
+.c2_c li .num { text-align:center; color:#888888; line-height:25px;}
+.c2_c li .btn { color:#ffffff;font: 14px/25px "microsoft yahei"; margin-top:10px; text-align:center;}
+/* C3 */
+.com_h2 {
+	clear: both;
+	height:48px;
+	border-top:1px solid #d8d8d8;
+	border-bottom:1px solid #d2d2d2;
+	width:985px;
+	margin-right: 5px;
+	padding-left: 5px;
+	margin-left: 5px;
+}
+.com_h2 h2{float: left;overflow: hidden;font: 28px/48px "microsoft yahei";}
+.com_h2 strong{float: left;overflow: hidden;font: 28px/48px "microsoft yahei";}
+.com_h2 h2 a{display: block;width: 560px;height: 48px;}
+.com_h2 span.left{float:left; color:#ee0065;font: 14px/30px Century Gothic, Arial; margin:10px 0 0 20px;}
+.com_h2 span.right{float: right;margin: 17px 0 0 0;}
+.com_h2 span.right a{padding:3px 7px;color:#333333;font:12px "microsoft yahei";}
+.com_h2 span.right a:hover{background-color:#000000;color:#FFFFFF;text-decoration:none;}
+.com_h2 span.right a.more { color:#f67fb2;}
+.com_h2 span.right a.more:hover {background-color:#000000;color:#ffffff;}
+.c3_con { background-color:#f8f8f8; padding:12px 3px 0 3px; height:80px; border-top:1px solid #ffffff; clear:both; position:relative; width:994px;}
+.c3_con_item { float:left; height:80px; width:71px;position: relative;}
+.c3_con_item img { background:url(http://new-icon.ol-img.com/kimiss/0926/img/pro_icon.jpg) no-repeat; border:0; height:50px; width:71px;}
+.c3_con_item img:hover{ -webkit-transition: -webkit-transform 0.4s ease; -moz-transition: -moz-transform 0.4s ease; -ms-transition: -ms-transform 0.4s ease; transform:scale(1.2, 1.2);-ms-transform:scale(1.2, 1.2); -webkit-transform:scale(1.2, 1.2);}
+.c3_con_item .txt { color:#333333; display:block;font:12px/20px "microsoft yahei"; width:71px; text-align:center;}
+.c3_con_item .pro_01 { background-position: 0 0;}
+.c3_con_item .pro_02 { background-position: -74px 0;}
+.c3_con_item .pro_03 { background-position: -147px 0;}
+.c3_con_item .pro_04 { background-position: -218px 0;}
+.c3_con_item .pro_05 { background-position: -290px 0;}
+.c3_con_item .pro_06 { background-position: -360px 0;}
+.c3_con_item .pro_07 { background-position: -432px 0;}
+.c3_con_item .pro_08 { background-position: -509px 0;}
+.c3_con_item .pro_09 { background-position: -581px 0;}
+.c3_con_item .pro_10 { background-position: -650px 0;}
+.c3_con_item .pro_11 { background-position: -713px 0;}
+.c3_con_item .pro_12 { background-position: -788px 0;}
+.c3_con_item .pro_13 { background-position: -858px 0;}
+.c3_con_item .pro_14 { background-position: -930px 0;}
+span.vSplitLine{ background:url(http://new-icon.ol-img.com/kimiss/0926/img/vSplitLine.jpg) 0 0 no-repeat; height:45px; width:2px; display:block; z-index:10; top:1px; right:0; position:absolute;}
+
+.c_search {
+	clear:both;
+	height:40px;
+	margin-top: 0;
+	margin-right: 5px;
+	margin-bottom: 30px;
+	margin-left: 5px;
+}
+.c_search .search_list { float:left; width:700px;}
+.c_search .se_input { float:left; background:url(http://new-icon.ol-img.com/kimiss/0926/img/s_icon.png) right 0 no-repeat #f6f5f5; border:1px solid #a2a0a0; border-right:0; color:#333333;height:36px;font: 14px/36px "microsoft yahei"; padding-right:22px; width:98px; text-align:center;position: relative;cursor: pointer;}
+.c_search .se_input .se_pro_key { display:block;}
+.select_items{position: absolute;width: 120px;border: 1px solid #a2a0a0; top:36px; left:-1px; display:none; z-index:10000;}
+.select_items a{display:block;width:100%;height: 30px;background-color: #FFFFFF;color:#666666;border-top: 1px solid #a2a0a0;text-align: center;line-height: 30px;}
+.select_items a:first-child{border-top: none;}
+.select_items a:hover{background-color: #f6f5f5;text-decoration: none;color:#666666;}
+.c_search .mainsearch { float:left; background-color:#f6f5f5; border:1px solid #a2a0a0; border-left:0; width:510px; height:36px;}
+.c_search .main_input { background:url(http://new-icon.ol-img.com/kimiss/0926/img/search.png) 0 -47px no-repeat #f6f5f5; border:0; color:#a2a0a0; height:35px;_height:33px; line-height:35px; padding-left:45px; width:465px;}
+.c_search .mainbtn { float:left; background-color:#ee0065; border:0; margin-left:3px; color:#ffffff;font:500 16px/38px "microsoft yahei"; cursor:pointer; width:65px; height:38px;}
+
+.c_search .hotpro { float:right; color:#888888; height:40px; overflow:hidden; width:290px;}
+.c_search .hotpro a {font: 12px/20px "microsoft yahei"; padding:0 5px;white-space: nowrap;}
+.c_search .hotpro a:hover {background-color: #000000;color: #FFFFFF;text-decoration: none;}
+.c4_l { float:left; display:inline; width:670px;margin-left: 5px;}
+.c4_l_1 { height:400px; width:670px; overflow:hidden;}
+.c4_l_t { border-bottom:2px solid #d2d2d2; height:35px;position: relative; width:670px;}
+.c4_l_t .bt {float: left; width: 100px;font:500 20px/30px "microsoft yahei";}
+.c4_l_t .tab_arrow {position: absolute;z-index: 1; bottom:-2px; right:320px;height: 7px; border-bottom:3px solid #ee0065;overflow: hidden;text-align: center; width:80px;}
+.c4_l_t .tab_arrow b{display: inline-block;margin-top: -3px;width: 0;height: 0;border-style: dashed dashed solid;border-width: 6px;border-color: transparent transparent #ee0065;overflow: hidden;zoom: 1;font-size: 0;}
+.c4_l_t .tab2_arrow {position: absolute;z-index: 1; bottom:-2px; right:400px;height: 7px; border-bottom:3px solid #ee0065;overflow: hidden;text-align: center; width:80px;}
+.c4_l_t .tab2_arrow b{display: inline-block;margin-top: -3px;width: 0;height: 0;border-style: dashed dashed solid;border-width: 6px;border-color: transparent transparent #ee0065;overflow: hidden;zoom: 1;font-size: 0;}
+
+.c4_l_t ul{position:absolute;bottom:-2px;right:0;height:35px;}
+.c4_l_t ul li{ float:left;display:inline;width:80px;height:35px;*display:inline; position:relative;}
+.c4_l_t ul li a{display:inline-block;width:80px; padding:2px 0 0 0;text-align:center;font:700 14px/30px microsoft yahei;*zoom:1;}
+.c4_l_t ul li b{display:block;background:url(http://new-icon.ol-img.com/kimiss/0926/img/sub_bg.png) no-repeat center 0; height:0px; width:80px; position:absolute; bottom:0;}
+/*.c4_l_t ul li a.current i, .c4_l_t ul li a:hover i{ height:6px;}*/
+.c4_l_t ul li a.current, .c4_l_t ul li a:hover{ color:#ee0065;text-decoration:none;}
+.c4_l_con { height:382px; overflow:hidden;}
+.c4_l_c { margin:15px 0; overflow:hidden;}
+.c4_l_c_i { border-bottom:1px solid #e6e6e6; width:335px; float:left; display:inline; padding:15px 0;}
+.c4_l_c_i_r { overflow:hidden; width:175px;}
+.c4_l_c_i_r .tit { font:500 16px/30px "microsoft yahei"; height:30px; width:175px; overflow: hidden;}
+.c4_l_c_i_r .name { font: 12px/30px "microsoft yahei"; color:#888888;}
+.c4_l_c_i_r .name a { font: 12px/30px "microsoft yahei";}
+.c4_l_c_i_r .dp { margin:10px 0;height: 40px;}
+.c4_l_c_i_r .dp_r { overflow:hidden;}
+.c4_l_c_i_r .dp_r p { font: 12px/20px "microsoft yahei";}
+.c4_l_c_i_r .btn { float:right; line-height:25px;}
+
+.c4_l_2 { margin-top:25px; width:670px; overflow:hidden;}
+.c4_l_2_con { background: url(http://new-icon.ol-img.com/kimiss/0926/img/time_icon.png) 16px top no-repeat; overflow:hidden;}
+.c4_l_2_c { border-left:4px solid #e6e6e6; margin:25px 0 0 25px;position: relative; height:580px;}
+.c4_l_2_c li { padding:22px 0 25px 65px; position:relative; height:100px;border-bottom:1px solid #ededed; width:575px; float:left;}
+.c4_l_2_c li .info { background-color:#ffffff; position:absolute; top:22px; left:-30px; width:60px; height:75px;line-height:20px; text-align:center; z-index:100;}
+.c4_l_2_c li .info p { color:#888888; font: 12px/20px "microsoft yahei"; margin-bottom:5px;}
+.c4_l_2_c li .info img { height:50px; width:50px;}
+.c4_l_2_c li .info_left { width:400px; float:left;}
+.c4_l_2_c li .info_left .p1 { color:#888888; font-size:12px;}
+.c4_l_2_c li .info_left .p2 { font: 16px/20px "microsoft yahei"; height:20px; margin:10px 0;}
+.c4_l_2_c li .info_left .p2 .s { float:left; display:inline; height:15px; padding:3px 15px 0 0;}
+.c4_l_2_c li .info_left .p2 h4 { float:left; display:inline;}
+.c4_l_2_c li .info_left .p3 { color:#888888; font-size:12px; line-height:20px;}
+.c4_l_2_c li .info_right { width:100px; float:right; padding:0 30px;}
+
+.c4_l_3 {
+	margin-top:20px;
+	float:left;
+	width:310px;
+	overflow:hidden;
+	margin-left: -5px;
+}
+.c4_l_3_t {
+	height: 35px;
+	border-bottom:1px solid #b2b2b2;
+	margin-left: 5px;
+}
+.c4_l_3_t_l{float: left;color: #333333;font:500 20px/35px "microsoft yahei";letter-spacing: 2px;}
+.c4_l_3_t_r{float: right;color: #ee0065;font:500 12px/20px "microsoft yahei"; margin-top:10px;}
+.c4_l_3_c{overflow:hidden;width:310px;height:210px; margin-top:15px;}
+.c4_l_3_c ul{overflow:hidden;position:relative;width:310px;height:180px;}
+.c4_l_3_c ul li{position:absolute;top:0;left:0;width:310px;height:180px;}
+.c4_l_3_c ul li a{display:block;margin:0 auto;width:310px;height:180px;}
+.g_nav_2{width:310px;height:36px;text-align:center;}
+.g_nav_2 a{cursor:pointer;display:inline-block;margin:7px 0;width:22px;height:16px;background:url(http://new-icon.ol-img.com/kimiss/0926/img/scro_icon.png) no-repeat -22px 0;}
+.g_nav_2 a.current{background:url(http://new-icon.ol-img.com/kimiss/0926/img/scro_icon.png) no-repeat 0 0;}
+.scro_bar {background:url(http://new-icon.ol-img.com/kimiss/0926/img/blackbg6.png) 0 0 repeat; color:#ffffff; bottom:0px; font: 14px/26px "Microsoft YaHei"; left:0; height:26px; position:absolute; text-align:center; width:100%;}
+
+.c4_l_4 { margin-top:20px; float:right; width:330px; overflow:hidden;}
+.c4_l_4_c{overflow:hidden;width:330px;height:210px; margin-top:15px;}
+.c4_l_4_c .newpro { margin:10px 0; overflow:hidden;}
+.c4_l_4_c .newpro_r { border-bottom:1px solid #ededed; float:left; height:90px; overflow:hidden; width:240px;}
+.c4_l_4_c .newpro_r .tit {font:500 14px/25px "microsoft yahei"; margin-bottom:6px;}
+
+.c4_r { float:right; display:inline; width:300px;margin-right: 5px;}
+.c4_r_1_c { border:1px solid #ededed; background-color:#f5f5f5; padding:15px 15px 0;}
+.c4_r_1_c .img { width:270px; height:150px; overflow:hidden;}
+.c4_r_1_c p {font:500 14px/35px "microsoft yahei"; text-align:center;}
+.c4_r_3 { margin-top:25px; overflow:hidden;}
+.c4_r_3_c { border:2px solid #e7e7e7; border-top:0; margin-top:10px; width:296px; height:315px; overflow:hidden;}
+.tabs_t { background-color:#333333; height:34px;}
+.tabs_t li { float:left; background-color:#ffffff; height:35px;}
+.tabs_t li a { background-color:#333333;border-top:2px solid #ffffff;color:#ffffff; font-size:14px; display:block; line-height:33px; text-align:center; width:74px; text-decoration:none;}
+ul.tabs_t li a.hover, ul.tabs_t li a:hover { background-color:#ffffff; border-top:2px solid #ee0065; border-bottom:none; color:#333333;}
+.tabs_b { padding:10px 20px 0; height:270px; width:256px; overflow:hidden;}
+.tabs_b li { border-bottom:1px solid #ededed; height:39px; line-height:39px;vertical-align:middle;}
+.tabs_b li .tab_name {height: 39px;line-height: 39px;}
+.tabs_b li.active { border-bottom:1px solid #ededed; height:150px;}
+.tabs_b li.active .name { width:200px;}
+.tabs_b li.last { border-bottom:0;}
+.tabs_b li s {background: url(http://new-icon.ol-img.com/kimiss/0926/img/no.png) no-repeat; float:left; width:26px; height:39px; display:inline-block;}
+.tabs_b li .tabs_num_1{ background-position: 0 0;}
+.tabs_b li .tabs_num_2{ background-position: 0 -40px;}
+.tabs_b li .tabs_num_3{ background-position: 0 -80px;}
+.tabs_b li .tabs_num_4{ background-position: 0 -120px;}
+.tabs_b li a.name { float:left; display: inline-block; font-size:14px;overflow:hidden; height:39px; width:140px;}
+.tabs_b li .tabs_num { float:right; display: inline-block; color:#888888; text-align:right; width:90px;}
+.tabs_b li.active .tabs_num{ display:none;}
+.tabs_b li .active_c { display:none; margin:0 0 10px 0; height:100px; clear:both;}
+.tabs_b li.active .active_c {display: block;}
+.tabs_b li .active_r { padding-top:15px; overflow:hidden;}
+.tabs_b li .active_r p { font-size:14px; line-height:25px; color:#888888;}
+.tabs_b li .active_r p span{ display:inline;}
+
+.c6_l{float:left;width:310px;margin-left: 5px; display:inline;}
+.c6_l_1{ width:310px; height:339px; overflow:hidden; margin-top:30px; position:relative; margin-left:-5px;}
+.c6_l_1 ul{overflow:hidden;position:relative;width:310px;height:300px;}
+.c6_l_1 ul li{position:absolute;top:0;left:0;width:310px;height:300px;}
+.c6_l_1 ul li a{display:block;margin:0 auto;width:310px;height:300px;}
+.c6_l_1 ul li a img{width:310px;height:300px;}
+
+.c6_c {float:left; display:inline; margin:30px 0 0 30px;width:330px;}
+.c6_r {float:right; display:inline; margin:30px 0 0 0;width:300px;}
+.c6_l .c6_item:first-child { margin-top:0;}
+.c6_item { margin-top:30px; height:150px; overflow:hidden;}
+.c6_item_r {height:150px; overflow:hidden;}
+.c6_item_r_t {height:25px; border-bottom:1px solid #b2b2b2;}
+.c6_item_r_t .tit{float: left;color: #000000;font:500 16px/25px "microsoft yahei";}
+.c6_item_r_t a.more{float: right;font: 12px/16px "microsoft yahei"; margin-top:3px;}
+.c6_item_r .bt {font:12px/25px "microsoft yahei"; margin:10px 0 5px 0; height:25px; width:175px; overflow:hidden;}
+.c6_item_r .txt {font:12px/25px "microsoft yahei"; color:#888888;}
+.c6_item_r .bt2{font:16px/30px "microsoft yahei"; margin:10px 0 5px 0; height:30px; width:195px; overflow:hidden;}
+.c6_item_r .bt3 {font:12px/25px "microsoft yahei"; margin:10px 0 5px 0; height:25px; width:195px; overflow:hidden;}
+.c6_item_r li{background:url(http://new-icon.ol-img.com/kimiss/0926/img/scro_icon.png) no-repeat -90px 0;height: 25px;padding-left: 10px;}
+.c6_item_r li a{font: 12px/25px "microsoft yahei";}
+
+.c6_c_1 h3{overflow:hidden;height:25px;margin-bottom:5px; text-align:center;}
+.c6_c_1 h3 a{font:18px "microsoft yahei";}
+.c6_c_2 { height:35px; background-color:#f6f5f5; margin-top:30px; text-align:center;}
+.c6_c_2 a {font: 14px/35px "microsoft yahei";}
+.c6_r_1 { clear:both; overflow:hidden;}
+.c6_r_2, .c6_r_3 { clear:both; margin-top:10px; overflow:hidden;}
+.c6_r .c6_r_item { margin:15px 0; overflow:hidden;}
+.c6_r .c6_r_item_r { height:80px; overflow:hidden;}
+.c6_r .c6_r_item_r .tit {font:500 14px/25px "microsoft yahei"; margin-bottom:6px;}
+.c6_r_3_c { width:300px; height:145px; overflow:hidden; margin-top:15px; position:relative;}
+.g_nav_3{width:300px;height:26px;text-align:right;background:url(http://new-icon.ol-img.com/kimiss/0926/img/blackbg6.png) 0 0 repeat; bottom:0px; left:0; position:absolute; margin-right:-5px;}
+.g_nav_3 a{cursor:pointer;display:inline-block;margin:2px 0;width:22px;height:16px;background:url(http://new-icon.ol-img.com/kimiss/0926/img/scro_icon.png) no-repeat -44px 0;}
+.g_nav_3 a.current{background:url(http://new-icon.ol-img.com/kimiss/0926/img/scro_icon.png) no-repeat 0 0;}
+
+.c7_l{float:left;width:310px; margin-left:5px; display:inline;}
+.c7_c {float:left; display:inline; margin-left:30px;width:330px;}
+.c7_r {float:right;width:300px;margin-right:5px; display:inline;}
+.c7_l_1 { height:160px; margin-top:30px; width:310px; overflow: hidden;position: relative; margin-left:-5px;}
+.c7_l_1 .bbar { background:url(http://new-icon.ol-img.com/kimiss/0926/img/blackbg6.png) 0 0 repeat; bottom:0px; font: 14px/30px "Microsoft YaHei"; left:0; height:30px; position:absolute; text-align:center; width:310px;}
+.c7_l_1 .bbar a { color:#ffffff; text-decoration:none;}
+.c7_dr { margin-top:30px; height:160px;}
+.c7_dr_r { overflow:hidden;}
+.c7_dr_r .name a { font: 16px/25px "microsoft yahei";}
+.c7_dr_r .tit { color:#888888;font: 14px/30px "microsoft yahei"; margin:5px 0;}
+.c7_dr_r .txt { color:#888888;font: 12px/25px "microsoft yahei";}
+.c7_dr_r .txt em { color:#ffffff; background: url(http://new-icon.ol-img.com/kimiss/0926/img/icons.png) 0 -60px no-repeat; height:23px; width:63px; display:inline-block; padding-left:5px;}
+.c7_r_2 { margin-top:20px;}
+.c7_r_2 .bt_line { margin-bottom:10px;}
+.c7_r_2_r { overflow:hidden;}
+.c7_r_2_r .txt { color:#888888;font: 12px/22px "microsoft yahei"; height:45px; margin-bottom:5px; overflow:hidden;}
+.c7_r_2_r .btn { text-align:center; line-height:25px;}
+
+.c8_c {margin:20px 0 10px 5px; overflow:hidden;}
+.c8_c .c8_c_item { float:left; display:inline; margin-left:48px; width:160px;}
+.c8_c .c8_c_item.first { margin:0;}
+.c8_c_item .btop { color:#cccccc;font:500 14px/25px "microsoft yahei"; margin-bottom:5px; text-align:center;}
+.c8_c_item .img { height:120px; width:160px; overflow:hidden;}
+.c8_c_item .tit {font:500 14px/30px "microsoft yahei"; height:30px; width:160px; overflow:hidden;}
+.c8_c_item .c8_c_b { margin-top:5px; overflow:hidden;}
+.c8_c_item .c8_c_b li{float:left;overflow:hidden;width:150px;height:25px;line-height:25px;background: url(http://new-icon.ol-img.com/kimiss/0926/img/scro_icon.png) no-repeat -90px 0;padding-left:10px;}
+
+
+/* 20130925 Yuan yanjun */
+.more_fix{
+	color: #EE0065;
+	font-family: "microsoft yahei";
+	font-weight:normal;
+	font-size:12px;
+}
+.more_fix_style_2{
+	color: #f67fb2;
+	font-family: "microsoft yahei";
+	font-weight:normal;
+	font-size:12px;
+	line-height:22px;
+}
+.title_14_24{
+	font-size:14px;
+	line-height:24px;
+	font-weight:bold;
+	color:#333;
+}
+.title_14_24 a{
+	font-size:14px;
+	line-height:24px;
+}
+.title_18_32{
+	font-size:18px;
+	line-height:32px;
+	font-weight:500;
+	color:#000;
+}
+.title_18_32 a{
+	font-size:18px;
+	line-height:32px;
+	font-weight:500;
+}
+.title_20_24{
+	font-size:20px;
+	line-height:24px;
+	font-weight:bold;
+	color:#000;
+}
+.title_20_24 a{
+	font-size:20px;
+	line-height:24px;
+	font-weight:bold;
+	color:#000;
+}
+.title_20_36{
+	font-size:20px;
+	float:left;
+	line-height:36px;
+	font-weight:500;
+	color:#000;
+}
+.title_20_36 a{
+	font-size:20px;
+	line-height:36px;
+	font-weight:500;
+	color:#000;
+}
+.c .intro_12_26{
+	font-size:12px;
+	line-height:25px;
+	font-weight:normal;
+	color:#888;
+	font-family:"microsoft yahei";
+}
+.intro_12_24{                    
+	font-size:12px;
+	line-height:24px;
+	font-weight:bold;
+	color:#888;
+}
+.word_12_24{
+	font-size:12px;
+	line-height:24px;
+	color:#333;
+}
+.word_12_23{
+	font-size:12px;
+	line-height:23px;
+	color:#333;
+}
+.word_12_26{
+	font-size:12px;
+	line-height:26px;
+	color:#333;
+}
+.word_12_20{
+	font-size:12px;
+	line-height:20px;
+	color:#333;
+}
+.userGravatar{
+	width:23px;
+	height:23px;
+	border:none;
+}
+.userName{
+	font-size:12px;
+	color:#f67fb2;
+	line-height:23px;
+}
+.textLink_12_36{
+	font-size:12px;
+	line-height:35px;
+	color:#000;
+	display: inline-block;
+	background-color: #f6f5f5;
+}
+.floatL{
+	float:left;
+}
+.floatR{
+	float:right;
+}
+a.detail{
+}
+.clear{
+	clear:both;
+}
+.img_310_240{
+	width:310px;
+	height:240px;
+}
+.img_160_120{
+	width:160px;
+	height:120px;
+}
+.img_80_80{
+	width:80px;
+	height:80px;
+}
+.img_50_50{
+	width:50px;
+	height:50px;
+}
+.marginTop_5{
+	margin-top:5px;
+}
+.marginTop_6{
+	margin-top:6px;
+}
+.marginTop_8{
+	margin-top:8px;
+}
+.marginTop_14{
+	margin-top:14px;
+}
+.marginTop_11{
+	margin-top:11px;
+}
+.marginTop_12{
+	margin-top:12px;
+}
+.marginTop_13{
+	margin-top:13px;
+}
+.marginTop_16{
+	margin-top:16px;
+}
+.marginTop_18{
+	margin-top:18px;
+}
+.marginTop_19{
+	margin-top:19px;
+}
+.marginRight_20{
+	margin-right:20px;
+	display:inline;
+}
+.marginTop_22{
+	margin-top:22px;
+}
+.marginTop_23{
+	margin-top:23px;
+}
+.marginTop_24{
+	margin-top:24px;
+}
+.marginTop_25{
+	margin-top:25px;
+}
+.marginTop_30{
+	margin-top:30px;
+}
+.block{
+	display: block;
+}
+.height_148{
+	height:148px;
+}
+.nightNine .com_h2 .more_fix{
+	padding:3px 0px;
+	margin-left:7px;
+	color:#EE0065;
+}
+.lineHeight_14{
+	line-height:14px;
+	height:20px;
+	overflow:hidden;
+}
+.lineHeight_34{
+	height:34px;
+	line-height:34px;
+}
+.nightNine .com_h2 span.right{
+	margin-right:0px;
+}
+.nightNine .floatL,.nightNine .floatR{
+	margin-top:23px;
+}
+.nightNine .floatL{
+	width:670px;
+	margin-left: 5px;
+	display:inline;
+}
+.nightNine .floatR{
+	width:300px;
+	display:inline;
+}
+.nightNine .headFirst a.img_310_240{
+	display: block;
+	overflow:hidden;
+	float:left;
+	margin-top:7px;
+}
+.nightNine .headFirst .leftimg{
+	overflow:hidden;
+	float:left;
+	margin-left:-5px;
+}
+.nightNine .headFirst .leftimg ul{overflow:hidden;position:relative;width:310px;height:240px;}
+.nightNine .headFirst .leftimg ul li{position:absolute;top:0;left:0;width:310px;height:240px;}
+.nightNine .headFirst .leftimg ul li a{display:block;margin:0 auto;width:310px;height:240px;}
+
+.nightNine .headFirst .itemsList{
+	margin-left:340px;
+}
+.nightNine .headFirst .itemsList .title_18_32{
+	text-align: center;
+}
+.nightNine .headFirst .textLink_12_36{
+	display: block;
+	height:35px;
+	overflow:hidden;
+	text-align: center;
+}
+.nightNine .headFirst .item p{
+	height:50px;
+	overflow: hidden;
+}
+.nightNine .row .titleBar{
+	height:35px;
+	width:100%;
+	overflow:hidden;
+	border-bottom:1px solid #b2b2b2;
+	clear:both;
+}
+.nightNine .row .titleBar .categoryBar{
+	float:right;
+}
+.nightNine .row .titleBar h3{
+	float:left;
+}
+.nightNine .row .titleBar .categoryBar{
+	margin-top:12px;
+}
+.nightNine .row .titleBar .categoryBar a{
+	display: inline-block;
+	padding:0px 4px;
+}
+.nightNine .row .titleBar .categoryBar a.word_12_20:hover{
+	background-color: #000;
+	color:#fff;
+}
+.nightNine .row .titleBar .categoryBar a:hover{
+	background-color: #000;
+	color:#fff;
+}
+.nightNine .row .contentBox{
+	height:134px;
+	width:100%;
+	overflow:hidden;
+}
+.nightNine .row .contentBox .thumb_title{
+	float:left;
+	width:140px;
+}
+.nightNine .row .contentBox .thumb_title a{
+	display: block;
+}
+.nightNine .row .contentBox .thumb_title img{
+	width:140px;
+	height:105px;
+}
+.nightNine .row .contentBox .thumb_title p{
+	text-align: center;
+	height:24px;
+	line-height:24px;
+	overflow:hidden;
+	margin-top:4px;
+	color:#333;
+}
+.nightNine .row .contentBox ul{
+
+}
+.nightNine .row .contentBox ul li{
+	height:23px;
+	line-height: 23px;
+	overflow: hidden;
+	margin-bottom:13px;
+}
+.nightNine .row .contentBox ul li img{
+	float:left;
+	margin-right:10px;
+}
+.verticalLine_1{
+	display: inline-block;
+	border-left:1px solid #a8a8a8;
+	border-right:1px solid #dfdfdf;
+	height:12px;
+	width:0px;
+	margin:0px 7px;
+}
+.nightNine .row .contentBox.height_148{
+	height:155px;
+	width:100%;
+}
+#scroller_1{
+	position: relative;
+}
+#scroller_1_inner{
+	position:relative;
+	width:605px;
+	margin:0 auto;
+	text-align: center;
+	height:100%;
+	overflow:hidden;
+}
+#scroller_1_inner ul{
+	height:100%;
+	width:620px;
+	float:left;
+}
+#scroller_1_prevBtn,#scroller_1_nextBtn{
+	position:absolute;
+	display: block;
+	width:14px;
+	height:26px;
+	background-image:url(http://new-icon.ol-img.com/kimiss/0926/img/scro_icon.png);
+	top:50%;
+	margin-top:-13px;
+}
+#scroller_1_prevBtn{
+	left:0px;
+	background-position:0px bottom; 
+}
+#scroller_1_prevBtn:hover{
+	background-position:48px bottom; 
+}
+#scroller_1_nextBtn{
+	right:0px;
+	background-position:73px bottom; 
+}
+#scroller_1_nextBtn:hover{
+	background-position:21px bottom; 
+}
+#scroller_1_inner li{
+	float:left;
+	margin-right:15px;
+	margin-bottom:0px;
+	height:100%;
+	width:140px;
+}
+#scroller_1_inner li a{
+	display: block;
+}
+#scroller_1_inner li img{
+	float:none;
+	width:140px;
+	height:125px;
+}
+#scroller_1_inner li a p{
+	width:100%;
+	line-height:24px;
+	height:24px;
+	overflow:hidden;
+	color:#333333;
+	font-family: "microsoft YaHei";
+	margin-top:5px;
+}
+
+.nightNine .floatR .bt_line{
+	height:34px;
+	line-height:34px;
+}
+.nightNine .floatR .bt_line span{
+	height:34px;
+	line-height:34px;
+}
+.nightNine .floatR .item img{
+	float:left;
+	margin-right:10px;
+}
+.nightNine .floatR .item div{
+
+}
+.nightNine .floatR .title_14_24{
+	text-align:left;
+	font-weight:normal;
+	height:20px;
+	line-height:20px;
+	overflow:hidden;
+}
+.nightNine .floatR p.word_12_24{
+	height:48px;
+	overflow:hidden;
+	line-height:24px;
+}
+.nightNine .floatR .more_fix{
+	float:right;
+	margin-top:6px;
+}
+#huoYueMiEr .userInfor img{
+	margin-left:18px;
+	margin-right:30px;
+	float:left;
+}
+#huoYueMiEr p{
+	line-height:20px;
+	color:#888;
+	font-size:12px;
+	font-family: "microsoft yahei";
+}
+#huoYueMiEr p.lineHeight_14{
+	line-height:14px;
+}
+#huoYueMiEr .userName{
+	margin-right:15px;
+	line-height:14px;
+	font-size:14px;
+	font-family: "microsoft yahei";
+	color:#333;
+
+}
+#huoYueMiEr p .pink{
+	font-size:14px;
+	margin:0px 4px;
+}
+#news .com_h2 span.right {
+    margin-right: 0;
+}
+
+#news .com_h2 .more_fix {
+    color: #EE0065;
+    margin-left: 7px;
+    padding: 3px 0;
+}
+#news .floatL{
+	height:500px;
+}
+.widthFixed{
+    width:9999px;
+    position: absolute;
+}
+/* 20130925 Yuan yanjun end */
+/*20140604supermars修改首页边距开始*/
+#mainbg .c .c2 {
+	margin-right: 5px;
+	margin-left: 5px;
+}
+#mainbg .c .c3 {
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.topbar_l {
+	text-indent: 5px;
+}
+.ad_310x330 {
+	margin-left: -5px;
+}
+.ad_300x330{
+	margin:30px 5px 0px;	
+}
+.c4_r_1{
+	margin-right:-5px;	
+}
+#meiTiGongLue {
+	margin-right: 5px;
+}
+#tiaoZaoShiChang {
+	margin-right: 5px;
+}
+#huoYueMiEr {
+	margin-right: 5px;
+}
+#guiMiAiYanJiu {
+	margin-right: 5px;
+}
+/*20140604supermars修改首页边距结束*/
+
+/*2016-04-12修改右侧[视频video]模块 BEG*/
+.zxh41_div{width:270px;margin:0 auto;background:#fff;padding:0 0 0px 16px;}
+.zxh41_div h3{font-size:18px;color:#333333;font-weight:normal;display:block;line-height:50px;height:50px;}
+.zxh41_div .wt{width:270px;margin:0 auto;overflow:hidden;border-bottom:1px #dcdcdc solid;padding-bottom:18px;}
+.zxh41_div .wt span{font-size:20px;color:#888888;display:block;width:24px;float:left;}
+.zxh41_div .wt p{displayl:block;float:left;width:245px;font-size:14px;color:#888888;line-height:24px;}
+.zxh41_div .jp{overflow:hidden;border-bottom:1px #dcdcdc solid;padding-bottom:20px;}
+.zxh41_div .jp h3{padding:5px 0px;}
+.zxh41_div .jp dl,.zxh41_div .jp dl dt,.zxh41_div .jp dl dd{display:block;}
+.zxh41_div .jp dl dt{float:left;width:105px;height:100px;overflow:hidden;}
+.zxh41_div .jp dl dt a{display:block;width:105px;height:100px;overflow:hidden;}
+.zxh41_div .jp dl dt a img{width:100%;}
+.zxh41_div .jp dl dd{float:left;width:130px;height:auto;padding-left:20px;}
+.zxh41_div .jp dl dd p.name{font-size:14px;color:#333333;line-height:24px;padding-bottom:13px;}
+.zxh41_div .jp dl dd p{color:#888888;font-size:12px;line-height:20px;}
+.zxh41_div .jp dl dd p span{color:#f67fb2;}
+.zxh41_div .sqhj{width:270px;overflow:hidden;border-bottom:1px #dcdcdc solid;padding-bottom:20px;}
+.zxh41_div .sqhj img{width:270px;}
+.zxh41_div .ewm{text-align:center;}
+.zxh41_div .ewm p.time{text-align:center;font-size:16px;color:#333333;line-height:50px;padding-top:2px;}
+.c1_r_4_con{border:0px;height:310px;}
+.c1_r_4_c{height:310px;}
+.dv_scroll_bar{height:310px;}
+.dv_scroll_bar .Scrollbar-Track{height:310px;}
+/*2016-04-12修改右侧[视频video]模块 END*/
+
+/*2014-07-30 样式BEG*/
+
+/*.top .logo { float:left; background:url("http://new-icon.ol-img.com/kimiss/0926/img/logonew.png") center center no-repeat; width:290px; height:55px; text-indent:-999px;margin-top:0px;}*/
+/*.top .mainsearch { background-color:#f6f5f5; border:1px solid #a2a0a0; width:324px; height:36px; left:606px; top:19px; position:absolute;}*/
+/*.top .main_input {border:0; color:#a2a0a0; height:35px; _height:33px; line-height:35px\9; padding-left:45px; width:279px;}*/
+/*.top .hotpro { float:right; height:40px; padding-top:4px; overflow:hidden; width:200px;  margin-right:400px;}*/
+/*.top .hotpro a {font: 12px/20px "microsoft yahei"; float:right; padding:0 5px;white-space: nowrap;}*/
+/*.top .mainbtn { background-color:#ee0065; border:0; color:#ffffff;font:500 16px/38px "microsoft yahei"; cursor:pointer; width:65px; height:38px; left:935px; top:19px; position:absolute;}*/
+
+/*2014-07-30 样式end*/
+
+/*2014-05-22 样式 BEG */
+.main_nav .nav_cur { float: left; height: 59px; margin-right: 1px; width: 101px; padding-left:18px; }
+.main_nav .nav3{ margin-right:0; width:90px;}
+.main_nav .nav5{ margin-right:17px;}
+.main_nav .nav6{ margin-right:25px; width:100px;}
+.main_nav .nav7{ margin-right:5px;}
+.nav_cur a { color: #FFF; display: block; font: 20px/48px "microsoft yahei"; height: 45px; text-align: center; width: 101px; }
+.main_nav { background: url(http://wwwcdn.kimiss.net/public/buy/img/nav3.png?123) no-repeat; clear: both; height: 59px; margin: 15px 0 0; position: relative; }
+.main_nav .app { position: absolute; right: 15px; top: 0; }
+.main_nav .app a { background: url(http://wwwcdn.kimiss.net/public/buy/img/nav_app.png) right 6px no-repeat; font: 14px/51px "microsoft yahei"; color: #f67fb2; padding-right: 30px; width: 50px; padding-top:6px; }
+.main_nav a { display: inline; float: left; height: 56px; }
+.main_nav a span {color: #fff; display: block; height: 56px; font: 18px/45px "microsoft yahei"; text-align: center; }
+.main_nav a .s1{ padding-left:10px;}
+.main_nav a .s4{ padding-right:10px;}
+.main_nav a.a1 { width: 100px; }
+.main_nav a.a2 { width: 90px; }
+.main_nav a.a3 { width: 85px; }
+.main_nav li { float: left; margin-right: 15px; display: inline; height: 59px; line-height: 59px; }
+.main_nav .nav_line { display: none; position: absolute; border-bottom: 3px solid #ee0065; height: 0; overflow: hidden; left: 0; bottom: 0; }
+.main_nav li.active a { border-bottom: 3px solid #ee0065; }
+.navbar_light { position: absolute; bottom: 15px; width: 100px; height: 3px; }
+.light { display: none; position: absolute; left: 0; width: 110px; height: 100%; background-color: #ee0065; }
+/*2014-05-22 样式end*/
+
+/*2015-5-27 改版css*/
+.main_nav{ background-image:url("http://new-icon.ol-img.com/kimiss/0926/img/navBg_20150527.png");}
+.main_nav a.a1{ width:126px;}
+.main_nav a.a2{ width:84px;}
+.main_nav a.a3{ width:95px;}
+.main_nav a.a4{ width:143px;}
+.main_nav a.a5{ width:92px;}
+.main_nav a.a6{ width:106px;}
+.main_nav .nav_cur{ padding-left:3px;}
+.main_nav .app a{ background:none; text-indent:-999em; width:110px;}
+.topbar_r .sina_gz{ height:24px;}
+
+/*15.8.10 大广告去掉后显示*/
+/*.top .logo {margin-top: 8px;}*/
+/*.top .hotpro{padding-top: 20px;}*/
+/*2015-5-27 改版css*/
+
+/*2014-04-18 BEG*/
+.s_gd li a{ color:#f00; text-decoration:none; }
+.s_gd li a:hover{ color:#f00; text-decoration:none; }
+.news { color: #4C4C4C; font-size: 14px;height: 20px; margin-bottom: 10px; overflow:hidden;padding-right: 20px;position:relative;}
+.news .s_gd{ width:275px;position:absolute;top:0;left:0;}
+.news .s_gd li{ width:275px;padding-left:20px;overflow:hidden;-o-text-overflow:ellipsis;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;-o-text-overflow:ellipsis;text-overflow:ellipsis; }
+.news span{ background:url('http://new-icon.ol-img.com/article/kimiss-www/img/1dada.jpg') no-repeat; width:16px; height:16px; position:absolute; left:0; top:2px; }
+/*2014-04-18 END*/
+
+/*2016/2/26添加视频模块入口beg*/
+.y_addTv{ overflow:hidden; width:100%;}
+.y_addTvList{ padding-top:34px; padding-bottom:20px; overflow:hidden;}
+.y_addTvLeft{ width:500px; overflow:hidden; float:left;}
+.y_addTvLeft dt{ position:relative; width:100%; height:285px;}
+.y_linkTv{ display:none; height:100%; width:100%; vertical-align:middle; background-color:rgba(0,0,0,0); position:absolute; top:0; left:0; text-align:center; transition: all 1s ease 0.2s;}
+.y_linkTv.now{ display:table; background-color:rgba(0,0,0,0.3);}
+.y_linkTv span{ display:table-cell; vertical-align:middle;}
+.y_linkTv span img{ vertical-align:middle;}
+.y_tvTime{ display:block; position:absolute; padding:1px 4px; height:20px; line-height:20px; background-color:rgba(0,0,0,0.4); left:0; bottom:2px; z-index:99; color:#fff;}
+.y_addTvLeft dd{ padding-top:16px; padding-left:10px;}
+.y_addTvLeft dd h3{ font-size:18px; line-height:30px; color:#000;}
+.y_addTvLeft dd p{ font-size:14px; line-height:14px; color:#666666; padding-top:4px;}
+.y_addTvRight{ width:500px; overflow:hidden; float:left;}
+.y_addTvRight dl{ width:230px; margin-left:20px; overflow:hidden; margin-bottom:10px; float:left;}
+.y_addTvRight dl dt{ position:relative; width:100%; height:134px;}
+.y_addTvRight dl dd h3{ font-size:14px; color:#333; padding: 14px 0; line-height:14px; text-indent: 0.5em;}
+.y_addTvRight dl dd h3.js_hover{ background:#fff;color:#333;}
+.y_addTvRight dl dd h3.js_hover1{ background:#ee0065;color:#fff;}
+/*2016/2/26添加视频模块入口end*/
+
+
+/*201641模块:视频video 改闺蜜知心话BEG*/
+.zxh41_div{width:270px;margin:0 auto;background:#fff;padding:0 0 0px 16px;}
+.zxh41_div h3{font-size:18px;color:#333333;font-weight:normal;display:block;line-height:50px;height:50px;}
+.zxh41_div .wt{width:270px;margin:0 auto;overflow:hidden;border-bottom:1px #dcdcdc solid;padding-bottom:18px;}
+.zxh41_div .wt span{font-size:20px;color:#888888;display:block;width:24px;float:left;}
+.zxh41_div .wt p{displayl:block;float:left;width:245px;font-size:14px;color:#888888;line-height:24px;}
+.zxh41_div .jp{overflow:hidden;border-bottom:1px #dcdcdc solid;padding-bottom:20px;}
+.zxh41_div .jp h3{padding:5px 0px;}
+.zxh41_div .jp dl,.zxh41_div .jp dl dt,.zxh41_div .jp dl dd{display:block;}
+.zxh41_div .jp dl dt{float:left;width:105px;height:100px;overflow:hidden;}
+.zxh41_div .jp dl dt a{display:block;}
+.zxh41_div .jp dl dd{float:left;width:130px;height:auto;padding-left:20px;}
+.zxh41_div .jp dl dd p.name{font-size:14px;color:#333333;line-height:24px;padding-bottom:13px;}
+.zxh41_div .jp dl dd p{color:#888888;font-size:12px;line-height:20px;}
+.zxh41_div .jp dl dd p span{color:#f67fb2;}
+.zxh41_div .sqhj{width:270px;overflow:hidden;border-bottom:1px #dcdcdc solid;padding-bottom:20px;}
+.zxh41_div .sqhj img{width:270px;}
+.zxh41_div .ewm{text-align:center;}
+.zxh41_div .ewm p.time{text-align:center;font-size:16px;color:#333333;line-height:50px;padding-top:2px;}
+.c1_r_4_con{border:0px;height:310px;}
+.c1_r_4_c{height:310px;}
+.dv_scroll_bar{height:310px;}
+.dv_scroll_bar .Scrollbar-Track{height:310px;}
+/*201641模块:视频video 改闺蜜知心话 END*/
+

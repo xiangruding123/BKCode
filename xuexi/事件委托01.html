@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>事件委托1</title>
+		<style>
+		
+		</style>
+	</head>
+	<body>
+	    <div id="parent">
+	        <h3>我是h3标签</h3>
+	        <p>我是p标签</p>
+	    </div>
+		<script>
+		    var parent=document.getElementById('parent');
+		    var h3=parent.getElementsByTagName('h3')[0];
+		    
+		    document.onclick=function(ev){  //点击事件委托给document
+		        var e=ev||window.event;
+		        console.log(e);
+		        
+		        if (e.target.nodeName=='H3') {//设置为h3的点击事件
+		            alert('h3');
+		        }
+		    }
+		</script>
+	</body>
+</html>

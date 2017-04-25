@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table >
+	    <tr>
+	        <td ><input type="checkbox" name="all_users" id="all_users" onclick = "checked_all();">全选</td>
+	   </tr>   
+	   <tr>
+	        <td ><input type="checkbox" name="users_id"  onclick = "change_checked();">子checkbox</td>
+	   </tr>
+	</table>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	<script>
+		function checked_all(){
+		    $("input[name='users_id']:checkbox").each(function(){ 
+		        $(this).prop("checked",$("#all_users").prop("checked"));
+		    });
+		}
+		//全选按钮是否被选中
+		function change_checked(){
+		    var coll = document.getElementsByName('users_id');
+		    var collid = document.getElementById('all_users');
+		    var m = 0;
+		    
+		    for(var i = 0; i < coll.length; i++){
+		        if(coll[i].checked == true){
+		        m++ ; 
+		    }
+		    else{
+		        collid.checked = false;
+		    } 
+		}
+		    //查看是否全部被选中
+		    if(m == coll.length){
+		        collid.checked = true;
+		    }
+		}
+	</script>
+	</body>
+</html>

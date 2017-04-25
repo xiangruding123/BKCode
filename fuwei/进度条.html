@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>进度条</title>
+		<style>
+			#box {
+				width: 200px;
+				height: 30px;
+				border: 1px dashed #d4d4d4;				
+			}
+			
+			#progressBar {
+				width: 0px;
+				height: 30px;
+				background: red;
+			}
+		</style>
+		
+		<script>
+			window.onload = function() {
+				var progressBar = document.getElementById("progressBar");
+				var progressNum = document.getElementById("progressNum");
+				var i=0;
+
+				var timer = setInterval(function(){
+					i++;
+					progressNum.innerHTML = i;
+					progressBar.style.width = i+"%";
+					if(i==100) {
+						clearInterval(timer);
+					}
+					
+				}, 50)
+			}
+			
+
+			// 判断两个日期相差的天数
+			// function intervalDays(date1, date2) {
+
+			// 	//获取两个日期的时间戳, 距离1970/1/1/0时的毫秒数
+			// 	var time1 = date1.getTime();
+			// 	var time2 = date2.getTime();
+
+			// 	//时间间隔(毫秒)
+			// 	var timeInterval = time1 < time2 ? time2 - time1 : time1 - time2;
+			// 	// var timeInterval = Math.abs(time1-time2);
+
+			// 	//间隔天数
+			// 	var dayInterval = timeInterval / (1000 * 3600 * 24);
+
+			// 	return dayInterval;
+			// }
+
+			// var date1 = new Date("2015/2/1");
+			// var date2 = new Date("2015/3/5");
+			// var dayInterval = intervalDays(date1, date2);
+			// alert(dayInterval);
+		</script>
+		
+	</head>
+	<body>
+		<h1>进度条</h1>
+		<div id="box">
+			<div id="progressBar"></div>
+		</div>
+		<span id="progressNum">0</span>%
+		
+	</body>
+</html>

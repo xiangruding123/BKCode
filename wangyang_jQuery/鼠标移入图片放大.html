@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	
+	<style>
+		*{padding:0;margin:0;}
+		li{ list-style:none; position:relative; width:500px; height:400px;margin: 30px auto; border:1px solid gray; overflow:hidden;}
+		li>img{ position:absolute; left:0; top:0; width:500px; height:400px;}
+		
+		p{ position:absolute; left:0; top:400px; background:black; opacity:0.7; width:500px; height:200px;}
+		span{ position:absolute; left:0; top:400px; color:white;}
+	
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	<script>
+	
+		$(function(){
+			$("li").mouseenter(function(){
+				var img=$(this).find("img");
+				var p=$(this).children("p");
+				var span=$(this).children().eq(2);
+				//console.log(img);
+				//console.log(p);
+				
+				img.stop().animate({
+					left:-50,
+					top:-50,
+					width:600,
+					height:500
+				});
+				
+				p.stop().animate({
+					top:200
+				});
+				span.stop().animate({
+					top:200
+				});
+			});
+		
+
+			//animate
+			$("li").mouseleave(function(){
+				var img=$(this).find("img");
+				var p=$(this).children("p");
+				var span=$(this).children().eq(2);
+				img.stop().animate({
+					left:0,
+					top:0,
+					width:500,
+					height:400
+				});
+				p.stop().animate({
+					top:400
+				});
+				span.stop().animate({
+					top:400
+				});
+			});
+			
+		});
+	
+	</script>
+</head>
+<body>
+	
+	<ul>
+		<li>
+			<img src="img/ll.jpg" />
+			<p></p>
+			<span>
+			感谢佛祖上帝和圣母玛利亚
+			让我今生遇见你啦
+			当然最感谢的是你的爸妈
+			含辛茹苦把你抚养大
+			现在的生活真的压力山大
+			有你就什么都不怕
+			你是救苦救难的活菩萨
+			求求你了拉我一把
+			从今以后
+			我负责赚钱养家
+			你负责貌美如花
+			你是我的领导 我的老大
+			我保证坚决听你的话
+			从今以后
+			我负责赚钱养家
+			你负责貌美如花
+			你是我的挚爱 我的牵挂
+			我一辈子都放不下
+			现在的生活真的压力山大
+			有你就什么都不怕
+		
+			</span>
+		</li>
+	</ul>
+
+</body>
+</html>

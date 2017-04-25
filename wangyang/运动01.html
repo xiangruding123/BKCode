@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{ position:absolute; width:50px; height:50px; background:red; left:450px;}
+			#div2{ position:absolute; width:50px; height:50px; background:blue; left:450px; top:60px;}
+		</style>
+		<script>
+			/*
+			取出对象的样式中的某个属性值
+			参数：
+				obj 指某个对象
+				attr 指该对象中的某个属性名
+			返回值：
+				取出对象的样式中的某个属性值
+			*/
+			function getStyle(obj, attr){
+				if(obj.currentStyle){
+					return obj.currentStyle[attr];
+				}else{
+					return getComputedStyle(obj, null)[attr];
+				}
+			}
+			
+			/*
+			运动函数
+			参数：
+				obj  指运动的对象
+				attr 指运动的对象的样式的属性名
+				end  指运动的对象的样式的attr属性的属性值（目标值）
+			*/
+			function startMove(obj, attr, end){
+				//var end=300;	//设置目标值
+				/*
+				第二次执行该函数时，需要先清除定时器，如果定时器是var创建出来的，第二次的函数是没办法清除第一次函数的定时器的
+				所以需要在obj对象上创建出一个属性来表示定时器，第二次执行该函数时，要先停止该对象的上一次的定时器，
+				以防止多个定时器同时对对象起作用
+				*/
+				clearInterval(obj.timer);	
+				obj.timer=setInterval(function(){	//开启定时器
+					var start=parseInt(getStyle(obj, attr));	//取出起始值
+					//取出速度，（即起始点到目标点过度时的步长）每次执行该函数时，都重新拿新起始点与目标点的间距的六分之一作为步长
+					var speed=(end-start)/6;	
+					//从小到大过度时，因为是正数，所以小数应向上取整数，最后的步长值为+1；
+					//从大到小过度时，因为是负数，所以小数应向下取整数，最后的步长值为-1；
+					speed=(speed>0)?Math.ceil(speed):Math.floor(speed);
+					//更新对象的属性
+					obj.style[attr]=start+speed+"px";
+					//console.log(speed);
+					if(start==end){//如果已经过度到目标值，则清除定时器
+						clearInterval(obj.timer);
+					}
+				}, 60)	//每隔60毫秒执行一次函数
+			}
+			
+			window.onload=function(){
+				var div1=document.getElementById("div1");
+				div1.onmouseover=function(){
+					startMove(div1, "width", 300);
+				}
+				div1.onmouseout=function(){
+					startMove(div1, "width", 50);
+				}
+			
+				var div2=document.getElementById("div2");
+				div2.onmouseover=function(){
+					startMove(div2, "width", 300);
+				}
+				div2.onmouseout=function(){
+					startMove(div2, "width", 50);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div id="div1"></div>
+		<div id="div2"></div>
+		
+	</body>
+</html>

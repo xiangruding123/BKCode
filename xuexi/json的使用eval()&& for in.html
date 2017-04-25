@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<!--====参考网址(博客园)===http://www.cnblogs.com/paulirish/p/5793313.html-->
+		
+		<!--4、json字符串转换为json对象
+		var json2="{ 'name' : '小丽' , 'sex' : '女' , 'age' : '22' }";
+		运用 eval( )函数转换
+		例如：
+		var json3=eval( '('+json2+')' ) ;
+		alert( json3.name ); // 弹出 '小丽'
+		5、json循环
+		普通for循环
+		var arr=[2,4,6];
+		for (var i=0; i<arr.length; i++){
+		alert(arr[i]); //2 4 6 
+		}
+		json循环只能用 for in
+		var jsn={‘a’:8,‘b’:8,‘c’:28};
+		for (var i in jsn){
+		alert(jsn[i]); //8 18 28
+		}
+		i → json的key , jsn[i] → 对应key的值-->
+		
+	</head>
+	<body>
+		<script>
+//			//json字符串转换为json对象
+//			var json2="{ 'name' : '小丽' , 'sex' : '女' , 'age' : '22' }";
+//			//运用 eval( )函数转换
+//			//例如：
+//			var json3=eval( '('+json2+')' ) ;
+//			alert( json3.name ); // 弹出 '小丽'
+//			//=========================================
+			
+			//json循环只能用 for in
+			
+			var jsn={"a":"8", "b":"18", "c":"28"};
+			for (var i in jsn){
+				alert(jsn[i]); //8 18 28
+			}
+			//i → json的key , jsn[i] → 对应key的值
+		
+		</script>
+	</body>
+</html>

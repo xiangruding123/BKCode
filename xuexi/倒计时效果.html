@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>练习2-倒计时</title>
+<style>
+*{color:red;}
+</style>
+</head>
+<body>
+<h1>距离2017年国庆节放假还剩：<span id="con"></span></h1>
+<h1>距离2017年中秋节放假还剩：<span id="con2"></span></h1>
+<script>
+    var con=document.getElementById('con');
+    var con2=document.getElementById('con2');
+    var guoq=new Date("2017/10/1,00:00:00");
+    var zhq=new Date("2017/9/15,00:00:00");
+    var end=guoq.getTime();
+    var end2=zhq.getTime();
+    var timer=null,timer2=null;
+    
+    
+    timer=setInterval(function(){
+        var str1='';
+        var now=new Date();
+        var start=now.getTime();
+        var zong=end-start;
+        var day=parseInt(zong/(1000*60*60*24));//获取商
+        var _day=zong%(1000*60*60*24);//获取余数
+        var hour=parseInt(_day/(1000*60*60));
+        var _hour=_day%(1000*60*60);
+        var minutes=parseInt(_hour/(1000*60));
+        var _minutes=_hour%(1000*60);
+        var seconds=parseInt(_minutes/1000);
+        var millis=_minutes%1000;
+        str1=day+'天'+hour+'小时'+minutes+'分钟'+seconds+'秒'+millis+'毫秒'
+        con.innerHTML=str1;
+    },1)
+    
+    
+    timer2=setInterval(function(){
+        var str1='';
+        var now=new Date();
+        var start=now.getTime();
+        var zong=end2-start;
+        var day=parseInt(zong/(1000*60*60*24));//获取商
+        var _day=zong%(1000*60*60*24);//获取余数
+        var hour=parseInt(_day/(1000*60*60));
+        var _hour=_day%(1000*60*60);
+        var minutes=parseInt(_hour/(1000*60));
+        var _minutes=_hour%(1000*60);
+        var seconds=parseInt(_minutes/1000);
+        var millis=_minutes%1000;
+        str1=day+'天'+hour+'小时'+minutes+'分钟'+seconds+'秒'+millis+'毫秒'
+        con2.innerHTML=str1;
+    },1)
+</script>
+</body>
+</html>

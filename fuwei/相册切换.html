@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0; margin: 0;}
+			#all{width: 252px;height: 200px; margin: 50px auto;}
+			#big{width: 150px; height: 150px;float: left;}
+			#pic{width: 50px; height: 50px;float: left;}
+			#pic_big{width: 150px; height: 150px;}
+		</style>
+		<script type="text/javascript">
+			window.onload = function () {
+				var all = document.getElementById("all");
+				var divList = all.getElementsByTagName('div');
+				var pic_big = document.getElementById("pic_big");
+				for (var i=1;i<12;i++) {
+					divList[i].index = i;
+					divList[i].onmouseover = function () {
+						pic_big.src = "image1/big_"+this.index+".jpg"
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="all">
+			<div id="big">
+				<img id="pic_big" src="image1/big_1.jpg"/>
+			</div>
+			<div id="pic" style="background: url(image1/small_1.jpg);"></div>
+			<div id="pic" style="background: url(image1/small_2.jpg);"></div>
+			<div id="pic" style="background: url(image1/small_3.jpg);"></div>
+			<div id="pic" style="background: url(image1/small_4.jpg);"></div>
+			<div id="pic" style="background: url(image1/small_5.jpg);"></div>
+			<div id="pic" style="background: url(image1/small_6.jpg);"></div>
+			<div id="pic" style="background: url(image1/small_7.jpg);"></div>
+			<div id="pic" style="background: url(image1/small_8.jpg);"></div>
+			<div id="pic" style="background: url(image1/small_9.jpg);"></div>
+			<div id="pic" style="background: url(image1/small_10.jpg);"></div>
+			<div id="pic" style="background: url(image1/small_11.jpg);"></div>
+	</body>
+</html>

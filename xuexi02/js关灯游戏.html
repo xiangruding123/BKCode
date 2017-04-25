@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style media="screen">
+			#wrap {
+			width: 500px;
+			height: 500px;
+			margin: auto;
+			position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap"></div>
+	</body>
+	<script type="text/javascript">
+		var wrap = document.getElementById('wrap');
+		var lights = [];                       // 定义数组   
+		for (var i = 0; i < 10; i++) {   
+			for (var j = 0; j < 10; j++) {
+				var aLight = document.createElement('div');  // 定义一个新的div  关灯游戏的灯
+				wrap.appendChild(aLight);                          //把aLight放入wrap中
+				aLight.style.width = '10%';                        //定义宽度
+				aLight.style.height = '10%';                       //定义高度
+				aLight.style.border = '1px solid blue';
+				aLight.style.background = 'black';
+				aLight.style.position = 'absolute';
+				aLight.style.left = j * 10 + '%';       // j * 10 ＋ '%' 表示横向的长度 当j ＝ 9 是 长度为500px 即 开始下一行
+				aLight.style.top = i * 10 + "%";     //  i* 10 ＋ '%' 表示丛向的长度 当i  ＝ 9 是 长度为500px 即 开始下一列
+				aLight.index = lights.length;
+				lights.push(aLight);                 // 将aLight 放入到数组 lights 中
+				
+				aLight.onclick = function(){          // 点击事件 函数运行
+					var currentLight = event.target;  //首先改变当前颜色的light的颜色 。 event.target 是指当前正在接受事件的对象。 如果点击div 则就是点击div本身
+					if (currentLight.style.backgroundColor == 'black') {    // 如果背景色为黑色
+						currentLight.style.backgroundColor = 'red';             //  则变成红色
+					}else {
+						currentLight.style.backgroundColor = 'black';        // 否则继续变为黑色
+					}
+					if (currentLight.index >= 10) {    // 获取上面那一行的灯
+						var topLight = lights[currentLight.index - 10];
+						topLight.style.backgroundColor = (topLight.style.backgroundColor == 'black') ? 'red' : 'black';
+					}
+					if (currentLight.index + 10 < lights.length) {     //获取下面那行的灯
+						var bottomLight = lights[currentLight.index + 10];
+						bottomLight.style.backgroundColor = (bottomLight.style.backgroundColor == 'black') ? 'red' : 'black';
+					}
+					if (currentLight.index % 10 != 0) {           //获取左边那行的灯
+						var leftLight = lights[currentLight.index - 1];
+						leftLight.style.backgroundColor = (leftLight.style.backgroundColor == 'black') ? 'red' : 'black';
+					}
+					if (currentLight.index % 10 != 9) {       //  获取右边那行的灯
+						var rightLight = lights[currentLight.index + 1];
+						rightLight.style.backgroundColor = (rightLight.style.backgroundColor == 'black') ?'red' : 'black';
+					}
+				}
+			}
+		}
+	</script>
+</html>

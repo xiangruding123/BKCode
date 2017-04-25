@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="wrap">
+		    <div id="con">
+		        <div id="box1">
+		            <img src="img/w10.jpg" alt="">
+		            <img src="img/w11.jpg" alt="">
+		            <img src="img/w12.jpg" alt="">
+		            <img src="img/w13.jpg" alt="">
+		            <img src="img/w14.jpg" alt="">
+		        </div>
+		        <div id="box2">
+		        </div>
+		    </div>
+		</div>
+		<script>
+		var wrap=document.getElementById('wrap');
+		var box1=document.getElementById('box1');
+		var box2=document.getElementById('box2');
+		// var img1=wrap.getElementsByTagName('img')[0];
+		var timer=null,x=0;
+		var maxWidth=box1.offsetWidth;
+		box2.innerHTML=box1.innerHTML;
+		function move(){
+		    timer=setInterval(function(){
+		        x+=5;
+		        if(x>=maxWidth){//临界点，一组图片转完时
+		            wrap.scrollLeft=0;
+		            //设这组图片的左卷距离为0，回到初始位置
+		            x=0;
+		        }
+		        wrap.scrollLeft=x;
+		    },20)
+		}
+		move();//进入页面自动执行
+		wrap.onmouseenter=function(){
+		    clearInterval(timer);
+		}
+		wrap.onmouseleave=function(){
+		    move();
+		}
+		</script>
+	</body>
+</html>

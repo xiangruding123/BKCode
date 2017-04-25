@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+*{margin:0; padding:0;}
+body{background:#555;}
+li{list-style:none;}
+ul>li{float:left; width:100px; height:30px; background:skyblue; text-align:center; font-weight:bold;}
+ul>.selected{background:white;}
+ol>li{ width:300px; height:300px; background:white; display:none;}
+ol>.selected{display:block;}
+</style>
+<script>
+window.onload=function(){
+	var tab=document.getElementsByTagName("ul")[0].children;
+	var item=document.getElementsByTagName("ol")[0].children;
+	for(var i=0; i<tab.length; i++){
+		tab[i].index=i;
+		tab[i].onmouseover=function(){
+			for(var i=0; i<tab.length; i++){
+				tab[i].className="";
+				item[i].className="";
+			}
+			tab[this.index].className="selected";
+			item[this.index].className="selected";
+		}
+	}
+}
+</script>
+</head>
+<body>
+
+<ul>
+	<li class="selected"><i>aaa</i></li>
+	<li>bbb</li>
+	<li>ccc</li>
+</ul>
+<ol>
+	<li class="selected">1111111</li>
+	<li>2222222</li>
+	<li>3333333</li>
+</ol>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script>
+//		    var num = 11;
+//	        function func1(){
+//	        	
+//	            alert(num);
+//	        }
+//	        func1();
+	        //首先基本上所有的编程语言都有类似的特性，局部方法可以访问外部父类方法的属性，也就是说，子类或子方法可以访问父类的资源。因此上面的这段代码，我们可以获取到num的值。
+			//父类能否获取到子方法内部的值呢？当然是不可以的，因为子方法的变量作用域仅仅是子方法的范围，外部是无法获取到的。
+//			
+//			function outerFun()
+//				{
+//				 //没有var 
+//				 a =0;   ////
+//				 alert(a);  
+//				}
+//				var a=4;
+//				outerFun();
+//				alert(a);
+//			　
+			
+//			
+//			function outerFun()
+//				{
+//				 //没有var 
+//				 var a =0; ///
+//				 alert(a);  
+//				}
+//				var a=4;
+//				outerFun();
+//				alert(a);
+			　
+				var b;   //1.变量声明
+				function test(){   //2.函数声明
+					alert('我是喽喽1');
+				}
+				test();       //3.执行程序
+				b=0;
+
+
+
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

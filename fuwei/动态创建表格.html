@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>练习_动态创建表格</title>
+		
+		<script>
+			var i = 0;
+			window.onload = function() {
+				i = document.getElementsByTagName("tr").length;
+				var saveBtn = document.getElementById("saveBtn");
+				saveBtn.onclick = function() {
+					add();
+				}
+			}
+				
+
+
+			//DOM
+			//获取节点, 创建节点, 修改节点, 删除节点
+			//增删改查
+			
+
+
+			//添加节点
+			function add() {
+				//获取table节点
+				var oTable = document.getElementById("tab");
+				
+				//获取输入框的值
+				var oInfo = document.getElementById("reginfo");
+				var input1 = oInfo.getElementsByTagName("input")[0];
+				var input2 = oInfo.getElementsByTagName("input")[1];
+				var input3 = oInfo.getElementsByTagName("input")[2];
+
+
+				var _id = input1.value;
+				var _name = input2.value;
+				var _tel = input3.value;
+
+
+				input1.value = "";
+				input2.value = "";
+				input3.value = "";
+			
+				//开始创建节点
+				//创建4个td
+				var td1 = document.createElement("td");
+				var td2 = document.createElement("td");
+				var td3 = document.createElement("td");
+				var td4 = document.createElement("td");
+				//给td赋值
+				td1.innerHTML = _id;
+				td2.innerHTML = _name;
+				td3.innerHTML = _tel;
+				td4.innerHTML = "<a name='delete' href='##'>删除</a>"
+				
+
+				/*
+				var opt1 = document.createTextNode(_id);
+				td1.appendChild(opt1);
+				*/
+				
+				//创建一个tr
+				var tr = document.createElement("tr");
+				tr.appendChild(td1);
+				tr.appendChild(td2);
+				tr.appendChild(td3);
+				tr.appendChild(td4);
+			
+				//table添加这个tr节点
+				oTable.appendChild(tr);
+				var del = tr.lastChild.lastChild;
+
+
+
+				// tr.index = i;
+				// del.index = i++;
+						
+				//每次添加后需要重新删除绑定事件
+				
+				del.onclick = function() {
+					oTable.deleteRow(this.parentNode.parentNode.rowIndex);
+					// var trs = document.getElementsByTagName("tr");
+					// for(var i=1; i<trs.length; i++) {
+					// 	if(this.index == trs[i].index) {
+					// 		oTable.removeChild(trs[i]);
+					// 	}
+					// }
+				}
+			}
+
+
+
+		</script>
+		
+	</head>
+	<body>
+		<div id="reginfo">
+			ID: <input type="text" />
+			姓名:<input type="text" />
+			电话:<input type="text" />  
+			<button id="saveBtn">保存</button>
+		</div>
+		<br>
+		<table id="tab" border="1">
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Tel</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>30</td>
+				<td>张三</td>
+				<td>135234234</td>
+				<td> <a href="##" name="delete">删除</a> </td>
+			</tr>
+			<tr>
+				<td>40</td>
+				<td>李四</td>
+				<td>14543423423</td>
+				<td><a href="##" name="delete">删除</a></td>
+			</tr>
+			
+		</table>
+		
+	</body>
+</html>

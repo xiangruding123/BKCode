@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>三级城市联动</title>
+		<script>
+		var obj={
+			"北京":{"东城区":["东城区1","东城区2","东城区3"],"西城区":["西城区1","西城区2","西城区3"],"海淀区":["海淀区1","海淀区2","海淀区3"],"朝阳区":["朝阳区1","朝阳区2","朝阳区3"]},
+			"上海":{"浦东区":["浦东区1","浦东区2","浦东区3"],"宝山区":["宝山区1","宝山区2","宝山区3"],"徐汇区":["徐汇区1","徐汇区2","徐汇区3"]},
+			"天津":{"塘沽区":["塘沽区1","塘沽区2","塘沽区3"],"南开区":["南开区1","南开区2","南开区3"]}
+		}
+		 window.onload=function()
+		 {
+		 	var s1=document.getElementById("s1");
+		 	var s2=document.getElementById("s2");
+		 	var s3=document.getElementById("s3");
+		 	for( var i in obj)  //遍历对象
+		 	{
+		 		 //console.log(i+":"+obj[i]);  //这里i指的属性，obj[i]指的属性值
+		 		 s1.options.add(new Option(i,i)) //s1这个下拉菜单中添加新项新项的text 和value都是i
+		 	}
+		 	s1.onchange=function()
+		 	{
+		 		s2.length=0;
+		 	    v=this.value; 
+		 		for(var j in obj[v])  //对象里的对象
+		 		{
+		 			//console.log(j);
+		 			s2.options.add(new Option(j,j))
+		 		}
+		 		s2.onchange();
+		 	}
+		 		
+		 	s2.onchange=function()
+		        	{
+		 		    s3.length=0;
+		 		    var p=this.value;
+		 		    var arr=obj[v][p];
+		 		    for(var i=0;i<arr.length;i++)
+		 		    {
+		 		    	//console.log(arr[i]);
+		 		    	s3.options.add(new Option(arr[i],arr[i]));
+		 		    }
+		         	}
+		        	s1.onchange();
+		        	s2.onchange();
+		 
+		 }
+		</script>
+	</head>
+	<body>
+		<select id="s1"></select>
+		<select id="s2"></select>
+		<select id="s3"></select>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="author" content="" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" type="text/css" href="" />
+  <style type="text/css"></style>
+  <script type="text/javascript">
+    window.onload=init;
+    var n=19; //图片标记数
+    var dingshi; //让图片动的定时器
+    
+    
+    function init(){
+        dingshi=window.setInterval("tupian()",1000);
+    }
+    
+    //更换图片
+    function tupian(){
+        var obj=document.getElementById("img1");
+        n++;
+        if(n>=23){
+            n=19;
+        }
+        obj.src="img/w"+n+".jpg";
+    }
+    //鼠标放上图片停止
+    function stoptupian(){
+        window.clearInterval(dingshi);
+    }
+    //鼠标离开图片动起来
+    function dongqilai(){
+        dingshi=window.setInterval("tupian()",1000);
+    }
+  </script>
+ </head>
+ <body>
+ 	
+  <img src="img/w19.jpg" onmouseover="stoptupian()"  onmouseout="dongqilai()" id="img1"> 
+  
+ </body>
+</html>

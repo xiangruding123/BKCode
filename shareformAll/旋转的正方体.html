@@ -1,0 +1,168 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+	<style>
+	*{
+		box-sizing:border-box;
+	}
+	body{
+		perspective:500px;/*3D的透视效果，子元素会获得透视效果*/
+		}
+	.min{
+		width:200px;
+		height:200px;
+		display:relative;
+		margin:300px auto;
+		animation:a 5s linear infinite;/*动画的属性*/
+		transform-style:preserve-3d;/*嵌套元素在3D空间显示*/
+
+		}
+		/*动画*/
+		@keyframes a{
+		from{
+			transform:
+					rotateX(0deg) 
+					rotateY(0deg);
+		}to{
+			transform:
+					rotateX(360deg) 
+					rotateY(360deg);
+		}
+	}
+	.min div{
+		width:100px;
+		height:100px;
+		position:absolute;
+		top:50%;
+		left:50%;
+		margin-top:-50px;
+		margin-left:-50px;
+		background:#000;
+		opacity:0.5;		
+		border:solid 1px #FFF;	
+		transition:all 2s ;/*过渡效果*/
+		
+	}
+	
+	.min span{
+		width:50px;
+		height:50px;
+		position:absolute;
+		display:block;
+		top:50%;
+		left:50%;
+		margin-top:-25px;
+		margin-left:-25px;
+		background:red;
+		border:solid 1px #000;	
+		
+	}
+	.min div:nth-child(1){
+		transform:
+		translateZ(50px);
+		}
+	.min:hover div:nth-child(1){
+		transform:
+		translateZ(100px);
+		}
+	.min div:nth-child(2){
+		transform:
+		translateZ(-50px);
+		}
+	.min:hover div:nth-child(2){
+		transform:
+		translateZ(-100px);
+		}
+	.min div:nth-child(3){
+		transform:
+		translateY(50px)
+		rotateX(90deg);
+		}
+	.min:hover div:nth-child(3){
+		transform:
+		translateY(100px)
+		rotateX(90deg);
+		}
+	.min div:nth-child(4){
+		transform:
+		translateY(-50px)
+		rotateX(90deg);
+		}
+	.min:hover div:nth-child(4){
+		transform:
+		translateY(-100px)
+		rotateX(90deg);
+		}
+	.min div:nth-child(5){
+		transform:
+		translateX(50px)
+		rotateY(90deg);
+		}
+	.min:hover div:nth-child(5){
+		transform:
+		translateX(100px)
+		rotateY(90deg);
+		}
+	.min div:nth-child(6){
+		transform:
+		translateX(-50px)
+		rotateY(90deg);
+		}
+	.min:hover div:nth-child(6){
+		transform:
+		translateX(-100px)
+		rotateY(90deg);
+		}	
+	.min span:nth-child(7){
+		transform:
+		translateZ(25px);
+		}
+	.min span:nth-child(8){
+		transform:
+		translateZ(-25px);
+		}
+	.min span:nth-child(9){
+		transform:
+		translateY(25px)
+		rotateX(90deg);
+		}
+	.min span:nth-child(10){
+		transform:
+		translateY(-25px)
+		rotateX(90deg);
+		}
+	.min span:nth-child(11){
+		transform:
+		translateX(25px)
+		rotateY(90deg);
+		}
+	.min span:nth-child(12){
+		transform:
+		translateX(-25px)
+		rotateY(90deg);
+		}
+	
+	</style>
+</head>
+
+<body>
+	<div class="min">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		
+	</div>
+</body>
+</html>

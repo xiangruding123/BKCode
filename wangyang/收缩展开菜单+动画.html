@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{padding:0; margin:0;}
+			div{ margin:0 auto; width:200px;}
+			li{list-style:none;}
+			ul>li{ background:black; color:white; text-align:center; width:200px; height:30px; line-height:30px; cursor:pointer; border-bottom:1px solid white;}
+			ol>li{ background:#f5f5f5; width:200px; height:0px; overflow:hidden;}
+			.selected{height:200px;}
+		</style>
+		<script src="js/startMove.js"></script>
+		<script>
+			window.onload=function(){
+				var ul=document.getElementsByTagName("ul");
+				var ol=document.getElementsByTagName("ol");
+				for(var i=0; i<ul.length; i++){
+					var tab=ul[i].children[0];
+					tab.index=i;
+					tab.onclick=function(){
+						for(var i=0; i<ol.length; i++){
+							//ol[i].children[0].style.display="none";
+							startMove(ol[i].children[0], {height:0});
+						}
+						//ol[this.index].children[0].style.display="block";
+						startMove(ol[this.index].children[0], {height:200});
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li>AAA</li>
+			</ul>
+			<ol>
+				<li class="selected">1</li>
+			</ol>
+			<ul>
+				<li>BBB</li>
+			</ul>
+			<ol>
+				<li>2</li>
+			</ol>
+			<ul>
+				<li>CCC</li>
+			</ul>
+			<ol>
+				<li>3</li>
+			</ol>
+			<ul>
+				<li>DDD</li>
+			</ul>
+			<ol>
+				<li>4</li>
+			</ol>
+		</div>
+	</body>
+</html>

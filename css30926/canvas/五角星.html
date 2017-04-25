@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="mycanvas" width=700 height=800 ></canvas>
+		<script>
+			var canvas = document.getElementById("mycanvas");   
+		    var context = canvas.getContext("2d");   
+		    context.beginPath();   
+		    //设置是个顶点的坐标，根据顶点制定路径   
+		    
+		    for (var i = 0; i < 5; i++) {   
+		        context.lineTo(Math.cos((18+i*72)/180*Math.PI)*200+200,-Math.sin((18+i*72)/180*Math.PI)*200+200);   
+		        context.lineTo(Math.cos((54+i*72)/180*Math.PI)*80+200,-Math.sin((54+i*72)/180*Math.PI)*80+200);   
+		    }   
+		    context.closePath();   
+		    //设置边框样式以及填充颜色   
+		    context.lineWidth="2";   
+		    context.fillStyle = "#FF0000";   
+		    context.strokeStyle = "#000";   
+		    context.fill();   
+		    context.stroke(); 
+		</script>
+	</body>
+</html>

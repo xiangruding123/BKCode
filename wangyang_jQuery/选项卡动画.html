@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		*{margin:0;padding:0;list-style:none;}
+		div{ margin:100px auto; width:390px; border:px solid gray;height:260px;}
+		
+		
+		ul{width:393px; height:30px; border-top:1px solid gray; border-left:1px solid gray;}
+		ul>li{width:130px; height:30px; line-height:30px; text-align:center; border-bottom:1px solid gray; border-right:1px solid gray; float:left; background:#f5f5f5; cursor:pointer;}
+		
+		
+		ol{width:392px; position:relative; height:230px; border-left:1px solid gray; border-bottom:1px solid gray; border-right:1px solid gray;}
+		ol>li{width:390px; height:230px; display:none; position:absolute; left:0; top:0; padding:5px; line-height:150%;}
+		
+		
+		ul .selected{background:white; border-bottom:none;}
+		ol .selected{display:block;}
+	
+	</style>
+	<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+	<script>
+		$(function(){
+			/*$("ul>li").each(function(i){	//each指对所有对象循环处理
+				$(this).attr("index", i)	//attr指给对象添加属性
+				console.log(i)
+			});*/
+			$("ul>li").mouseover(function(){
+				//console.log( $(this).index() );	//index指当前对象的索引
+				$("ul>li").attr("class","").eq($(this).index()).attr("class","selected");
+				//$(this).attr("class","selected");		
+				
+				//$("ol>li").attr("class","");
+				//$("ol>li").eq($(this).index()).attr("class","selected");
+				$("ol>li").hide().eq($(this).index()).stop().slideDown(600);//方法是对方法最近的对象来说的
+				//$("ol>li")
+			});
+		});
+	</script>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li class="selected">AAA</li>
+				<li>BBB</li>
+				<li>CCC</li>
+			</ul>
+			<ol>
+				<li class="selected">
+				论语<br>
+				子在川上曰：<br>
+				逝者如斯夫！<br>
+				不舍昼夜。
+				</li>
+				<li>
+				沁园春·雪<br>
+				毛泽东<br>
+				北国风光，千里冰封，万里雪飘。<br>
+				望长城内外，惟余莽莽；大河上下，顿失滔滔。<br>
+				山舞银蛇，原驰蜡象，欲与天公试比高。<br>
+				</li>
+				<li>
+				须晴日，看红装素裹，分外妖娆。<br>
+				江山如此多娇，引无数英雄竞折腰。<br>
+				惜秦皇汉武，略输文采；唐宗宋祖，稍逊风骚。<br>
+				一代天骄，成吉思汗，只识弯弓射大雕。<br>
+				一代天骄，成吉思汗，只识弯弓射大雕。<br>
+				一代天骄，成吉思汗，只识弯弓射大雕。<br>
+				俱往矣，数风流人物，还看今朝。	
+				</li>
+			</ol>
+		</div>
+	</body>
+</html>
